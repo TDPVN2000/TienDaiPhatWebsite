@@ -1,0 +1,95 @@
+/* ====== BUSINESS SECTOR ====== */
+.containerBusinessSector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0px;
+
+  .title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #36404e;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  .line {
+    width: 594px;
+    object-fit: cover;
+  }
+}
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 1260px;
+  margin: 64px auto 0 auto;
+  justify-content: center;
+
+  .containerItem {
+    width: 392px;
+    height: 468px;
+    background-color: #36404e0a;
+    display: flex;
+    flex-direction: column;
+
+    .btnLearnMore {
+      border: none;
+      background-color: transparent;
+      color: #26418e;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .arrow {
+      margin-left: 5px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .containerThumbnail {
+    flex: 1;
+    display: flex;
+
+    .thumbnail {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .containerContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px;
+
+    .viewBtnLearnMore {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .titleItem {
+      font-size: 24px;
+      font-weight: bold;
+      color: #36404e;
+      margin-bottom: 8px;
+    }
+
+    .contentItem {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #36404ee5;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

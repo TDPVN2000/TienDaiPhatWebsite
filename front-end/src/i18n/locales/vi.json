@@ -1,0 +1,161 @@
+{
+  "common": {
+    "logo": "HOME",
+    "welcomeUser": "Hi {{name}}!",
+    "error": "Something went wrong!",
+    "logout": "Logout",
+    "login": "Login",
+    "signUp": "Sign Up",
+    "medicalEquipment": "THIẾT BỊ Y TẾ",
+    "dredgingLandfill": "NẠO VÉT, SAN LẤP",
+    "investmentProduction": "ĐẦU TƯ SẢN XUẤT CÔNG NGHỆ CAO",
+    "VNAttractiveInvestment": "Việt Nam – Điểm đến đầu tư hấp dẫn",
+    "unlockingPotential": "Khai phá tiềm năng",
+    "updating": "Đang cập nhật"
+  },
+  "button": {
+    "backHome": "Back home",
+    "viewMore": "Xem thêm",
+    "viewDetail": "Xem Chi Tiết"
+  },
+  "text": {
+    "notFoundPage": "Sorry, the page you visited does not exist.",
+    "accessDeniedPage": "Sorry, you are not authorized to access this page."
+  },
+  "formLabel": {
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "confirmPassword": "Confirm Password"
+  },
+  "validate": {
+    "emailRequired": "Email required.",
+    "passwordRequired": "Enter your password.",
+    "usernameRequired": "Enter your email.",
+    "usernameNoAllSpaces": "Username no all space.",
+    "usernameWrongFormat": "Username wrong format.",
+    "passwordNoAllSpaces": "Password no all space.",
+    "passwordWrongFormat": "Password wrong format.",
+    "passwordTooShort": "Password too short."
+  },
+  "nav": {
+    "home": "Home",
+    "setting1": "Setting 1",
+    "task": "Task"
+  },
+  "login": {
+    "title": "Login"
+  },
+  "signUp": {
+    "title": "Sign up"
+  },
+  "languages": {
+    "showKey": "Show key",
+    "japanese": "Japanese",
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  },
+  "placeholder": {
+    "email": "Email...",
+    "password": "Password...",
+    "keyword": "Keyword..."
+  },
+  "table": {
+    "index": "Index",
+    "taskName": "Task name",
+    "amount": "Amount",
+    "createdAt": "Created at",
+    "action": "Action"
+  },
+  "tableAction": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "detail": "Detail"
+  },
+  "pagination": {
+    "total": "{{start}} - {{end}} of {{total}} items"
+  },
+  "popconfirm": {
+    "deleteTitle": "Are you sure delete this?",
+    "ok": "Ok",
+    "cancel": "Cancel"
+  },
+  "introduction": {
+    "title": "Công ty Cổ phần Đầu tư Tiến Đại Phát",
+    "establishment": "Thành lập ngày ",
+    "address": "Trụ sở chính tại ",
+    "content1": "Công ty Cổ phần Đầu tư Tiến Đại Phát tự hào là một trong những đơn vị tiên phong tại Việt Nam trong lĩnh vực sản xuất thương mại thiết bị y tế. Với tầm nhìn và sứ mệnh đưa ra các sản phẩm chất lượng cao Made in Vietnam, chúng tôi không ngừng nghiên cứu đổi mới và nâng cao công nghệ sản xuất để đáp ứng yêu cầu ngày càng cao của thị trường.",
+    "content2": "Ngoài sản xuất thiết bị y tế, Công ty còn hoạt động mạnh mẽ trong các lĩnh vực khác như nạo vét đường thuỷ, khai thác khoáng sản, đầu tư sản xuất và hợp tác kinh doanh - thương mại."
+  },
+  "history": {
+    "title": "Lịch sử phát triển",
+    "content1": "Tiền thân Công ty Cổ phần Đầu tư Tiến Đại Phát chuyên kinh doanh thiết bị cơ khí, dạy nghề và y tế nhằm phục vụ cung cấp cho các khách hàng trong nước. Nhận thấy xu hướng đổi mới của thị trường, công ty đã tái cơ cấu, tập trung vào sản xuất thiết bị y tế và mở rộng sang các lĩnh vực kinh doanh khác. ",
+    "content2": "Sự thay đổi này thể hiện tầm nhìn chiến lược về xu thế tương lai, định hình sự phát triển bền vững và toàn diện, đồng thời khẳng định vị thế của Công ty trong việc dẫn đầu thị trường. ",
+    "content3": "Chứng Chỉ ISO 9001:2000 (2006): Đánh dấu bước phát triển và cam kết về chất lượng và uy tín của công ty"
+  },
+  "businessSector": {
+    "title": "Ngành nghề kinh doanh",
+    "btnLearnMore": "Tìm hiểu thêm ->"
+  },
+  "visionMission": {
+    "title": "Tầm nhìn và sứ mệnh",
+    "content": "Thế giới đang thay đổi không ngừng, kéo theo đó là sự đa dạng hóa và đa phương hóa trong các chuỗi cung ứng toàn cầu. Nắm bắt cơ hội này, chúng tôi không ngừng học hỏi và đổi mới sáng tạo để trở thành đơn vị tiên phong đón đầu xu thế, dẫn đầu thị trường và nắm bắt các cơ hội mới."
+  },
+  "news": {
+    "title": "Tin tức",
+    "titleNews": "Góc tin tức",
+    "subTitleNews": "Khám phá hoạt động và thông tin nổi bật"
+  },
+  "contact": {
+    "title": "Liên hệ với chúng tôi",
+    "subTitle": "Giải pháp xây dựng tương lai đang chờ bạn"
+  },
+  "recruitment": {
+    "title": "Tham gia và tạo nên điều tuyệt vời cùng chúng tôi",
+    "titleTreatment": "Lương thưởng và các quyền lợi khác tại Tiến Đại Phát",
+    "introduceTreatment": "Tại Tiến Đại Phát, chúng tôi cam kết mang đến cho đội ngũ nhân viên môi trường làm việc chuyên nghiệp, thân thiện và đầy đủ các phúc lợi hấp dẫn, bao gồm:",
+    "note": "Hãy gia nhập Tiến Đại Phát để tận hưởng những quyền lợi tuyệt vời và cùng chúng tôi tạo nên giá trị bền vững!",
+    "position": "VỊ TRÍ",
+    "address": "ĐỊA CHỈ LÀM VIỆC",
+    "detail": "CHI TIẾT"
+  },
+  "investmentProduction": {
+    "contentIntroduction": "Nhìn ra tiềm năng và dư địa phát triển lớn của thị trường trong nước, Công ty Cổ phần Đầu tư Tiến Đại Phát đã không ngần ngại đầu tư, tìm tòi, học hỏi để phát triển công nghệ lõi với mục tiêu trở thành một phần trong chuỗi cung ứng giá trị cao của đất nước cũng như thế giới.",
+    "noteProject": "Dự án liên quan đến lĩnh vực này đang được cập nhật",
+    "statisticsMinistryFinance": "Theo thống kê của Bộ Tài chính",
+    "content1": "Các dự án đầu tư nước ngoài vào Việt Nam theo một số lĩnh vực liên quan đến công nghệ, còn hiệu lực đến Tháng 1, 2025 \n(Luỹ Kế)",
+    "content2": "Số vốn thực hiện và dự án mới của các nhà đầu tư nước ngoài vào Việt Nam (2024 – 2025)",
+    "titleSubContent2": "Luỹ kế đến 31/01/2025:",
+    "mainSubContent2": "149 quốc gia, vùng lãnh thổ có đầu tư tại Việt Nam với 42.272 dự án, tổng vốn đăng ký 505,4 tỷ USD. Hàn Quốc dẫn đầu, tiếp theo là Singapore, Nhật Bản, Đài Loan.",
+    "contentTop": "Trong hai thập kỷ qua, Việt Nam đã vươn lên trở thành một trong những nền kinh tế có tốc độ tăng trưởng nhanh nhất khu vực, với GDP tăng trung bình 6-7% mỗi năm. Điều làm Việt Nam nổi bật không chỉ là tăng trưởng kinh tế mà còn là sự chuyển dịch mạnh mẽ sang công nghệ cao, sản xuất, chuyển đổi số và chuyển đổi xanh.",
+    "contentBottom": "Việt Nam hiện là chuỗi cung ứng quan trọng của thế giới, với sự tham gia của nhiều tập đoàn công nghệ hàng đầu như Samsung, Intel, Foxconn, LG,… Việt Nam cũng đang nhanh chóng mở rộng hệ sinh thái bán dẫn, với sự hiện diện của nhiều nhà máy sản xuất chip và trung tâm nghiên cứu phát triển (R&D)."
+  },
+  "dredgingLandfill": {
+    "introductionToTheField": "Giới thiệu về lĩnh vực",
+    "contentIntroduction": "Tiến Đại Phát tự hào là đơn vị nội địa sở hữu tàu nạo vét lớn nhất Việt Nam, hiện tại đang là đơn vị duy nhất có đầy đủ hồ sơ năng lực để thực hiện các dự án lớn, phức tạp - trọng điểm ngoài biển. ",
+    "titleDredgerInformation": "Thông tin tàu nạo vét",
+    "profileTitle": "Hồ sơ năng lực",
+    "btnContact": "Liên hệ để biết thêm thông tin chi tiết",
+    "completedProjects": "Các dự án đã hoàn thành"
+  },
+  "medicalEquipment": {
+    "historyDevelopment": "Lịch sử và Định hướng phát triển",
+    "contentIntro1": "Tiến Đại Phát khởi đầu với hoạt động nhập khẩu và cung cấp các thiết bị y tế cho các bệnh viện công và tư trên cả nước, từ tuyến Trung ương đến địa phương.",
+    "contentIntro2": "Với định hướng tự lực và không phụ thuộc trong công nghệ và sản xuất, Tiến Đại Phát đã nghiên cứu đầu tư để có thể chủ động cung cấp các loại thiết bị Y tế tại Việt Nam.",
+    "contentIntro3": "Dấu ấn đầu tiên được tạo ra bằng việc Công ty phát triển và sản xuất các thiết bị Y tế có tính nhạy cảm cao trong lĩnh vực Lọc máu, Tiến Đại Phát tự tin là đơn vị tiên phong dẫn đầu thị trường Made in Vietnam.",
+    "productTitle": "Sản phẩm",
+    "nameProduct1": "Quả lọc thận nhân tạo/ lõi lọc PES/ Low-flux.",
+    "info1Product1": "Độ thẩm thấu màng lọc thấp: Các lỗ màng nhỏ hơn.",
+    "info2Product1": "Chủ yếu loại bỏ các phân tử nhỏ như ure thông qua quá trình khuếch tán.",
+    "info3Product1": "Thường phù hợp cho bệnh nhân suy thận nhẹ hơn.",
+    "nameProduct2": "Quả lọc thận nhân tạo/ lõi lọc PES/ High-flux.",
+    "info1Product2": "Độ thẩm thấu màng lọc cao: Các lỗ màng lớn hơn.",
+    "info2Product2": "Loại bỏ các phân tử nhỏ, lớn và trung bình qua quá trình khuếch tán và đối lưu.",
+    "info3Product3": "Thích hợp cho bệnh nhân suy thận nặng hơn, có thể hưởng lợi từ việc loại bỏ độc tố hiệu quả hơn.",
+    "btnContact": "Liên hệ để biết thêm thông tin về sản phẩm",
+    "investmentProductionScale": "Quy mô đầu tư sản xuất",
+    "instruct": "Ấn vào con số để biết thêm thông tin",
+    "titleProjectComplete": "Các dự án đã hoàn thành",
+    "titleCertificate": "Chứng nhận & Tiêu chuẩn"
+  }
+}

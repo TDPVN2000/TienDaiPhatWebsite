@@ -1,0 +1,38 @@
+/* ====== HISTORY ====== */
+.containerHistory {
+  display: flex;
+  padding: 100px 348px;
+  background-image: url('../../../../../assets/images/img_history.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 700px;
+
+  .bgHistory {
+    background-color: #00000066;
+    padding: 48px 40px;
+    max-width: 702px;
+
+    .titleHistory {
+      font-size: 52px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #ffffffd9;
+      margin-bottom: 24px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lineYellow {
+      margin: 32px 0px;
+    }
+  }
+}

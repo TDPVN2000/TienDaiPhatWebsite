@@ -1,0 +1,78 @@
+{
+  "common": {
+    "logo": "HOME",
+    "welcomeUser": "Hi {{name}}!",
+    "error": "Something went wrong!",
+    "logout": "Logout",
+    "login": "Login",
+    "signUp": "Sign Up"
+  },
+  "button": {
+    "backHome": "Back home"
+  },
+  "text": {
+    "notFoundPage": "Sorry, the page you visited does not exist.",
+    "accessDeniedPage": "Sorry, you are not authorized to access this page."
+  },
+  "formLabel": {
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "confirmPassword": "Confirm Password"
+  },
+  "validate": {
+    "emailRequired": "Email required.",
+    "passwordRequired": "Enter your password.",
+    "usernameRequired": "Enter your email.",
+    "usernameNoAllSpaces": "Username no all space.",
+    "usernameWrongFormat": "Username wrong format.",
+    "passwordNoAllSpaces": "Password no all space.",
+    "passwordWrongFormat": "Password wrong format.",
+    "passwordTooShort": "Password too short."
+  },
+  "nav": {
+    "home": "Home",
+    "setting1": "Setting 1",
+    "task": "Task"
+  },
+  "login": {
+    "title": "Login"
+  },
+  "signUp": {
+    "title": "Sign up"
+  },
+  "languages": {
+    "showKey": "Show key",
+    "japanese": "Japanese",
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  },
+  "placeholder": {
+    "email": "Email...",
+    "password": "Password...",
+    "keyword": "Keyword..."
+  },
+  "table": {
+    "index": "Index",
+    "taskName": "Task name",
+    "amount": "Amount",
+    "createdAt": "Created at",
+    "action": "Action"
+  },
+  "tableAction": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "detail": "Detail"
+  },
+  "pagination": {
+    "total": "{{start}} - {{end}} of {{total}} items"
+  },
+  "popconfirm": {
+    "deleteTitle": "Are you sure delete this?",
+    "ok": "Ok",
+    "cancel": "Cancel"
+  },
+  "introduction": {
+    "title": "Company TDP"
+  }
+}

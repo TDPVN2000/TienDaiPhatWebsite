@@ -1,0 +1,126 @@
+/* ====== NEWS ====== */
+.containerNews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0px;
+
+  .title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #36404e;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  .line {
+    object-fit: cover;
+  }
+
+  .btnViewMore {
+    margin-top: 64px;
+    color: #26418e;
+    font-size: 16px;
+    border: 1px solid #26418e;
+    border-radius: none;
+    padding: 12px 20px 8px 20px;
+
+    &:hover {
+      color: #fff;
+      background-color: #26418e;
+      .icArrow {
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    .icArrow {
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.body {
+  display: flex;
+  padding: 0 348px;
+  margin-top: 64px;
+  justify-content: center;
+
+  .newsLarge {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-right: 24px;
+
+    .newsImage {
+      max-width: 600px;
+      height: 460px;
+      object-fit: cover;
+    }
+
+    .icClock {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+
+    .newsDate {
+      font-size: 12px;
+      color: #36404eb2;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      margin: 16px 0px 8px 0px;
+    }
+
+    .newsTitle {
+      font-size: 32px;
+      font-weight: 700;
+      color: #36404e;
+      line-height: 48px;
+    }
+  }
+
+  .newsSmallGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    flex: 1;
+
+    .icClock {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+
+    .newsImageSmall {
+      width: 288px;
+      height: 181px;
+      object-fit: cover;
+    }
+
+    .newsTitleSmall {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+      line-height: 1.5;
+      max-height: 3em;
+      text-overflow: ellipsis;
+      font-size: 20px;
+      color: #36404e;
+      font-weight: 700;
+    }
+
+    .newsDateSmall {
+      font-size: 12px;
+      color: #36404eb2;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      margin: 16px 0px 8px 0px;
+    }
+  }
+}

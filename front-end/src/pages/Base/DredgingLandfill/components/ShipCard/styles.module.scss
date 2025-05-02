@@ -1,0 +1,50 @@
+.shipCard {
+  max-width: 405px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffda44;
+  color: #36404e;
+  font-weight: bold;
+  padding: 16px 24px 12px 24px;
+  border-bottom-right-radius: 99px;
+  font-size: 24px;
+}
+
+.info {
+  padding: 16px 24px;
+  position: absolute;
+  bottom: 0;
+}
+
+.type {
+  color: #ffda44;
+  font-size: 15px;
+  margin: 0 0 4px;
+  font-style: thin;
+  font-weight: 700;
+}
+
+.details {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  font-style: thin;
+}

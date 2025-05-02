@@ -1,0 +1,15 @@
+.pageWrapper {
+  height: 100%;
+  height: -webkit-fill-available;
+  display: flex;
+}
+.mainWrapper {
+  height: 100%;
+  flex: 1;
+}
+.pageContent {
+  flex: 1;
+  background: #fff;
+  height: 100%;
+  overflow: auto;
+}

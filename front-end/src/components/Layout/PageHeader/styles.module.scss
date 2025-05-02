@@ -1,0 +1,147 @@
+$header-bg-color: grey;
+$header-text-color: white;
+
+.header {
+  color: $header-text-color;
+  padding: 16px 348px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+
+  .logo {
+    .logoImage {
+      width: 60px;
+      height: auto;
+    }
+  }
+
+  &Nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      position: relative;
+
+      &:hover .submenu {
+        display: block;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 32px;
+    }
+
+    a {
+      color: $header-text-color;
+      text-decoration: none;
+      font-size: 14px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .language {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .languageImg {
+    width: 30px;
+    height: auto;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background-color: white;
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdownItem {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .txtLanguage {
+      color: black;
+      margin: 0px;
+      margin-left: 5px;
+    }
+
+    &:hover {
+      background-color: #f0f0f0;
+      border-radius: 8px;
+    }
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    z-index: 10;
+    width: 270px;
+    // margin-top: 5px;
+
+    .submenuItem {
+      display: block;
+      text-decoration: none;
+      color: #2b323b;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 10px 12px;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: #e6edff;
+      }
+    }
+  }
+
+  // .submenu {
+  //   position: absolute;
+  //   background-color: #fff;
+  //   border-radius: 12px;
+  //   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  //   padding: 4px;
+  //   z-index: 10;
+  //   width: 270px;
+  //   margin-top: 5px;
+
+  //   .submenuItem {
+  //     display: block;
+  //     text-decoration: none;
+  //     color: #2b323b;
+  //     font-size: 16px;
+  //     font-weight: 700;
+  //     padding: 8px 12px;
+  //     border-radius: 8px;
+
+  //     &:hover {
+  //       background-color: #e6edff;
+  //       border-radius: 8px;
+  //     }
+  //   }
+  // }
+}

@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 306px;
+  min-height: 164px;
+  padding: 0px 24px;
+
+  .txtAmount {
+    font-size: 36px;
+    font-weight: bold;
+    color: #26418e;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #36404e;
+    text-align: center;
+  }
+}

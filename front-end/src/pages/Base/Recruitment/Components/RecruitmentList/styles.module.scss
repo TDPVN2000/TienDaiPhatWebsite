@@ -1,0 +1,95 @@
+.containerListRecruitment {
+  display: flex;
+  flex-direction: column;
+  padding: 120px 0px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #36404e;
+    margin-bottom: 16px;
+  }
+
+  .line {
+    width: 1148px;
+    object-fit: cover;
+    margin-bottom: 64px;
+  }
+
+  .label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #36404e;
+  }
+
+  .labelAddress {
+    justify-content: flex-start !important;
+  }
+
+  .labelDetail {
+    justify-content: flex-start !important;
+  }
+
+  .jobList {
+    .jobItem {
+      padding: 24px 16px;
+      border-bottom: 1px solid #eaebeb;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 1224px;
+
+      .jobPosition {
+        width: 45%;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-right: 60px;
+
+        .txtPosition {
+          color: #36404e;
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        .txtDesPosition {
+          color: #6b7076;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+
+      .jobAddress {
+        width: 45%;
+        color: #6b7076;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .viewBtnDetail {
+        width: 15%;
+        align-items: center;
+        display: flex;
+        margin-left: 60px;
+      }
+
+      .styleBtn {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        padding: 9px 16px 6px 16px;
+        background-color: #f2994a;
+        border-radius: 99px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

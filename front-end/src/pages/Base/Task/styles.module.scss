@@ -1,0 +1,33 @@
+.task {
+  padding: 20px;
+  .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+    }
+  }
+  .content {
+    margin-top: 20px;
+    .filterContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .filter {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .table {
+      margin-top: 20px;
+    }
+    .pagination {
+      margin-top: 10px;
+    }
+  }
+}

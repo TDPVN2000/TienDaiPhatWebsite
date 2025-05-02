@@ -1,0 +1,114 @@
+@import 'general';
+@import 'custom';
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Black.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Black-Italic.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Black-Italic.ttf') format('truetype');
+  font-weight: 900; /* Black Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Bold.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Bold.ttf') format('truetype');
+  font-weight: bold; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa-TEST';
+  src: url('../assets/fonts/SVN-Nexa-Bold-Italic.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Bold-Italic.ttf') format('truetype');
+  font-weight: bold; /* Bold Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Book.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Book.ttf') format('truetype');
+  font-weight: 400; /* Book */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Book-Italic.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Book-Italic.ttf') format('truetype');
+  font-weight: 400; /* Book Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Heavy.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Heavy.ttf') format('truetype');
+  font-weight: 800; /* Heavy */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Heavy-Italic.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Heavy-Italic.ttf') format('truetype');
+  font-weight: 800; /* Heavy Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Italic.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Italic.ttf') format('truetype');
+  font-weight: normal; /* Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Light.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Light.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Light-Italic.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Light-Italic.ttf') format('truetype');
+  font-weight: 300; /* Light Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Regular.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Regular.ttf') format('truetype');
+  font-weight: normal; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Thin.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Thin.ttf') format('truetype');
+  font-weight: 100; /* Thin */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url('../assets/fonts/SVN-Nexa-Thin-Italic.otf') format('opentype'),
+    url('../assets/fonts/SVN-Nexa-Thin-Italic.ttf') format('truetype');
+  font-weight: 100; /* Thin Italic */
+  font-style: italic;
+}

@@ -1,0 +1,22 @@
+.container {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .headerBackground {
+    background-image: url('../../../assets/images/img_bg_recruitment.svg');
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

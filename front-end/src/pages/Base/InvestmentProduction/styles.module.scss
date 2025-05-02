@@ -1,0 +1,219 @@
+.container {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .headerBackground {
+    background-image: url('../../../assets/images/carousel3.svg');
+    width: 100%;
+    height: 760px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .containerTitleBg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #00000066;
+      padding: 24px 32px 5px 32px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .titleBg {
+      font-size: 56px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // padding: 120px 0px;
+
+    .introduction {
+      display: flex;
+      flex-direction: row;
+      background-image: url('../../../assets/images/img_bg_invesment.svg');
+      width: 100%;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      padding: 130px 348px;
+      align-items: center;
+
+      .titleIntroduction {
+        font-size: 56px;
+        font-weight: 700;
+        color: #ffda44;
+        max-width: 273px;
+        margin-right: 64px;
+      }
+
+      .viewContentIntro {
+        border-left: 2px solid #ffda44;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contentIntroduction {
+        font-size: 18px;
+        font-weight: 700;
+        color: #ffffffe5;
+        max-width: 580px;
+        line-height: 28px;
+        margin-left: 12px;
+      }
+    }
+
+    .viewProject {
+      display: flex;
+      width: 100%;
+      background-color: #f7f7f8;
+      padding: 24px 0px;
+      justify-content: center;
+      align-items: center;
+
+      .noteProject {
+        font-size: 18px;
+        font-weight: 700;
+        color: #36404e80;
+        font-style: italic;
+      }
+    }
+
+    .mainContent {
+      display: flex;
+      flex-direction: column;
+      padding: 120px 348px;
+
+      .title {
+        text-align: center;
+        font-size: 52px;
+        font-weight: 700;
+        color: #36404e;
+        margin-bottom: 16px;
+      }
+
+      .line {
+        max-width: 923px;
+        object-fit: cover;
+        display: flex;
+        align-self: center;
+      }
+    }
+
+    .viewContent1 {
+      display: flex;
+      flex-direction: row;
+      margin-top: 80px;
+
+      .left {
+        display: flex;
+        margin-right: 25px;
+
+        .imgTest1 {
+          height: auto;
+          max-width: 496px;
+          object-fit: cover;
+        }
+      }
+
+      .right {
+        display: flex;
+        flex-direction: column;
+
+        .content {
+          font-size: 16px;
+          font-weight: 400;
+          color: #36404ee5;
+          line-height: 24px;
+        }
+
+        .top {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 31px;
+
+          .imgTest2 {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-left: 25px;
+          }
+        }
+        .bottom {
+        }
+      }
+    }
+
+    .viewContent2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 64px;
+
+      .statisticsMinistryFinance {
+        color: #36404e;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+      .content1 {
+        color: #26418e;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .tableFinanceMinistry {
+        width: 100%;
+      }
+      .subContent2 {
+        background-color: #f7f7f8;
+        margin-top: 20px;
+        padding: 8px 12px;
+        border-left: 2px solid #36404e;
+      }
+      .titleSubContent2 {
+        font-size: 14px;
+        font-weight: 700;
+        color: #36404eb2;
+        margin-bottom: 5px;
+      }
+      .mainSubContent2 {
+        font-size: 14px;
+        font-weight: 400;
+        color: #36404eb2;
+      }
+    }
+
+    .viewContent3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 64px;
+
+      .content2 {
+        color: #26418e;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .tableCapitalStatistics {
+        width: 100%;
+        max-width: 809px;
+      }
+    }
+  }
+}

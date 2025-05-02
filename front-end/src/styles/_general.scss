@@ -1,0 +1,77 @@
+@import './variable';
+
+// Common
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Nexa';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  text-decoration: none;
+  color: inherit;
+}
+
+// Display
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.f-1 {
+  flex: 1;
+}
+
+// Box
+@each $size in $box-size {
+  .m-#{$size} {
+    margin: #{$size}px;
+  }
+  .mt-#{$size} {
+    margin-top: #{$size}px;
+  }
+  .mr-#{$size} {
+    margin-right: #{$size}px;
+  }
+  .mb-#{$size} {
+    margin-bottom: #{$size}px;
+  }
+  .ml-#{$size} {
+    margin-left: #{$size}px;
+  }
+  .c-gap-#{$size} {
+    column-gap: #{$size}px;
+  }
+}
+
+// Width
+@each $w in $width-size {
+  .mw-#{$w} {
+    min-width: #{$w}px;
+  }
+}
+
+// Line
+@for $i from 1 through 3 {
+  .line-#{$i} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    -webkit-box-orient: vertical;
+  }
+}
