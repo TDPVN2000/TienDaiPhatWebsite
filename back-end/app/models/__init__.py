@@ -4,12 +4,28 @@ from app.models.content import Content, ContentTranslation
 from app.models.category import Category, CategoryTranslation
 from app.models.tag import Tag, TagTranslation
 from app.models.user import User
+from app.models.field import Field
+from app.models.introduction import Introduction
+from app.models.product import Product
+from app.models.investment import Investment
+from app.models.project import Project
+from app.models.certification import Certification
+from app.models.table_data import TableData
+from app.models.capability import Capability
 
 __all__ = [
     'Translation',
     'Content', 'ContentTranslation',
     'Category', 'CategoryTranslation',
     'Tag', 'TagTranslation',
-    'User'
+    'User',
+    'Field',
+    'Introduction',
+    'Product',
+    'Investment',
+    'Project',
+    'Certification',
+    'TableData',
+    'Capability'
 ] 
  
