@@ -1,37 +1,39 @@
-from app.models.field import Field
-from app.extensions import db
+from ..models import Field
+from ..extensions import db
 
-class FieldService:
-    @staticmethod
-    def get_all():
-        return Field.query.all()
+def get_all():
+    return Field.query.all()
 
-    @staticmethod
-    def get_by_id(field_id):
-        return Field.query.get(field_id)
+def get_by_id(field_id, include_children=False):
+    field = Field.query.get(field_id)
+    if field:
+        return field.to_dict(include_children=include_children)
+    return None
 
-    @staticmethod
-    def create(data):
-        field = Field(**data)
-        db.session.add(field)
+def create(data):
+    field = Field(
+        name=data.get('name'),
+        description=data.get('description'),
+        image_url=data.get('image_url')
+    )
+    db.session.add(field)
+    db.session.commit()
+    return field.to_dict()
+
+def update(field_id, data):
+    field = Field.query.get(field_id)
+    if field:
+        field.name = data.get('name', field.name)
+        field.description = data.get('description', field.description)
+        field.image_url = data.get('image_url', field.image_url)
         db.session.commit()
-        return field
+        return field.to_dict()
+    return None
 
-    @staticmethod
-    def update(field_id, data):
-        field = Field.query.get(field_id)
-        if not field:
-            return None
-        for key, value in data.items():
-            setattr(field, key, value)
-        db.session.commit()
-        return field
-
-    @staticmethod
-    def delete(field_id):
-        field = Field.query.get(field_id)
-        if not field:
-            return False
+def delete(field_id):
+    field = Field.query.get(field_id)
+    if field:
         db.session.delete(field)
         db.session.commit()
-        return True 
+        return True
+    return False 

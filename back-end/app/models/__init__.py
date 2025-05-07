@@ -1,7 +1,4 @@
 # This file makes the models directory a Python package 
-from app.models.content import Content
-from app.models.category import Category
-from app.models.tag import Tag
 from app.models.field import Field
 from app.models.introduction import Introduction
 from app.models.product import Product
@@ -12,9 +9,6 @@ from app.models.table_data import TableData
 from app.models.capability import Capability
 
 __all__ = [
-    'Content',
-    'Category',
-    'Tag',
     'Field',
     'Introduction',
     'Product',
