@@ -45,8 +45,6 @@ logs/
 # Static files
 static/uploads/*
 !static/uploads/.gitkeep
-static/translations/*
-!static/translations/.gitkeep
 
 # Docker
 .docker/
