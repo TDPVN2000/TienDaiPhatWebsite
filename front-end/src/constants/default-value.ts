@@ -32,32 +32,32 @@ export const taskData: ITaskRow[] = [
 ];
 
 export const MENU = [
-  { label: 'VỀ CHÚNG TÔI', path: '/' },
+  { label: 'menu.aboutUs', path: '/' },
   {
-    label: 'LĨNH VỰC HOẠT ĐỘNG',
+    label: 'menu.fieldOfOperation',
     path: '/field-action',
     submenu: [
-      { label: 'Thiết bị y tế', path: '/medical-equipment' },
-      { label: 'Nạo vét, san lấp', path: '/dredging-landfill' },
+      { label: 'menu.medicalEquipment', path: '/medical-equipment' },
+      { label: 'menu.dredgingLandfill', path: '/dredging-landfill' },
       {
-        label: 'Đầu tư sản xuất công nghệ cao',
+        label: 'menu.investmentProduction',
         path: '/investment-production',
       },
       {
-        label: 'Khai thác khoáng sản và thương mại (đang cập nhật)',
+        label: 'menu.mineralExploitation',
         path: '/mineral-exploitation',
         isUpdating: true,
       },
       {
-        label: 'Hợp tác kinh doanh (đang cập nhật)',
+        label: 'menu.businessCooperation',
         path: '/business-cooperation',
         isUpdating: true,
       },
     ],
   },
-  { label: 'TIN TỨC', path: '/news' },
-  { label: 'TUYỂN DỤNG', path: '/recruitment' },
-  { label: 'LIÊN HỆ', path: '/contact' },
+  { label: 'menu.news', path: '/news' },
+  { label: 'menu.recruitment', path: '/recruitment' },
+  { label: 'menu.contact', path: '/contact' },
 ];
 
 export const businessSectorDummyData = [
@@ -73,7 +73,7 @@ export const businessSectorDummyData = [
   {
     id: 2,
     thumbnail: images.waterway,
-    title: 'NẠO VÉT ĐƯỜNG THỦY',
+    title: 'NẠO VÉT, SAN LẤP',
     content: 'Xây dựng cảng biển nước sâu, san lấp.',
     path: '/dredging-landfill',
     status: true,
@@ -90,7 +90,7 @@ export const businessSectorDummyData = [
   {
     id: 4,
     thumbnail: images.mineral,
-    title: 'KHAI THÁC KHOÁNG SẢN',
+    title: 'KHAI THÁC KHOÁNG SẢN VÀ THƯƠNG MẠI',
     content:
       'Khai thác và chế biến khoáng sản, cung cấp nguyên liệu cho các ngành công nghiệp.',
     status: false,
@@ -98,7 +98,7 @@ export const businessSectorDummyData = [
   {
     id: 5,
     thumbnail: images.trade,
-    title: 'THƯƠNG MẠI - HỢP TÁC KINH DOANH',
+    title: 'HỢP TÁC KINH DOANH',
     content:
       'Mở rộng hợp tác kinh doanh và thương mại với các đối tác trong và ngoài nước, tạo nên mạng lưới quan hệ kinh doanh toàn cầu.',
     status: false,
@@ -146,41 +146,38 @@ export const benefitsData = [
   {
     title: 'Chế độ lương thưởng',
     items: [
-      'Mức lương cạnh tranh: Phù hợp với năng lực và kinh nghiệm của từng cá nhân.',
+      'Mức lương cạnh tranh: Được xây dựng dựa trên năng lực, kinh nghiệm và vị trí công việc, đảm bảo sự công bằng và thu hút nhân tài.',
       'Thưởng hiệu suất: Thưởng theo kết quả công việc và đóng góp thực tế.',
-      'Thưởng lễ, Tết: Thưởng cuối năm, tháng 13, và các dịp lễ lớn như Tết Nguyên Đán, Quốc khánh, v.v.',
-      'Thưởng đặc biệt: Thưởng cho nhân viên xuất sắc, các sáng kiến đóng góp nổi bật.',
+      'Thưởng lễ, Tết: Thực hiện đầy đủ theo quy định của Nhà nước, đảm bảo quyền lợi cho người lao động.',
     ],
   },
   {
     title: 'Chế độ phúc lợi',
     items: [
-      'Bảo hiểm đầy đủ: Bao gồm BHXH, BHYT và BHTN theo quy định pháp luật.',
-      'Khám sức khỏe định kỳ: Hàng năm, đảm bảo nhân viên luôn khỏe mạnh để làm việc và phát triển.',
-      'Chế độ nghỉ phép: 12 ngày phép năm, nghỉ lễ, Tết theo quy định, cùng các ngày nghỉ bổ sung khi cần.',
-      'Quà tặng nhân dịp đặc biệt: Sinh nhật, cưới hỏi, lễ Tết, và các sự kiện quan trọng khác.',
+      'Bảo hiểm theo quy định: Đóng đầy đủ BHXH, BHYT và BHTN theo quy định pháp luật.',
+      'Chế độ nghỉ phép: 12 ngày phép năm, nghỉ lễ, Tết theo quy định.',
     ],
   },
   {
     title: 'Cơ hội phát triển',
     items: [
-      'Đào tạo chuyên môn: Tham gia các khóa học nâng cao kỹ năng, nghiệp vụ do công ty tổ chức.',
-      'Lộ trình thăng tiến rõ ràng: Dựa trên năng lực và thành tích.',
-      'Học hỏi trong môi trường chuyên nghiệp: Đội ngũ lãnh đạo và đồng nghiệp sẵn sàng hỗ trợ bạn.',
+      'Đào tạo chuyên môn: Được tham gia các khóa học nâng cao kỹ năng, kiến thức chuyên môn phù hợp với từng vị trí.',
+      'Lộ trình thăng tiến rõ ràng: Được xây dựng trên nền tảng năng lực, thái độ và đóng góp thực tế.',
+      'Môi trường học hỏi chuyên nghiệp: Làm việc cùng đội ngũ lãnh đạo giàu kinh nghiệm và đồng nghiệp nhiệt huyết, luôn sẵn sàng chia sẻ và hỗ trợ. Có cơ hội làm việc và công tác với các đơn vị nước ngoài trong các lĩnh vực liên quan đến công nghệ và đổi mới. ',
     ],
   },
   {
     title: 'Các phúc lợi khác',
     items: [
-      'Hoạt động nội bộ sôi động: Du lịch hằng năm, team-building, và các sự kiện kết nối tập thể.',
-      'Hỗ trợ tài chính: Trợ cấp ăn trưa, đi lại, và công tác phí.',
-      'Môi trường làm việc lý tưởng: Thoải mái, sáng tạo và đề cao sự tôn trọng lẫn nhau.',
+      'Hỗ trợ bữa trưa theo ngày công: Góp phần đảm bảo sức khỏe và hiệu quả công việc.',
+      'Không gian làm việc lý tưởng: Thân thiện, cởi mở, khuyến khích sáng tạo và tôn trọng sự khác biệt.',
     ],
   },
 ];
 
 export const JOBSLIST = [
   {
+    id: 1,
     position: 'Kiểm toán viên',
     desPosition:
       'Kiểm tra, đánh giá báo cáo tài chính, hệ thống kiểm soát nội bộ và tính tuân thủ pháp luật, nhằm đảm bảo thông tin minh bạch và chính xác.',
@@ -188,6 +185,7 @@ export const JOBSLIST = [
       '11/8/1999 đường Hữu Tùng Mậu, Phường Cầu Diễn, Q. Nam Từ Liêm, Hà Nội',
   },
   {
+    id: 2,
     position: 'Nhân viên kinh doanh',
     desPosition:
       'Tìm kiếm, tư vấn và chốt đơn hàng với khách hàng, duy trì và phát triển mối quan hệ khách hàng, đảm bảo đạt chỉ tiêu doanh số, hỗ trợ sau bán hàng và cập nhật thông tin thị trường.',
@@ -195,6 +193,7 @@ export const JOBSLIST = [
       '11/8/1999 đường Hữu Tùng Mậu, Phường Cầu Diễn, Q. Nam Từ Liêm, Hà Nội',
   },
   {
+    id: 3,
     position: 'Kế toán',
     desPosition:
       'Quản lý sổ sách, hóa đơn, chứng từ, lập báo cáo tài chính, thu chi, và thuế, đối chiếu số liệu và kiểm tra tính chính xác, hỗ trợ các công việc kế toán khác theo yêu cầu.',
@@ -202,6 +201,7 @@ export const JOBSLIST = [
       '11/8/1999 đường Hữu Tùng Mậu, Phường Cầu Diễn, Q. Nam Từ Liêm, Hà Nội',
   },
   {
+    id: 4,
     position: 'Trợ lý giám đốc',
     desPosition:
       'Hỗ trợ giám đốc trong công việc hàng ngày, sắp xếp lịch làm việc, họp và công tác, tổng hợp báo cáo và xử lý tài liệu, phối hợp với các bộ phận để thực hiện nhiệm vụ được giao.',

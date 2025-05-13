@@ -1,9 +1,20 @@
 import { images } from 'assets';
 import styles from './styles.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 function ItemNews({ data }: any) {
+  const navigate = useNavigate();
+
+  const handleClick = (id: number) => {
+    navigate(`/news-detail/${id}`);
+  };
+
   return (
-    <div key={data.id} className={styles.newsSmall}>
+    <div
+      key={data.id}
+      className={styles.newsSmall}
+      onClick={() => handleClick(data?.id)}
+    >
       <img
         src={data.image}
         alt={data.title}

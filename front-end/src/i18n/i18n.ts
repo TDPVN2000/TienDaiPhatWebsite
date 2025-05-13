@@ -15,7 +15,7 @@ i18n
       escapeValue: false,
     },
     resources: {
-      en: { translation: en },
       vi: { translation: vi },
+      en: { translation: en },
     },
   });

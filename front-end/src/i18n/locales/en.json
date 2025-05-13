@@ -7,6 +7,18 @@
     "login": "Login",
     "signUp": "Sign Up"
   },
+  "menu": {
+    "aboutUs": "ABOUT US",
+    "fieldOfOperation": "FIELD OF OPERATION",
+    "medicalEquipment": "Medical Equipment",
+    "dredgingLandfill": "Dredging Landfill",
+    "investmentProduction": "Investment Production",
+    "mineralExploitation": "Mineral Exploitation (updating)",
+    "businessCooperation": "Business Cooperation (updating)",
+    "news": "NEWS",
+    "recruitment": "RECRUITMENT",
+    "contact": "CONTACT"
+  },
   "button": {
     "backHome": "Back home"
   },
