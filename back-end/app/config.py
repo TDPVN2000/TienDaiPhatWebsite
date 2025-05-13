@@ -6,6 +6,12 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key'
     DEBUG = os.environ.get('FLASK_ENV') == 'development'
     
+    # CORS settings
+    CORS_ORIGINS = ['*']  # Allow all origins
+    CORS_METHODS = ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+    CORS_ALLOW_HEADERS = ['Content-Type', 'Authorization']
+    CORS_SUPPORTS_CREDENTIALS = True
+    
     # Database settings
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql://postgres:postgres@db:5432/tiendaiphat'
     SQLALCHEMY_TRACK_MODIFICATIONS = False

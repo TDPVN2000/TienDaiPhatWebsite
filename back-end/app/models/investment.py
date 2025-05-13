@@ -4,7 +4,7 @@ from datetime import datetime
 class Investment(db.Model):
     __tablename__ = 'investment'
     id = db.Column(db.Integer, primary_key=True)
-    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=False)
+    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=True)
     title = db.Column(db.String(255), nullable=False)
     value = db.Column(db.String(255))
     unit = db.Column(db.String(50))

@@ -4,7 +4,7 @@ from datetime import datetime
 class TableData(db.Model):
     __tablename__ = 'table_data'
     id = db.Column(db.Integer, primary_key=True)
-    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=False)
+    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=True)
     title = db.Column(db.String(255), nullable=False)
     data = db.Column(db.Text)  # Có thể lưu JSON, HTML, Markdown
     created_at = db.Column(db.DateTime, default=datetime.utcnow)

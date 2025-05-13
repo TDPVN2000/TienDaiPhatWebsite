@@ -1,4 +1,5 @@
 from ..extensions import db
+from datetime import datetime
 
 class Field(db.Model):
     __tablename__ = 'field'
@@ -6,6 +7,8 @@ class Field(db.Model):
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text)
     image_url = db.Column(db.String(500))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     # Relationships with unique backref names
     investments = db.relationship('Investment', backref='field_investment', lazy=True)
@@ -21,7 +24,9 @@ class Field(db.Model):
             'id': self.id,
             'name': self.name,
             'description': self.description,
-            'image_url': self.image_url
+            'image_url': self.image_url,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None
         }
         
         if include_children:

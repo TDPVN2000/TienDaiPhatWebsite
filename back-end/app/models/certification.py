@@ -4,7 +4,7 @@ from datetime import datetime
 class Certification(db.Model):
     __tablename__ = 'certification'
     id = db.Column(db.Integer, primary_key=True)
-    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=False)
+    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=True)
     name = db.Column(db.String(255), nullable=False)
     image_url = db.Column(db.String(500))
     description = db.Column(db.Text)

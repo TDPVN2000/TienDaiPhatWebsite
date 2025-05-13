@@ -4,7 +4,7 @@ from datetime import datetime
 class Product(db.Model):
     __tablename__ = 'product'
     id = db.Column(db.Integer, primary_key=True)
-    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=False)
+    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=True)
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text)
     image_url = db.Column(db.String(500))

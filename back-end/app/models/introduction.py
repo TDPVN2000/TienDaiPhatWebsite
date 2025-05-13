@@ -4,7 +4,7 @@ from datetime import datetime
 class Introduction(db.Model):
     __tablename__ = 'introduction'
     id = db.Column(db.Integer, primary_key=True)
-    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=False)
+    field_id = db.Column(db.Integer, db.ForeignKey('field.id', ondelete='CASCADE'), nullable=True)
     title = db.Column(db.String(255), nullable=False)
     content = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)

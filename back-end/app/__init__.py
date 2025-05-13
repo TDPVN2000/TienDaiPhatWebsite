@@ -15,7 +15,8 @@ from .controllers import (
     investment_controller,
     product_controller,
     introduction_controller,
-    field_controller
+    field_controller,
+    news_controller
 )
 
 def create_app(config_class=Config):
@@ -23,7 +24,13 @@ def create_app(config_class=Config):
     app.config.from_object(config_class)
 
     # Initialize extensions
-    CORS(app)
+    CORS(app, 
+         resources={r"/api/*": {
+             "origins": app.config['CORS_ORIGINS'],
+             "methods": app.config['CORS_METHODS'],
+             "allow_headers": app.config['CORS_ALLOW_HEADERS'],
+             "supports_credentials": app.config['CORS_SUPPORTS_CREDENTIALS']
+         }})
     babel = Babel(app)
     mail = Mail(app)
     cache = Cache(app)
@@ -47,5 +54,6 @@ def create_app(config_class=Config):
     app.register_blueprint(product_controller.bp)
     app.register_blueprint(introduction_controller.bp)
     app.register_blueprint(field_controller.bp)
+    app.register_blueprint(news_controller.bp)
 
     return app

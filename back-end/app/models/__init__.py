@@ -7,6 +7,7 @@ from app.models.project import Project
 from app.models.certification import Certification
 from app.models.table_data import TableData
 from app.models.capability import Capability
+from app.models.new import New
 
 __all__ = [
     'Field',
@@ -16,6 +17,7 @@ __all__ = [
     'Project',
     'Certification',
     'TableData',
-    'Capability'
+    'Capability',
+    'New'
 ] 
  

@@ -1,4 +1,6 @@
 from flask_restx import Api, Namespace, Resource, fields
+from .product import product_ns, product_model
+from .new import news_ns, news_model
 
 # Create API instance
 api = Api(
@@ -15,7 +17,6 @@ table_data_ns = Namespace('table-data', description='Table data operations')
 certification_ns = Namespace('certifications', description='Certification operations')
 project_ns = Namespace('projects', description='Project operations')
 investment_ns = Namespace('investments', description='Investment operations')
-product_ns = Namespace('products', description='Product operations')
 introduction_ns = Namespace('introductions', description='Introduction operations')
 field_ns = Namespace('fields', description='Field operations')
 
@@ -72,16 +73,6 @@ investment_model = api.model('Investment', {
     'updated_at': fields.DateTime(description='Last update timestamp')
 })
 
-# Product models
-product_model = api.model('Product', {
-    'id': fields.Integer(description='Product ID'),
-    'name': fields.String(description='Product name'),
-    'description': fields.String(description='Product description'),
-    'image_url': fields.String(description='Product image URL'),
-    'created_at': fields.DateTime(description='Creation timestamp'),
-    'updated_at': fields.DateTime(description='Last update timestamp')
-})
-
 # Introduction models
 introduction_model = api.model('Introduction', {
     'id': fields.Integer(description='Introduction ID'),
@@ -117,4 +108,5 @@ api.add_namespace(project_ns)
 api.add_namespace(investment_ns)
 api.add_namespace(product_ns)
 api.add_namespace(introduction_ns)
-api.add_namespace(field_ns) 
+api.add_namespace(field_ns)
+api.add_namespace(news_ns)

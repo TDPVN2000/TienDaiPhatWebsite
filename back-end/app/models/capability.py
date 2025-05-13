@@ -4,7 +4,7 @@ from datetime import datetime
 class Capability(db.Model):
     __tablename__ = 'capability'
     id = db.Column(db.Integer, primary_key=True)
-    field_id = db.Column(db.Integer, db.ForeignKey('field.id'), nullable=False)
+    field_id = db.Column(db.Integer, db.ForeignKey('field.id'), nullable=True)
     name = db.Column(db.String(255), nullable=False)
     icon_url = db.Column(db.String(500))
     description = db.Column(db.Text)
