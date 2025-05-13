@@ -13,6 +13,10 @@ const InvestmentProduction = lazy(
 );
 const NotFound = lazy(() => import('pages/StaticPage/NotFound'));
 const AccessDenied = lazy(() => import('pages/StaticPage/AccessDenied'));
+const NewsDetail = lazy(() => import('pages/Base/News/components/NewsDetail'));
+const RecruitmentDetail = lazy(
+  () => import('pages/Base/Recruitment/Components/RecruitmentDetail')
+);
 
 export default function RootWrapper() {
   return (
@@ -20,7 +24,9 @@ export default function RootWrapper() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
+        <Route path="/news-detail/:id" element={<NewsDetail />} />
         <Route path="/recruitment" element={<Recruitment />} />
+        <Route path="/recruitment-detail/:id" element={<RecruitmentDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/medical-equipment" element={<MedicalEquipment />} />
         <Route path="/dredging-landfill" element={<DredgingLandfill />} />

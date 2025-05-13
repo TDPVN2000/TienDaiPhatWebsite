@@ -1,12 +1,15 @@
-import PageHeader from 'components/Layout/PageHeader';
-import styles from './styles.module.scss';
-import PageFooter from 'components/Layout/PageFooter';
-import { useTranslations } from 'next-intl';
-import { images } from 'assets';
-import { featureNewsData, newsData } from 'constants/default-value';
-import ItemNews from './components/ItemNews';
-import { useState } from 'react';
 import { Pagination } from 'antd';
+import { images } from 'assets';
+import PageFooter from 'components/Layout/PageFooter';
+import PageHeader from 'components/Layout/PageHeader';
+import { featureNewsData } from 'constants/default-value';
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+import ItemNews from './components/ItemNews';
+import styles from './styles.module.scss';
+import { useQuery } from '@tanstack/react-query';
+import { listNewsKey } from 'utils/queryKey';
+import { getNewsApi } from 'api/news';
 
 const tdpNewsData = Array.from({ length: 100 }, (_, index) => ({
   id: index + 1,
@@ -17,9 +20,13 @@ const tdpNewsData = Array.from({ length: 100 }, (_, index) => ({
 
 function News() {
   const t = useTranslations();
-
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 9;
+
+  const { data, isFetching, refetch } = useQuery({
+    queryKey: [listNewsKey],
+    queryFn: () => getNewsApi(),
+  });
 
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;

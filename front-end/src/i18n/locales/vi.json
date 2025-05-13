@@ -13,6 +13,18 @@
     "unlockingPotential": "Khai phá tiềm năng",
     "updating": "Đang cập nhật"
   },
+  "menu": {
+    "aboutUs": "VỀ CHÚNG TÔI",
+    "fieldOfOperation": "LĨNH VỰC HOẠT ĐỘNG",
+    "medicalEquipment": "Thiết bị y tế",
+    "dredgingLandfill": "Nạo vét, san lấp",
+    "investmentProduction": "Đầu tư sản xuất công nghệ cao",
+    "mineralExploitation": "Khai thác khoáng sản và thương mại (đang cập nhật)",
+    "businessCooperation": "Hợp tác kinh doanh (đang cập nhật)",
+    "news": "TIN TỨC",
+    "recruitment": "TUYỂN DỤNG",
+    "contact": "LIÊN HỆ"
+  },
   "button": {
     "backHome": "Back home",
     "viewMore": "Xem thêm",
@@ -114,7 +126,7 @@
     "title": "Tham gia và tạo nên điều tuyệt vời cùng chúng tôi",
     "titleTreatment": "Lương thưởng và các quyền lợi khác tại Tiến Đại Phát",
     "introduceTreatment": "Tại Tiến Đại Phát, chúng tôi cam kết mang đến cho đội ngũ nhân viên môi trường làm việc chuyên nghiệp, thân thiện và đầy đủ các phúc lợi hấp dẫn, bao gồm:",
-    "note": "Hãy gia nhập Tiến Đại Phát để tận hưởng những quyền lợi tuyệt vời và cùng chúng tôi tạo nên giá trị bền vững!",
+    "note": "Hãy gia nhập ngay để cùng chúng tôi xây dượng, phát triển và tạo nên những giá trị đột phá và bền vững!",
     "position": "VỊ TRÍ",
     "address": "ĐỊA CHỈ LÀM VIỆC",
     "detail": "CHI TIẾT"

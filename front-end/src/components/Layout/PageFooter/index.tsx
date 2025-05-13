@@ -82,8 +82,8 @@ const PageFooter = () => {
                   Đầu tư sản xuất công nghệ cao
                 </a>
               </li>
-              <li>Khai thác khoáng sản và thương mại</li>
-              <li>Hợp tác kinh doanh</li>
+              <li>Khai thác khoáng sản và thương mại (Đang cập nhật)</li>
+              <li>Hợp tác kinh doanh (Đang cập nhật)</li>
             </ul>
           </div>
 
@@ -91,8 +91,12 @@ const PageFooter = () => {
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>VỀ CHÚNG TÔI</h3>
             <ul>
-              <li>Liên hệ</li>
-              <li>Tuyển dụng</li>
+              <li>
+                <a href="/contact"> Liên hệ</a>
+              </li>
+              <li>
+                <a href="/recruitment">Tuyển dụng</a>
+              </li>
             </ul>
           </div>
         </div>

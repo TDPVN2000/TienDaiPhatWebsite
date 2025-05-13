@@ -3,13 +3,20 @@ import styles from './styles.module.scss';
 import { images } from 'assets';
 import { MENU } from 'constants/default-value';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-export default function PageHeader() {
-  const [language, setLanguage] = useState('vi');
+interface Props {
+  isDetail?: boolean;
+}
+
+export default function PageHeader(props: Props) {
+  const { isDetail } = props || {};
+  const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState(i18n.language);
   const [isOpen, setIsOpen] = useState(false);
-  // const [submenuOpen, setSubmenuOpen] = useState(false);
 
   const handleLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang);
     setLanguage(lang);
     setIsOpen(false);
   };
@@ -18,19 +25,17 @@ export default function PageHeader() {
     setIsOpen(!isOpen);
   };
 
-  // const toggleSubmenu = () => {
-  //   setSubmenuOpen(!submenuOpen);
-  // };
-
   const handleMenuClick = (e: any, hasSubmenu: any) => {
     if (hasSubmenu) {
-      e.preventDefault(); // Ngăn chặn điều hướng
-      // toggleSubmenu();
+      e.preventDefault();
     }
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={styles.header}
+      style={isDetail ? { boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' } : {}}
+    >
       <a href="/" className={styles.logo}>
         <img src={images.logo} alt="Logo" className={styles.logoImage} />
       </a>
@@ -41,8 +46,11 @@ export default function PageHeader() {
               <a
                 href={item.path}
                 onClick={(e) => handleMenuClick(e, item.submenu)}
+                style={{
+                  color: isDetail ? '#36404E' : undefined,
+                }}
               >
-                {item.label}
+                {t(item.label)}
               </a>
               {item.submenu && (
                 <div className={styles.submenu}>
@@ -57,7 +65,7 @@ export default function PageHeader() {
                           pointerEvents: subItem.isUpdating ? 'none' : 'auto',
                         }}
                       >
-                        {subItem.label}
+                        {t(subItem.label)}
                       </a>
                     );
                   })}

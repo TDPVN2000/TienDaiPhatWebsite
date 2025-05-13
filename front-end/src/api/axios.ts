@@ -9,12 +9,17 @@ const axiosInstance = Axios.create({
   timeout: 3 * 60 * 1000,
   baseURL: configs.API_DOMAIN,
 });
+
 axiosInstance.interceptors.request.use(
   (config: any) => {
     const token = cookie.getItem(CookieKey.TOKEN);
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+
+    // NOTE: Bypass HTML warning từ ngrok (SAU XÓA)
+    config.headers['ngrok-skip-browser-warning'] = 'true';
+
     return config;
   },
   (error: any) => Promise.reject(error)

@@ -23,7 +23,11 @@ function BusinessSector() {
             status,
           } = item || {};
           return (
-            <div key={id} className={styles.containerItem}>
+            <div
+              key={id}
+              className={styles.containerItem}
+              onClick={() => navigate(path)}
+            >
               <div className={styles.containerThumbnail}>
                 <img
                   src={thumbnail}
@@ -40,7 +44,6 @@ function BusinessSector() {
                 </div>
                 <div className={styles.viewBtnLearnMore}>
                   <button
-                    onClick={() => navigate(path)}
                     className={styles.btnLearnMore}
                     style={{
                       color: status ? '#26418e' : '#36404E80',

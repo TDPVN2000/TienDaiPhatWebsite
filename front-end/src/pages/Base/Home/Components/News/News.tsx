@@ -2,16 +2,28 @@ import { images } from 'assets';
 import { newsData } from 'constants/default-value';
 import { useTranslations } from 'next-intl';
 import styles from './styles.module.scss';
+import { useNavigate } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { listNewsKey } from 'utils/queryKey';
+import { getNewsApi } from 'api/news';
+import { useEffect } from 'react';
 
 function News() {
   const t = useTranslations();
+  const navigate = useNavigate();
+
+  const { data, isFetching, refetch } = useQuery({
+    queryKey: [listNewsKey],
+    queryFn: () => getNewsApi(),
+  });
+
+  console.log('123', data);
 
   return (
     <div className={styles.containerNews}>
       <p className={styles.title}>{t('news.title')}</p>
       <img src={images.lineNews} alt="line" className={styles.line} />
       <div className={styles.body}>
-        {/* Ô lớn bên trái */}
         <div className={styles.newsLarge}>
           <img
             src={newsData[0].image}
@@ -51,7 +63,7 @@ function News() {
         </div>
       </div>
 
-      <button onClick={() => null} className={styles.btnViewMore}>
+      <button onClick={() => navigate('/news')} className={styles.btnViewMore}>
         {t('button.viewMore')}
         <img src={images.arrowRight} alt="line" className={styles.icArrow} />
       </button>
