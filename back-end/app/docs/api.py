@@ -19,6 +19,7 @@ project_ns = Namespace('projects', description='Project operations')
 investment_ns = Namespace('investments', description='Investment operations')
 introduction_ns = Namespace('introductions', description='Introduction operations')
 field_ns = Namespace('fields', description='Field operations')
+recruitment_ns = Namespace('recruitment', description='Recruitment operations')
 
 # Common response models
 error_model = api.model('Error', {
@@ -100,6 +101,28 @@ field_model = api.model('Field', {
     'products': fields.List(fields.Nested(product_model), description='Related products')
 })
 
+# Recruitment models
+recruitment_model = api.model('Recruitment', {
+    'id': fields.Integer(description='Recruitment ID'),
+    'position': fields.String(required=True, description='Job position title'),
+    'des_position': fields.String(required=True, description='Job position description'),
+    'address': fields.String(required=True, description='Work location address'),
+    'status': fields.String(description='Job status (active, inactive, closed)', default='active'),
+    'created_at': fields.DateTime(description='Creation timestamp'),
+    'updated_at': fields.DateTime(description='Last update timestamp')
+})
+
+recruitment_input_model = api.model('RecruitmentInput', {
+    'position': fields.String(required=True, description='Job position title'),
+    'des_position': fields.String(required=True, description='Job position description'),
+    'address': fields.String(required=True, description='Work location address'),
+    'status': fields.String(description='Job status (active, inactive, closed)', default='active')
+})
+
+recruitment_list_model = api.model('RecruitmentList', {
+    'recruitments': fields.List(fields.Nested(recruitment_model))
+})
+
 # Add namespaces to API
 api.add_namespace(capability_ns)
 api.add_namespace(table_data_ns)
@@ -110,3 +133,4 @@ api.add_namespace(product_ns)
 api.add_namespace(introduction_ns)
 api.add_namespace(field_ns)
 api.add_namespace(news_ns)
+api.add_namespace(recruitment_ns)

@@ -9,6 +9,7 @@ from .certification import certification_ns, certification_model, certification_
 from .table_data import table_data_ns, table_data_model, table_data_input_model, table_data_list_model
 from .capability import capability_ns, capability_model, capability_input_model, capability_list_model
 from .new import news_ns, news_model, news_input_model, news_list_model
+from .api import recruitment_ns, recruitment_model, recruitment_input_model, recruitment_list_model
 
 # Add namespaces
 api.add_namespace(field_ns, path='/api/fields')
@@ -20,6 +21,7 @@ api.add_namespace(certification_ns, path='/api/certifications')
 api.add_namespace(table_data_ns, path='/api/table-data')
 api.add_namespace(capability_ns, path='/api/capabilities')
 api.add_namespace(news_ns, path='/api/news')
+api.add_namespace(recruitment_ns, path='/api/recruitments')
 
 # Export all models and namespaces
 __all__ = [
@@ -43,5 +45,7 @@ __all__ = [
     # Capability
     'capability_ns', 'capability_model', 'capability_input_model', 'capability_list_model',
     # News
-    'news_ns', 'news_model', 'news_input_model', 'news_list_model'
+    'news_ns', 'news_model', 'news_input_model', 'news_list_model',
+    # Recruitment
+    'recruitment_ns', 'recruitment_model', 'recruitment_input_model', 'recruitment_list_model'
 ] 

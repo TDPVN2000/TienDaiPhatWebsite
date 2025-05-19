@@ -8,6 +8,7 @@ from app.models.certification import Certification
 from app.models.table_data import TableData
 from app.models.capability import Capability
 from app.models.new import New
+from app.models.recruitment import Recruitment
 
 __all__ = [
     'Field',
@@ -18,6 +19,7 @@ __all__ = [
     'Certification',
     'TableData',
     'Capability',
-    'New'
+    'New',
+    'Recruitment'
 ] 
  
