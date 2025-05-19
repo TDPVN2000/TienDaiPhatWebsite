@@ -3,10 +3,19 @@ import { useTranslations } from 'next-intl';
 import styles from './styles.module.scss';
 import { JOBSLIST } from 'constants/default-value';
 import { useNavigate } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { getRecruitmentListApi } from 'api/recruitment';
+import { listRecruitmentKey } from 'utils/queryKey';
 
 function RecruitmentList() {
   const t = useTranslations();
   const navigate = useNavigate();
+
+  // !TODO: Call API List Recruitment
+  // const { data, isFetching, refetch } = useQuery({
+  //   queryKey: [listRecruitmentKey],
+  //   queryFn: () => getRecruitmentListApi(),
+  // });
 
   const handleClick = (id: number) => {
     navigate(`/recruitment-detail/${id}`);
@@ -31,10 +40,10 @@ function RecruitmentList() {
         {JOBSLIST.map((job, index) => (
           <div className={styles.jobItem} key={index}>
             <div className={styles.jobPosition}>
-              <div className={styles.txtPosition}>{job.position}</div>
-              <div className={styles.txtDesPosition}>{job.desPosition}</div>
+              <div className={styles.txtPosition}>{job?.position}</div>
+              <div className={styles.txtDesPosition}>{job?.des_position}</div>
             </div>
-            <div className={styles.jobAddress}>{job.address}</div>
+            <div className={styles.jobAddress}>{job?.address}</div>
             <div className={styles.viewBtnDetail}>
               <button
                 onClick={() => handleClick(job?.id)}

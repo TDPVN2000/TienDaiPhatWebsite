@@ -10,12 +10,32 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import { getProjectApi } from 'api/project';
+import { useQuery } from '@tanstack/react-query';
+import { fieldsKey, projectKey } from 'utils/queryKey';
+import { getDetailFieldsApi } from 'api/fields';
+import { SubMenu } from 'constants/enum';
 
 function DredgingLandfill() {
   const t = useTranslations();
   const navigate = useNavigate();
+  const slideRef = useRef<HTMLDivElement>(null);
 
-  const slideRef = useRef<HTMLDivElement>(null); // Khai báo kiểu cho slideRef
+  // !TODO: Call API Fields
+  // const {
+  //   data: fields,
+  //   isFetching,
+  //   refetch,
+  // } = useQuery({
+  //   queryKey: [fieldsKey],
+  //   queryFn: () => getDetailFieldsApi(SubMenu.DREDGING_LANDFILL),
+  // });
+
+  // !TODO: Call API Project
+  // const { data: projectData, isFetching, refetch } = useQuery({
+  //   queryKey: [projectKey],
+  //   queryFn: () => getProjectApi(),
+  // });
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -48,10 +68,18 @@ function DredgingLandfill() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.headerBackground}>
+      <div
+        className={styles.headerBackground}
+        style={
+          {
+            // backgroundImage: `url(${fields?.image_url})`,
+          }
+        }
+      >
         <PageHeader />
         <div className={styles.containerTitleBg}>
           <p className={styles.titleBg}>{t('common.dredgingLandfill')}</p>
+          {/* <p className={styles.titleBg}>{fields?.name}</p> */}
         </div>
       </div>
       <div className={styles.body}>
@@ -130,10 +158,10 @@ function DredgingLandfill() {
             {projectData.map((item) => {
               return (
                 <ProjectCard
-                  key={item.id}
-                  image={item.image}
-                  title={item.title}
-                  contractValue={item.contractValue}
+                  key={item?.id}
+                  image={item?.image_url}
+                  title={item?.name}
+                  contractValue={item?.description}
                 />
               );
             })}

@@ -262,15 +262,29 @@
 
       .certificateList {
         margin-top: 64px;
+        display: flex;
+        gap: 24px;
       }
 
       .certificate {
-        margin-right: 24px;
-        object-fit: cover;
+        width: 392px;
+        height: 512px;
       }
 
       .certificate:last-child {
         margin-right: 0px;
+      }
+
+      .certificatePlaceholder {
+        width: 392px;
+        height: 512px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-style: italic;
+        color: #888;
+        background-color: #f2f4f9;
       }
     }
   }

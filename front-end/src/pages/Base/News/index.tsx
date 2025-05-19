@@ -14,8 +14,8 @@ import { getNewsApi } from 'api/news';
 const tdpNewsData = Array.from({ length: 100 }, (_, index) => ({
   id: index + 1,
   title: `Tin số ${index + 1}`,
-  date: '2025-04-15',
-  image: 'https://picsum.photos/288/181?random=${Math.random()}',
+  created_at: '2025-05-12T17:00:46.311206',
+  image_url: 'https://picsum.photos/288/181?random=${Math.random()}',
 }));
 
 function News() {
@@ -23,14 +23,16 @@ function News() {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 9;
 
-  const { data, isFetching, refetch } = useQuery({
-    queryKey: [listNewsKey],
-    queryFn: () => getNewsApi(),
-  });
+  // !TODO: Call API List News
+  // const { data, isFetching, refetch } = useQuery({
+  //   queryKey: [listNewsKey],
+  //   queryFn: () => getNewsApi(),
+  // });
 
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
   const visibleTDPNews = tdpNewsData.slice(startIndex, endIndex);
+  const featuredNews = tdpNewsData.slice(0, 3);
 
   const handleChange = (page: number) => {
     setCurrentPage(page);
@@ -46,33 +48,39 @@ function News() {
         <p className={styles.subTitle}>{t('news.subTitleNews')}</p>
         <img src={images.line} alt="line" className={styles.line} />
 
-        <div className={styles.viewListNews}>
-          <div className={styles.viewFeaturedNews}>
-            <div className={styles.highlightNewsTag}>TIN NỔI BẬT</div>
-            <div className={styles.containerFeatureNews}>
-              {featureNewsData.map((news) => (
-                <ItemNews key={news.id} data={news} />
-              ))}
+        {tdpNewsData.length > 0 ? (
+          <div className={styles.viewListNews}>
+            <div className={styles.viewFeaturedNews}>
+              <div className={styles.highlightNewsTag}>TIN NỔI BẬT</div>
+              <div className={styles.containerFeatureNews}>
+                {featuredNews.map((news) => (
+                  <ItemNews key={news.id} data={news} />
+                ))}
+              </div>
             </div>
-          </div>
-          <div className={styles.viewTDPNews}>
-            <div className={styles.highlightNewsTag}>TIN TỪ TIẾN ĐẠI PHÁT</div>
-            <div className={styles.containerTDPNews}>
-              {visibleTDPNews.map((news) => (
-                <ItemNews key={news.id} data={news} />
-              ))}
-            </div>
+            <div className={styles.viewTDPNews}>
+              <div className={styles.highlightNewsTag}>
+                TIN TỪ TIẾN ĐẠI PHÁT
+              </div>
+              <div className={styles.containerTDPNews}>
+                {visibleTDPNews.map((news) => (
+                  <ItemNews key={news.id} data={news} />
+                ))}
+              </div>
 
-            <Pagination
-              current={currentPage}
-              pageSize={pageSize}
-              total={tdpNewsData.length}
-              onChange={handleChange}
-              className={styles.pagination}
-              showSizeChanger={false}
-            />
+              <Pagination
+                current={currentPage}
+                pageSize={pageSize}
+                total={tdpNewsData.length}
+                onChange={handleChange}
+                className={styles.pagination}
+                showSizeChanger={false}
+              />
+            </div>
           </div>
-        </div>
+        ) : (
+          <p className={styles.noData}>{t('news.noData')}</p>
+        )}
       </div>
       <PageFooter />
     </div>

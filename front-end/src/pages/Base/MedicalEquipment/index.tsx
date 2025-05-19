@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { images } from 'assets';
 import ProductItem from './components/ProductItem';
 import {
+  certificationList,
   investmentData,
   productListMedical,
   projectComplete,
@@ -13,6 +14,11 @@ import InvestmentDataItem from './components/InvestmentDataItem';
 import ProjectCompleteItem from './components/ProjectCompleteItem';
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getCertificationsApi } from 'api/certifications';
+import { useQuery } from '@tanstack/react-query';
+import { certificationKey, fieldsKey } from 'utils/queryKey';
+import { getDetailFieldsApi } from 'api/fields';
+import { SubMenu } from 'constants/enum';
 
 function MedicalEquipment() {
   const t = useTranslations();
@@ -40,12 +46,46 @@ function MedicalEquipment() {
     ));
   };
 
+  // !TODO: Call API Fields
+  // const {
+  //   data: fields,
+  //   isFetching,
+  //   refetch,
+  // } = useQuery({
+  //   queryKey: [fieldsKey],
+  //   queryFn: () => getDetailFieldsApi(SubMenu.MEDICAL_EQUIPMENT),
+  // });
+
+  // !TODO: Call API Project
+  // const { data: projectComplete, isFetching, refetch } = useQuery({
+  //   queryKey: [projectKey],
+  //   queryFn: () => getProjectApi(),
+  // });
+
+  // !TODO: Call API Certificate
+  // const {
+  //   data: certificationList,
+  //   isFetching,
+  //   refetch,
+  // } = useQuery({
+  //   queryKey: [certificationKey],
+  //   queryFn: () => getCertificationsApi(),
+  // });
+
   return (
     <div className={styles.container}>
-      <div className={styles.headerBackground}>
+      <div
+        className={styles.headerBackground}
+        style={
+          {
+            // backgroundImage: `url(${fields?.image_url})`,
+          }
+        }
+      >
         <PageHeader />
         <div className={styles.containerTitleBg}>
           <p className={styles.titleBg}>{t('common.medicalEquipment')}</p>
+          {/* <p className={styles.titleBg}>{fields?.name}</p> */}
         </div>
       </div>
       <div className={styles.body}>
@@ -158,21 +198,21 @@ function MedicalEquipment() {
           </p>
 
           <div className={styles.certificateList}>
-            <img
-              src={images.imgCer}
-              alt="certificate"
-              className={styles.certificate}
-            />
-            <img
-              src={images.imgCer}
-              alt="certificate"
-              className={styles.certificate}
-            />
-            <img
-              src={images.imgCer}
-              alt="certificate"
-              className={styles.certificate}
-            />
+            {certificationList.length > 0 &&
+              certificationList.map((item) => {
+                return item?.image_url ? (
+                  <img
+                    key={item?.id}
+                    src={item?.image_url}
+                    alt="certificate"
+                    className={styles.certificate}
+                  />
+                ) : (
+                  <div key={item?.id} className={styles.certificatePlaceholder}>
+                    {t('common.updating')}
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>
