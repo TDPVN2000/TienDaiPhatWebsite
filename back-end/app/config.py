@@ -7,11 +7,22 @@ class Config:
     DEBUG = os.environ.get('FLASK_ENV') == 'development'
     
     # CORS settings
-    CORS_ORIGINS = ['*']  # Allow all origins for development
-    CORS_METHODS = ['*']
-    CORS_ALLOW_HEADERS = ['*']
+    CORS_ORIGINS = [
+        'http://localhost:3000',
+        'https://*.ngrok-free.app'
+    ]
+    CORS_METHODS = ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH']
+    CORS_ALLOW_HEADERS = [
+        'Content-Type',
+        'Authorization',
+        'X-Requested-With',
+        'Accept',
+        'Origin',
+        'ngrok-skip-browser-warning'
+    ]
+    CORS_EXPOSE_HEADERS = ['Content-Type', 'Authorization']
     CORS_SUPPORTS_CREDENTIALS = True
-    CORS_EXPOSE_HEADERS = ['*']
+    CORS_MAX_AGE = 600  # Cache preflight requests for 10 minutes
     
     # Database settings
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql://postgres:postgres@db:5432/tiendaiphat'
