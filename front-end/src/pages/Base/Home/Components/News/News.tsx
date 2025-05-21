@@ -1,24 +1,17 @@
 import { images } from 'assets';
-import { newsData } from 'constants/default-value';
-import { useTranslations } from 'next-intl';
-import styles from './styles.module.scss';
-import { useNavigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { listNewsKey } from 'utils/queryKey';
-import { getNewsApi } from 'api/news';
-import { useEffect } from 'react';
-import { convertTimeToLocal } from 'utils/helper';
 import { DateTimeFormat } from 'constants/enum';
+import { useTranslations } from 'next-intl';
+import { useNavigate } from 'react-router-dom';
+import { convertTimeToLocal } from 'utils/helper';
+import styles from './styles.module.scss';
 
-function News() {
+interface Props {
+  newsData: any[];
+}
+
+function News({ newsData }: Props) {
   const t = useTranslations();
   const navigate = useNavigate();
-
-  // !TODO: Call API List News
-  // const { data, isFetching, refetch } = useQuery({
-  //   queryKey: [listNewsKey],
-  //   queryFn: () => getNewsApi(),
-  // });
 
   const handleClick = (id: number) => {
     navigate(`/news-detail/${id}`);
@@ -49,7 +42,7 @@ function News() {
 
         <div className={styles.newsSmallGrid}>
           {newsData.length > 0 &&
-            newsData?.slice(1).map((news) => (
+            newsData?.slice(1, 5).map((news: any) => (
               <div
                 key={news?.id}
                 className={styles.newsSmall}

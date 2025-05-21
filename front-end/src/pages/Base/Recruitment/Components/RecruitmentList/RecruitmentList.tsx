@@ -1,21 +1,15 @@
 import { images } from 'assets';
 import { useTranslations } from 'next-intl';
-import styles from './styles.module.scss';
-import { JOBSLIST } from 'constants/default-value';
 import { useNavigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { getRecruitmentListApi } from 'api/recruitment';
-import { listRecruitmentKey } from 'utils/queryKey';
+import styles from './styles.module.scss';
 
-function RecruitmentList() {
+interface Props {
+  jobList: any[];
+}
+
+function RecruitmentList({ jobList }: Props) {
   const t = useTranslations();
   const navigate = useNavigate();
-
-  // !TODO: Call API List Recruitment
-  // const { data, isFetching, refetch } = useQuery({
-  //   queryKey: [listRecruitmentKey],
-  //   queryFn: () => getRecruitmentListApi(),
-  // });
 
   const handleClick = (id: number) => {
     navigate(`/recruitment-detail/${id}`);
@@ -37,7 +31,7 @@ function RecruitmentList() {
             <p className={styles.label}>{t('recruitment.detail')}</p>
           </div>
         </div>
-        {JOBSLIST.map((job, index) => (
+        {jobList.map((job: any, index: number) => (
           <div className={styles.jobItem} key={index}>
             <div className={styles.jobPosition}>
               <div className={styles.txtPosition}>{job?.position}</div>

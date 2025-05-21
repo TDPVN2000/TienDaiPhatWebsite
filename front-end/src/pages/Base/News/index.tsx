@@ -1,15 +1,15 @@
+import { useQuery } from '@tanstack/react-query';
 import { Pagination } from 'antd';
+import { getNewsApi } from 'api/news';
 import { images } from 'assets';
 import PageFooter from 'components/Layout/PageFooter';
 import PageHeader from 'components/Layout/PageHeader';
-import { featureNewsData } from 'constants/default-value';
+import Loading from 'components/Loading';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { listNewsKey } from 'utils/queryKey';
 import ItemNews from './components/ItemNews';
 import styles from './styles.module.scss';
-import { useQuery } from '@tanstack/react-query';
-import { listNewsKey } from 'utils/queryKey';
-import { getNewsApi } from 'api/news';
 
 const tdpNewsData = Array.from({ length: 100 }, (_, index) => ({
   id: index + 1,
@@ -24,10 +24,14 @@ function News() {
   const pageSize = 9;
 
   // !TODO: Call API List News
-  // const { data, isFetching, refetch } = useQuery({
-  //   queryKey: [listNewsKey],
-  //   queryFn: () => getNewsApi(),
-  // });
+  const { data: tdpNewsData = [], isLoading: isLoadingNewsData } = useQuery({
+    queryKey: [listNewsKey],
+    queryFn: () => getNewsApi(),
+  });
+
+  if (isLoadingNewsData) {
+    return <Loading />;
+  }
 
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
@@ -53,8 +57,8 @@ function News() {
             <div className={styles.viewFeaturedNews}>
               <div className={styles.highlightNewsTag}>TIN NỔI BẬT</div>
               <div className={styles.containerFeatureNews}>
-                {featuredNews.map((news) => (
-                  <ItemNews key={news.id} data={news} />
+                {featuredNews.map((news: any) => (
+                  <ItemNews key={news?.id} data={news} />
                 ))}
               </div>
             </div>
@@ -63,8 +67,8 @@ function News() {
                 TIN TỪ TIẾN ĐẠI PHÁT
               </div>
               <div className={styles.containerTDPNews}>
-                {visibleTDPNews.map((news) => (
-                  <ItemNews key={news.id} data={news} />
+                {visibleTDPNews.map((news: any) => (
+                  <ItemNews key={news?.id} data={news} />
                 ))}
               </div>
 
