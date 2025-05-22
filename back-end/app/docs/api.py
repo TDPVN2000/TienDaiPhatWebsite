@@ -29,6 +29,7 @@ error_model = api.model('Error', {
 # Capability models
 capability_model = api.model('Capability', {
     'id': fields.Integer(description='Capability ID'),
+    'field_id': fields.Integer(description='Field ID'),
     'name': fields.String(description='Capability name'),
     'description': fields.String(description='Capability description'),
     'created_at': fields.DateTime(description='Creation timestamp'),
@@ -38,6 +39,7 @@ capability_model = api.model('Capability', {
 # Table Data models
 table_data_model = api.model('TableData', {
     'id': fields.Integer(description='Table Data ID'),
+    'field_id': fields.Integer(description='Field ID'),
     'name': fields.String(description='Table Data name'),
     'data': fields.Raw(description='Table Data content'),
     'created_at': fields.DateTime(description='Creation timestamp'),
@@ -47,6 +49,7 @@ table_data_model = api.model('TableData', {
 # Certification models
 certification_model = api.model('Certification', {
     'id': fields.Integer(description='Certification ID'),
+    'field_id': fields.Integer(description='Field ID'),
     'name': fields.String(description='Certification name'),
     'description': fields.String(description='Certification description'),
     'image_url': fields.String(description='Certification image URL'),
@@ -57,6 +60,7 @@ certification_model = api.model('Certification', {
 # Project models
 project_model = api.model('Project', {
     'id': fields.Integer(description='Project ID'),
+    'field_id': fields.Integer(description='Field ID'),
     'name': fields.String(description='Project name'),
     'description': fields.String(description='Project description'),
     'image_url': fields.String(description='Project image URL'),
@@ -67,6 +71,7 @@ project_model = api.model('Project', {
 # Investment models
 investment_model = api.model('Investment', {
     'id': fields.Integer(description='Investment ID'),
+    'field_id': fields.Integer(description='Field ID'),
     'name': fields.String(description='Investment name'),
     'description': fields.String(description='Investment description'),
     'image_url': fields.String(description='Investment image URL'),
@@ -77,6 +82,7 @@ investment_model = api.model('Investment', {
 # Introduction models
 introduction_model = api.model('Introduction', {
     'id': fields.Integer(description='Introduction ID'),
+    'field_id': fields.Integer(description='Field ID'),
     'title': fields.String(description='Introduction title'),
     'content': fields.String(description='Introduction content'),
     'image_url': fields.String(description='Introduction image URL'),
