@@ -109,35 +109,35 @@ export const newsData = [
   {
     id: 1,
     title: 'Những Cơ Hội Nghề Nghiệp Hấp Dẫn Tại Tiến Đại Phát Tháng 12/2024',
-    date: '12/10/2024',
-    image:
+    created_at: '2025-05-12T17:00:46.311206',
+    image_url:
       'https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg',
   },
   {
     id: 2,
     title: 'Xu Hướng Kinh Doanh Nổi Bật Năm 2024: Cơ Hội Cho Các Doanh Nghiệp',
-    date: '12/10/2024',
-    image: 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg',
+    created_at: '2025-05-12T17:00:46.311206',
+    image_url: 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg',
   },
   {
     id: 3,
     title: 'Tiến Đại Phát Đưa Ra Giải Pháp Mới: Tăng Hiệu Quả Cho Doanh Nghiệp',
-    date: '12/10/2024',
-    image:
+    created_at: '2025-05-12T17:00:46.311206',
+    image_url:
       'https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80',
   },
   {
     id: 4,
     title: 'Hoạt Động Team Building 2024: Gắn Kết Đội Ngũ – Vươn Xa Thành Công',
-    date: '12/10/2024',
-    image:
+    created_at: '2025-05-12T17:00:46.311206',
+    image_url:
       'https://images.pexels.com/photos/733853/pexels-photo-733853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
   },
   {
     id: 5,
     title: 'Chúc Mừng Nhân Viên Xuất Sắc Tháng 12/2024!',
-    date: '12/10/2024',
-    image:
+    created_at: '2025-05-12T17:00:46.311206',
+    image_url:
       'https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-waterfall-free-image.jpeg?w=600&quality=80',
   },
 ];
@@ -179,7 +179,7 @@ export const JOBSLIST = [
   {
     id: 1,
     position: 'Kiểm toán viên',
-    desPosition:
+    des_position:
       'Kiểm tra, đánh giá báo cáo tài chính, hệ thống kiểm soát nội bộ và tính tuân thủ pháp luật, nhằm đảm bảo thông tin minh bạch và chính xác.',
     address:
       '11/8/1999 đường Hữu Tùng Mậu, Phường Cầu Diễn, Q. Nam Từ Liêm, Hà Nội',
@@ -187,7 +187,7 @@ export const JOBSLIST = [
   {
     id: 2,
     position: 'Nhân viên kinh doanh',
-    desPosition:
+    des_position:
       'Tìm kiếm, tư vấn và chốt đơn hàng với khách hàng, duy trì và phát triển mối quan hệ khách hàng, đảm bảo đạt chỉ tiêu doanh số, hỗ trợ sau bán hàng và cập nhật thông tin thị trường.',
     address:
       '11/8/1999 đường Hữu Tùng Mậu, Phường Cầu Diễn, Q. Nam Từ Liêm, Hà Nội',
@@ -195,7 +195,7 @@ export const JOBSLIST = [
   {
     id: 3,
     position: 'Kế toán',
-    desPosition:
+    des_position:
       'Quản lý sổ sách, hóa đơn, chứng từ, lập báo cáo tài chính, thu chi, và thuế, đối chiếu số liệu và kiểm tra tính chính xác, hỗ trợ các công việc kế toán khác theo yêu cầu.',
     address:
       '11/8/1999 đường Hữu Tùng Mậu, Phường Cầu Diễn, Q. Nam Từ Liêm, Hà Nội',
@@ -203,7 +203,7 @@ export const JOBSLIST = [
   {
     id: 4,
     position: 'Trợ lý giám đốc',
-    desPosition:
+    des_position:
       'Hỗ trợ giám đốc trong công việc hàng ngày, sắp xếp lịch làm việc, họp và công tác, tổng hợp báo cáo và xử lý tài liệu, phối hợp với các bộ phận để thực hiện nhiệm vụ được giao.',
     address:
       '11/8/1999 đường Hữu Tùng Mậu, Phường Cầu Diễn, Q. Nam Từ Liêm, Hà Nội',
@@ -237,42 +237,25 @@ export const shipData = [
 export const projectData = [
   {
     id: 1,
-    image: images.project1,
-    title: 'Công trình Cảng chuyên dụng nhà máy thép Hòa Phát tại Dung Quất',
-    contractValue: 'Tổng giá trị hợp đồng 115.500.000.000 VNĐ',
+    image_url: images.project1,
+    name: 'Công trình Cảng chuyên dụng nhà máy thép Hòa Phát tại Dung Quất',
+    description: 'Tổng giá trị hợp đồng 115.500.000.000 VNĐ',
   },
   {
     id: 2,
-    image: images.project2,
-    title:
-      'Dự án Cảng Biển Trung tâm điện lực Duyên Hải tại huyện Duyên Hải, tỉnh Trà Vinh.',
-    contractValue: 'Tổng giá trị hợp đồng 110.000.000.000 VND',
+    image_url: images.project2,
+    name: 'Dự án Cảng Biển Trung tâm điện lực Duyên Hải tại huyện Duyên Hải, tỉnh Trà Vinh.',
+    description: 'Tổng giá trị hợp đồng 110.000.000.000 VND',
   },
   {
     id: 3,
-    image: images.project3,
-    title: 'Dự án Xây dựng khu liên hợp lọc hóa dầu Nghi Sơn tại Thanh Hóa.',
-    contractValue: 'Tổng giá trị hợp đồng 40.000.000.000 VNĐ',
+    image_url: images.project3,
+    name: 'Dự án Xây dựng khu liên hợp lọc hóa dầu Nghi Sơn tại Thanh Hóa.',
+    description: 'Tổng giá trị hợp đồng 40.000.000.000 VNĐ',
   },
 ];
 
-export const imgSlideDummy = [
-  images.slide1,
-  images.slide2,
-  images.slide3,
-  images.slide1,
-  images.slide2,
-  images.slide3,
-  images.slide1,
-  images.slide2,
-  images.slide3,
-  images.slide1,
-  images.slide2,
-  images.slide3,
-  images.slide1,
-  images.slide2,
-  images.carousel1,
-];
+export const imgSlideDummy = [images.slide1, images.slide2, images.slide3];
 
 export const productListMedical = [
   {
@@ -327,32 +310,32 @@ export const projectComplete = [
   {
     id: 1,
     name: 'Bệnh viện K- cơ sở Tân Triều',
-    image: images.hospitalTanTrieu,
+    image_url: images.hospitalTanTrieu,
   },
   {
     id: 2,
     name: 'Bệnh viện đa khoa tỉnh Phú Thọ',
-    image: images.hospitalPhuTho,
+    image_url: images.hospitalPhuTho,
   },
   {
     id: 3,
     name: 'Bệnh viện Chỉnh hình và Phục hồi chức năng Đà Nẵng',
-    image: images.hospitalDaNang,
+    image_url: images.hospitalDaNang,
   },
   {
     id: 4,
     name: 'Cấp 500 giường tại bệnh viện đa khoa tỉnh Hậu Giang',
-    image: images.hospitalHauGiang,
+    image_url: images.hospitalHauGiang,
   },
   {
     id: 5,
     name: 'Bệnh viện đa khoa tỉnh Hải Dương',
-    image: images.hospitalHaiDuong,
+    image_url: images.hospitalHaiDuong,
   },
   {
     id: 6,
     name: 'Bệnh viện E Hà Nội',
-    image: images.hospitalHNe,
+    image_url: images.hospitalHNe,
   },
 ];
 
@@ -459,5 +442,20 @@ export const tdpNewsData = [
     date: '12/10/2024',
     image:
       'https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80',
+  },
+];
+
+export const certificationList = [
+  {
+    id: 1,
+    image_url: '',
+  },
+  {
+    id: 2,
+    image_url: '',
+  },
+  {
+    id: 3,
+    image_url: '',
   },
 ];

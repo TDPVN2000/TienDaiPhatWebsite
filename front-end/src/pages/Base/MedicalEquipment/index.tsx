@@ -4,15 +4,18 @@ import PageFooter from 'components/Layout/PageFooter';
 import { useTranslations } from 'next-intl';
 import { images } from 'assets';
 import ProductItem from './components/ProductItem';
-import {
-  investmentData,
-  productListMedical,
-  projectComplete,
-} from 'constants/default-value';
+import { investmentData, productListMedical } from 'constants/default-value';
 import InvestmentDataItem from './components/InvestmentDataItem';
 import ProjectCompleteItem from './components/ProjectCompleteItem';
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getCertificationsApi } from 'api/certifications';
+import { useQuery } from '@tanstack/react-query';
+import { certificationKey, fieldsKey, projectKey } from 'utils/queryKey';
+import { getDetailFieldsApi } from 'api/fields';
+import { SubMenu } from 'constants/enum';
+import { getProjectApi } from 'api/project';
+import Loading from 'components/Loading';
 
 function MedicalEquipment() {
   const t = useTranslations();
@@ -40,12 +43,43 @@ function MedicalEquipment() {
     ));
   };
 
+  // !TODO: Call API Fields
+  const { data: fields = [], isLoading: isLoadingFields } = useQuery({
+    queryKey: [fieldsKey],
+    queryFn: () => getDetailFieldsApi(6),
+    // queryFn: () => getDetailFieldsApi(SubMenu.MEDICAL_EQUIPMENT),
+  });
+
+  // !TODO: Call API Project
+  const { data: projectComplete = [], isLoading: isLoadingProject } = useQuery({
+    queryKey: [projectKey],
+    queryFn: () => getProjectApi(),
+  });
+
+  // !TODO: Call API Certificate
+  const { data: certificationList = [], isLoading: isLoadingCert } = useQuery({
+    queryKey: [certificationKey],
+    queryFn: () => getCertificationsApi(),
+  });
+
+  const isLoading = isLoadingFields || isLoadingProject || isLoadingCert;
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className={styles.container}>
-      <div className={styles.headerBackground}>
+      <div
+        className={styles.headerBackground}
+        style={{
+          backgroundImage: `url(${fields?.image_url})`,
+        }}
+      >
         <PageHeader />
         <div className={styles.containerTitleBg}>
           <p className={styles.titleBg}>{t('common.medicalEquipment')}</p>
+          {/* <p className={styles.titleBg}>{fields?.name}</p> */}
         </div>
       </div>
       <div className={styles.body}>
@@ -137,13 +171,15 @@ function MedicalEquipment() {
           </p>
           <img src={images.line} alt="line" className={styles.line} />
           <div className={styles.projectCompleteList}>
-            {projectComplete.map((item, index) => {
-              return (
-                <div key={index} className={styles.itemWrapper}>
-                  <ProjectCompleteItem data={item} />
-                </div>
-              );
-            })}
+            {projectComplete
+              .filter((item: any) => item?.field_id === 6) // !TODO: sau đổi 6 thành Enum tương ứng SubMenu.MEDICAL_EQUIPMENT
+              .map((item: any, index: number) => {
+                return (
+                  <div key={index} className={styles.itemWrapper}>
+                    <ProjectCompleteItem data={item} />
+                  </div>
+                );
+              })}
           </div>
         </div>
 
@@ -158,21 +194,22 @@ function MedicalEquipment() {
           </p>
 
           <div className={styles.certificateList}>
-            <img
-              src={images.imgCer}
-              alt="certificate"
-              className={styles.certificate}
-            />
-            <img
-              src={images.imgCer}
-              alt="certificate"
-              className={styles.certificate}
-            />
-            <img
-              src={images.imgCer}
-              alt="certificate"
-              className={styles.certificate}
-            />
+            {certificationList.length > 0
+              ? certificationList.map((item: any) => {
+                  return (
+                    <img
+                      key={item?.id}
+                      src={item?.image_url}
+                      alt="certificate"
+                      className={styles.certificate}
+                    />
+                  );
+                })
+              : Array.from({ length: 3 }).map((_, index) => (
+                  <div key={index} className={styles.certificatePlaceholder}>
+                    {t('common.updating')}
+                  </div>
+                ))}
           </div>
         </div>
       </div>

@@ -3,16 +3,40 @@ import styles from './styles.module.scss';
 import PageFooter from 'components/Layout/PageFooter';
 import { useTranslations } from 'next-intl';
 import { images } from 'assets';
+import { useQuery } from '@tanstack/react-query';
+import { fieldsKey } from 'utils/queryKey';
+import { getDetailFieldsApi } from 'api/fields';
+import { SubMenu } from 'constants/enum';
+import Loading from 'components/Loading';
 
 function InvestmentProduction() {
   const t = useTranslations();
 
+  // !TODO: Call API Fields
+  const { data: fields = [], isLoading: isLoadingFields } = useQuery({
+    queryKey: [fieldsKey],
+    queryFn: () => getDetailFieldsApi(8),
+    // queryFn: () => getDetailFieldsApi(SubMenu.INVESTMENT_PRODUCTION),
+  });
+
+  const isLoading = isLoadingFields;
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className={styles.container}>
-      <div className={styles.headerBackground}>
+      <div
+        className={styles.headerBackground}
+        style={{
+          backgroundImage: `url(${fields?.image_url})`,
+        }}
+      >
         <PageHeader />
         <div className={styles.containerTitleBg}>
           <p className={styles.titleBg}>{t('common.investmentProduction')}</p>
+          {/* <p className={styles.titleBg}>{fields?.name}</p> */}
         </div>
       </div>
       <div className={styles.body}>

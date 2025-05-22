@@ -10,12 +10,30 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import { getProjectApi } from 'api/project';
+import { useQuery } from '@tanstack/react-query';
+import { fieldsKey, projectKey } from 'utils/queryKey';
+import { getDetailFieldsApi } from 'api/fields';
+import { SubMenu } from 'constants/enum';
+import Loading from 'components/Loading';
 
 function DredgingLandfill() {
   const t = useTranslations();
   const navigate = useNavigate();
+  const slideRef = useRef<HTMLDivElement>(null);
 
-  const slideRef = useRef<HTMLDivElement>(null); // Khai báo kiểu cho slideRef
+  // !TODO: Call API Fields
+  const { data: fields = [], isLoading: isLoadingFields } = useQuery({
+    queryKey: [fieldsKey],
+    queryFn: () => getDetailFieldsApi(7),
+    // queryFn: () => getDetailFieldsApi(SubMenu.DREDGING_LANDFILL),
+  });
+
+  // !TODO: Call API Project
+  const { data: projectData = [], isLoading: isLoadingProjectData } = useQuery({
+    queryKey: [projectKey],
+    queryFn: () => getProjectApi(),
+  });
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -46,12 +64,24 @@ function DredgingLandfill() {
     return () => clearInterval(intervalId);
   }, []);
 
+  const isLoading = isLoadingFields || isLoadingProjectData;
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className={styles.container}>
-      <div className={styles.headerBackground}>
+      <div
+        className={styles.headerBackground}
+        style={{
+          backgroundImage: `url(${fields?.image_url})`,
+        }}
+      >
         <PageHeader />
         <div className={styles.containerTitleBg}>
           <p className={styles.titleBg}>{t('common.dredgingLandfill')}</p>
+          {/* <p className={styles.titleBg}>{fields?.name}</p> */}
         </div>
       </div>
       <div className={styles.body}>
@@ -127,16 +157,18 @@ function DredgingLandfill() {
           </p>
           <img src={images.line} alt="line" className={styles.line} />
           <div className={styles.viewListProject}>
-            {projectData.map((item) => {
-              return (
-                <ProjectCard
-                  key={item.id}
-                  image={item.image}
-                  title={item.title}
-                  contractValue={item.contractValue}
-                />
-              );
-            })}
+            {projectData
+              .filter((item: any) => item?.field_id === 7) // !TODO: sau đổi 7 thành Enum tương ứng SubMenu.DREDGING_LANDFILL
+              .map((item: any) => {
+                return (
+                  <ProjectCard
+                    key={item?.id}
+                    image={item?.image_url}
+                    title={item?.name}
+                    contractValue={item?.description}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>
