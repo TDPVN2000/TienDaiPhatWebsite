@@ -8,6 +8,7 @@ import { fieldsKey } from 'utils/queryKey';
 import { getDetailFieldsApi } from 'api/fields';
 import { SubMenu } from 'constants/enum';
 import Loading from 'components/Loading';
+import bgInvestment from 'assets/images/carousel3.svg';
 
 function InvestmentProduction() {
   const t = useTranslations();
@@ -30,7 +31,7 @@ function InvestmentProduction() {
       <div
         className={styles.headerBackground}
         style={{
-          backgroundImage: `url(${fields?.image_url})`,
+          backgroundImage: `url(${fields?.image_url || bgInvestment})`,
         }}
       >
         <PageHeader />

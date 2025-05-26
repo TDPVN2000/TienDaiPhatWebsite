@@ -16,6 +16,7 @@ import { fieldsKey, projectKey } from 'utils/queryKey';
 import { getDetailFieldsApi } from 'api/fields';
 import { SubMenu } from 'constants/enum';
 import Loading from 'components/Loading';
+import bgDredging from 'assets/images/carousel2.svg';
 
 function DredgingLandfill() {
   const t = useTranslations();
@@ -75,7 +76,7 @@ function DredgingLandfill() {
       <div
         className={styles.headerBackground}
         style={{
-          backgroundImage: `url(${fields?.image_url})`,
+          backgroundImage: `url(${fields?.image_url || bgDredging})`,
         }}
       >
         <PageHeader />

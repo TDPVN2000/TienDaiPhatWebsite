@@ -16,6 +16,7 @@ import { getDetailFieldsApi } from 'api/fields';
 import { SubMenu } from 'constants/enum';
 import { getProjectApi } from 'api/project';
 import Loading from 'components/Loading';
+import bgMedicalEquipment from 'assets/images/carousel1.svg';
 
 function MedicalEquipment() {
   const t = useTranslations();
@@ -73,7 +74,7 @@ function MedicalEquipment() {
       <div
         className={styles.headerBackground}
         style={{
-          backgroundImage: `url(${fields?.image_url})`,
+          backgroundImage: `url(${fields?.image_url || bgMedicalEquipment} )`,
         }}
       >
         <PageHeader />
