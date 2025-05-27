@@ -116,7 +116,9 @@
   "news": {
     "title": "Tin tức",
     "titleNews": "Góc tin tức",
-    "subTitleNews": "Khám phá hoạt động và thông tin nổi bật"
+    "subTitleNews": "Khám phá hoạt động và thông tin nổi bật",
+    "noData": "Chưa có bài viết nào ở đây. Chúng tôi sẽ cập nhật sớm nhất có thể!",
+    "titleBack": "Quay lại trang tin tức"
   },
   "contact": {
     "title": "Liên hệ với chúng tôi",
@@ -129,7 +131,8 @@
     "note": "Hãy gia nhập ngay để cùng chúng tôi xây dượng, phát triển và tạo nên những giá trị đột phá và bền vững!",
     "position": "VỊ TRÍ",
     "address": "ĐỊA CHỈ LÀM VIỆC",
-    "detail": "CHI TIẾT"
+    "detail": "CHI TIẾT",
+    "titleBack": "Quay lại trang Tuyển dụng"
   },
   "investmentProduction": {
     "contentIntroduction": "Nhìn ra tiềm năng và dư địa phát triển lớn của thị trường trong nước, Công ty Cổ phần Đầu tư Tiến Đại Phát đã không ngần ngại đầu tư, tìm tòi, học hỏi để phát triển công nghệ lõi với mục tiêu trở thành một phần trong chuỗi cung ứng giá trị cao của đất nước cũng như thế giới.",

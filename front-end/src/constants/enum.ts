@@ -51,3 +51,11 @@ export enum StorageType {
   LOCAL_STORAGE = 'localStorage',
   SESSION_STORAGE = 'sessionStorage',
 }
+
+export enum SubMenu {
+  MEDICAL_EQUIPMENT = 1,
+  DREDGING_LANDFILL = 2,
+  INVESTMENT_PRODUCTION = 3,
+  MINING = 4,
+  BUSINESS_COOPERATION = 5,
+}

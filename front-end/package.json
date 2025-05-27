@@ -27,6 +27,7 @@
     "react-router-dom": "6.3.0",
     "react-slick": "^0.30.3",
     "react-slideshow-image": "^4.3.2",
+    "react-spinners": "^0.17.0",
     "sass": "^1.56.0",
     "slick-carousel": "^1.8.1",
     "use-debounce": "^8.0.4"

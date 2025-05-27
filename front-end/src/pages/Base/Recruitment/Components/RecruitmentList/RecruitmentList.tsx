@@ -1,10 +1,13 @@
 import { images } from 'assets';
 import { useTranslations } from 'next-intl';
-import styles from './styles.module.scss';
-import { JOBSLIST } from 'constants/default-value';
 import { useNavigate } from 'react-router-dom';
+import styles from './styles.module.scss';
 
-function RecruitmentList() {
+interface Props {
+  jobList: any[];
+}
+
+function RecruitmentList({ jobList }: Props) {
   const t = useTranslations();
   const navigate = useNavigate();
 
@@ -28,13 +31,13 @@ function RecruitmentList() {
             <p className={styles.label}>{t('recruitment.detail')}</p>
           </div>
         </div>
-        {JOBSLIST.map((job, index) => (
+        {jobList.map((job: any, index: number) => (
           <div className={styles.jobItem} key={index}>
             <div className={styles.jobPosition}>
-              <div className={styles.txtPosition}>{job.position}</div>
-              <div className={styles.txtDesPosition}>{job.desPosition}</div>
+              <div className={styles.txtPosition}>{job?.position}</div>
+              <div className={styles.txtDesPosition}>{job?.des_position}</div>
             </div>
-            <div className={styles.jobAddress}>{job.address}</div>
+            <div className={styles.jobAddress}>{job?.address}</div>
             <div className={styles.viewBtnDetail}>
               <button
                 onClick={() => handleClick(job?.id)}

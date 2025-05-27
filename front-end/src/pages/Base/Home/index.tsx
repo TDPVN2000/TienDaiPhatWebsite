@@ -9,6 +9,10 @@ import VisionMission from './Components/VisionMission/VisionMission';
 import News from './Components/News/News';
 import PageHeader from 'components/Layout/PageHeader';
 import PageFooter from 'components/Layout/PageFooter';
+import { listNewsKey } from 'utils/queryKey';
+import { useQuery } from '@tanstack/react-query';
+import { getNewsApi } from 'api/news';
+import Loading from 'components/Loading';
 
 const slideList = [images.carousel1, images.carousel2, images.carousel3];
 
@@ -23,6 +27,16 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, []);
+
+  // !TODO: Call API List News
+  const { data: newsData = [], isLoading: isLoadingNewsData } = useQuery({
+    queryKey: [listNewsKey],
+    queryFn: () => getNewsApi(),
+  });
+
+  if (isLoadingNewsData) {
+    return <Loading />;
+  }
 
   return (
     <div className={styles.container}>
@@ -55,7 +69,7 @@ export default function Home() {
       <History />
       <BusinessSector />
       <VisionMission />
-      <News />
+      <News newsData={newsData} />
 
       <PageFooter />
     </div>

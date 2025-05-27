@@ -25,7 +25,7 @@ const PageFooter = () => {
                 alt="Phone"
                 className={styles.iconContact}
               />
-              (84-4) 37870907 0
+              ...
             </p>
             <p className={styles.footerEmail}>
               <img
@@ -33,7 +33,7 @@ const PageFooter = () => {
                 alt="Email"
                 className={styles.iconContact}
               />
-              tiendaiphat.co@gmail.com
+              ...
             </p>
             <div className={styles.footerSocials}>
               <span>

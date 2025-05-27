@@ -59,6 +59,7 @@ import hospitalHaiDuong from './images/img_haiduong.svg';
 import hospitalHNe from './images/img_hanoie.svg';
 import certificate from './images/ic_certificate.svg';
 import imgCer from './images/img_cer.svg';
+import arrowLeft from './images/ic_arrow_left.svg';
 
 export const images = {
   userIcon,
@@ -122,4 +123,5 @@ export const images = {
   hospitalHNe,
   certificate,
   imgCer,
+  arrowLeft,
 };
