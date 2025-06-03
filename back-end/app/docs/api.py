@@ -21,6 +21,30 @@ introduction_ns = Namespace('introductions', description='Introduction operation
 field_ns = Namespace('fields', description='Field operations')
 recruitment_ns = Namespace('recruitment', description='Recruitment operations')
 
+# Translation API
+translation_ns = api.namespace('translations', description='Translation operations')
+
+translation_model = translation_ns.model('Translation', {
+    'id': fields.Integer(readonly=True),
+    'key': fields.String(required=True, description='Translation key'),
+    'language': fields.String(required=True, description='Language code'),
+    'value': fields.String(required=True, description='Translated value'),
+    'created_at': fields.DateTime(readonly=True),
+    'updated_at': fields.DateTime(readonly=True)
+})
+
+# News API
+news_ns = api.namespace('news', description='News operations')
+
+news_model = news_ns.model('News', {
+    'id': fields.Integer(readonly=True),
+    'title': fields.String(required=True, description='News title'),
+    'content': fields.String(required=True, description='News content'),
+    'image_url': fields.String(description='News image URL'),
+    'created_at': fields.DateTime(readonly=True),
+    'updated_at': fields.DateTime(readonly=True)
+})
+
 # Common response models
 error_model = api.model('Error', {
     'message': fields.String(description='Error message')
@@ -140,3 +164,4 @@ api.add_namespace(introduction_ns)
 api.add_namespace(field_ns)
 api.add_namespace(news_ns)
 api.add_namespace(recruitment_ns)
+api.add_namespace(translation_ns)

@@ -17,7 +17,8 @@ from .controllers import (
     introduction_controller,
     field_controller,
     news_controller,
-    recruitment_controller
+    recruitment_controller,
+    translation_controller
 )
 
 def create_app(config_class=Config):
@@ -59,5 +60,6 @@ def create_app(config_class=Config):
     app.register_blueprint(field_controller.bp)
     app.register_blueprint(news_controller.bp)
     app.register_blueprint(recruitment_controller.bp)
+    app.register_blueprint(translation_controller.bp)
 
     return app

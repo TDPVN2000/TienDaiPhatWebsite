@@ -9,7 +9,13 @@ class Config:
     # CORS settings
     CORS_ORIGINS = [
         'http://localhost:3000',
-        'https://*.ngrok-free.app'
+        'https://*.ngrok-free.app',
+        'http://localhost:5000',
+        'http://localhost:*',
+        'https://localhost:*',
+        'http://127.0.0.1:*',
+        'https://127.0.0.1:*',
+        '*'  # Allow all origins in development
     ]
     CORS_METHODS = ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH']
     CORS_ALLOW_HEADERS = [
@@ -18,7 +24,10 @@ class Config:
         'X-Requested-With',
         'Accept',
         'Origin',
-        'ngrok-skip-browser-warning'
+        'ngrok-skip-browser-warning',
+        'Access-Control-Allow-Origin',
+        'Access-Control-Allow-Headers',
+        'Access-Control-Allow-Methods'
     ]
     CORS_EXPOSE_HEADERS = ['Content-Type', 'Authorization']
     CORS_SUPPORTS_CREDENTIALS = True

@@ -9,6 +9,7 @@ from app.models.table_data import TableData
 from app.models.capability import Capability
 from app.models.new import New
 from app.models.recruitment import Recruitment
+from app.models.translation import Translation
 
 __all__ = [
     'Field',
@@ -20,6 +21,7 @@ __all__ = [
     'TableData',
     'Capability',
     'New',
-    'Recruitment'
+    'Recruitment',
+    'Translation'
 ] 
  
