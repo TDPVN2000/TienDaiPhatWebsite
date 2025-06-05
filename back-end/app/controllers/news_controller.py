@@ -15,7 +15,7 @@ class NewsList(BaseController):
     def get(self):
         """List all news"""
         news = NewsService.get_all()
-        return [n.to_dict() for n in news]
+        return news
 
     @news_ns.doc('create_news')
     @news_ns.expect(news_model)
@@ -36,7 +36,7 @@ class NewsResource(BaseController):
         new = NewsService.get_by_id(news_id)
         if not new:
             news_ns.abort(404, 'News not found')
-        return new.to_dict()
+        return new
 
     @news_ns.doc('update_news')
     @news_ns.expect(news_model)
