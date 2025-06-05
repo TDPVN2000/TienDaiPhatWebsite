@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Ensure static directories exist and have proper permissions
+mkdir -p /tmp/static/{uploads,translations,news,introductions,capabilities,certifications,projects,investments,fields,products,recruitments}
+chmod -R 777 /tmp/static
+
 # Wait for database to be ready
 echo "Waiting for database to be ready..."
 while ! nc -z db 5432; do

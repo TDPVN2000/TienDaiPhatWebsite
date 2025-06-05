@@ -21,16 +21,30 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY . .
 
-# Create necessary directories
-RUN mkdir -p /app/static/uploads
-RUN mkdir -p /app/static/translations
+# Create necessary directories with proper permissions
+RUN mkdir -p /tmp/static && \
+    mkdir -p /tmp/static/uploads && \
+    mkdir -p /tmp/static/translations && \
+    mkdir -p /tmp/static/news && \
+    mkdir -p /tmp/static/introductions && \
+    mkdir -p /tmp/static/capabilities && \
+    mkdir -p /tmp/static/certifications && \
+    mkdir -p /tmp/static/projects && \
+    mkdir -p /tmp/static/investments && \
+    mkdir -p /tmp/static/fields && \
+    mkdir -p /tmp/static/products && \
+    mkdir -p /tmp/static/recruitments && \
+    chmod -R 777 /tmp/static
 
 # Set permissions for entrypoint script
 RUN chmod +x /app/entrypoint.sh
 
-# Set permissions for the app directory
-RUN chown -R www-data:www-data /app
-USER www-data
+# Create a non-root user
+RUN useradd -m -u 1000 appuser && \
+    chown -R appuser:appuser /app
+
+# Switch to non-root user
+USER appuser
 
 # Run the application
 CMD ["/app/entrypoint.sh"]

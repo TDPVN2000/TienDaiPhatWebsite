@@ -1,5 +1,6 @@
 from app.models.introduction import Introduction
 from app.extensions import db
+from .ckeditor_handler import CKEditorHandler
 
 class IntroductionService:
     @staticmethod
@@ -12,6 +13,12 @@ class IntroductionService:
 
     @staticmethod
     def create(data):
+        # Process CKEditor content
+        if 'content' in data:
+            content = data['content']
+            processed_content, _ = CKEditorHandler.process_content(content, 'introductions')
+            data['content'] = processed_content
+
         intro = Introduction(**data)
         db.session.add(intro)
         db.session.commit()
@@ -22,6 +29,14 @@ class IntroductionService:
         intro = Introduction.query.get(intro_id)
         if not intro:
             return None
+
+        # Process CKEditor content if present
+        if 'content' in data:
+            old_content = intro.content
+            processed_content, _ = CKEditorHandler.process_content(data['content'], 'introductions')
+            data['content'] = processed_content
+            CKEditorHandler.cleanup_old_images(processed_content, old_content, 'introductions')
+
         for key, value in data.items():
             setattr(intro, key, value)
         db.session.commit()
@@ -32,6 +47,11 @@ class IntroductionService:
         intro = Introduction.query.get(intro_id)
         if not intro:
             return False
+
+        # Clean up images in content
+        if intro.content:
+            CKEditorHandler.cleanup_old_images('', intro.content, 'introductions')
+
         db.session.delete(intro)
         db.session.commit()
         return True 
