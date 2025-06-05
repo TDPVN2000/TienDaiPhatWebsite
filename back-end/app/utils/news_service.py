@@ -2,6 +2,7 @@ from ..models import New
 from ..extensions import db
 from .translation_service import TranslationService
 from .ckeditor_handler import CKEditorHandler
+from .content_handler import ContentHandler
 from typing import List, Optional
 
 class NewsService:
@@ -20,6 +21,8 @@ class NewsService:
                     language,
                     ['title', 'content']
                 )
+            # Process content for display
+            news_dict = ContentHandler.process_model_for_display(news_dict, 'news')
             result.append(news_dict)
         
         return result
@@ -39,6 +42,8 @@ class NewsService:
                 language,
                 ['title', 'content']
             )
+        # Process content for display
+        news_dict = ContentHandler.process_model_for_display(news_dict, 'news')
         return news_dict
 
     @staticmethod

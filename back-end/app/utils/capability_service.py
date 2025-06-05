@@ -1,15 +1,20 @@
 from app.models.capability import Capability
 from app.extensions import db
 from .ckeditor_handler import CKEditorHandler
+from .content_handler import ContentHandler
 
 class CapabilityService:
     @staticmethod
     def get_all():
-        return Capability.query.all()
+        caps = Capability.query.all()
+        return [ContentHandler.process_model_for_display(cap.to_dict(), 'capabilities') for cap in caps]
 
     @staticmethod
     def get_by_id(cap_id):
-        return Capability.query.get(cap_id)
+        cap = Capability.query.get(cap_id)
+        if not cap:
+            return None
+        return ContentHandler.process_model_for_display(cap.to_dict(), 'capabilities')
 
     @staticmethod
     def create(data):

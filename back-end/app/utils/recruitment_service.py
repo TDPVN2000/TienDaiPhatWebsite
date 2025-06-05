@@ -1,15 +1,20 @@
 from app.models.recruitment import Recruitment
 from app.extensions import db
 from .ckeditor_handler import CKEditorHandler
+from .content_handler import ContentHandler
 
 class RecruitmentService:
     @staticmethod
     def get_all():
-        return Recruitment.query.all()
+        recruitments = Recruitment.query.all()
+        return [ContentHandler.process_model_for_display(recruitment.to_dict(), 'recruitments') for recruitment in recruitments]
 
     @staticmethod
     def get_by_id(recruitment_id):
-        return Recruitment.query.get(recruitment_id)
+        recruitment = Recruitment.query.get(recruitment_id)
+        if not recruitment:
+            return None
+        return ContentHandler.process_model_for_display(recruitment.to_dict(), 'recruitments')
 
     @staticmethod
     def create(data):

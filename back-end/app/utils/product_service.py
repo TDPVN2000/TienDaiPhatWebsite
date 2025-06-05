@@ -1,15 +1,20 @@
 from app.models.product import Product
 from app.extensions import db
 from .ckeditor_handler import CKEditorHandler
+from .content_handler import ContentHandler
 
 class ProductService:
     @staticmethod
     def get_all():
-        return Product.query.all()
+        products = Product.query.all()
+        return [ContentHandler.process_model_for_display(product.to_dict(), 'products') for product in products]
 
     @staticmethod
     def get_by_id(product_id):
-        return Product.query.get(product_id)
+        product = Product.query.get(product_id)
+        if not product:
+            return None
+        return ContentHandler.process_model_for_display(product.to_dict(), 'products')
 
     @staticmethod
     def create(data):

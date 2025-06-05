@@ -1,15 +1,20 @@
 from app.models.introduction import Introduction
 from app.extensions import db
 from .ckeditor_handler import CKEditorHandler
+from .content_handler import ContentHandler
 
 class IntroductionService:
     @staticmethod
     def get_all():
-        return Introduction.query.all()
+        intros = Introduction.query.all()
+        return [ContentHandler.process_model_for_display(intro.to_dict(), 'introductions') for intro in intros]
 
     @staticmethod
     def get_by_id(intro_id):
-        return Introduction.query.get(intro_id)
+        intro = Introduction.query.get(intro_id)
+        if not intro:
+            return None
+        return ContentHandler.process_model_for_display(intro.to_dict(), 'introductions')
 
     @staticmethod
     def create(data):
