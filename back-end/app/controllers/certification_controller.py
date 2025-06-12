@@ -15,7 +15,7 @@ class CertificationList(BaseController):
     def get(self):
         """List all certifications"""
         certs = CertificationService.get_all()
-        return [c.to_dict() for c in certs]
+        return certs
 
     @certification_ns.doc('create_certification')
     @certification_ns.expect(certification_model)

@@ -15,7 +15,7 @@ class IntroductionList(BaseController):
     def get(self):
         """List all introductions"""
         intros = IntroductionService.get_all()
-        return [i.to_dict() for i in intros]
+        return intros
 
     @introduction_ns.doc('create_introduction')
     @introduction_ns.expect(introduction_model)

@@ -15,7 +15,7 @@ class CapabilityList(BaseController):
     def get(self):
         """List all capabilities"""
         caps = CapabilityService.get_all()
-        return [c.to_dict() for c in caps]
+        return caps
 
     @capability_ns.doc('create_capability')
     @capability_ns.expect(capability_model)

@@ -15,7 +15,7 @@ class ProjectList(BaseController):
     def get(self):
         """List all projects"""
         projects = ProjectService.get_all()
-        return [p.to_dict() for p in projects]
+        return projects
 
     @project_ns.doc('create_project')
     @project_ns.expect(project_model)

@@ -29,6 +29,7 @@ translation_model = translation_ns.model('Translation', {
     'key': fields.String(required=True, description='Translation key'),
     'language': fields.String(required=True, description='Language code'),
     'value': fields.String(required=True, description='Translated value'),
+    'model_name': fields.String(required=True, description='Name of the model this translation belongs to'),
     'created_at': fields.DateTime(readonly=True),
     'updated_at': fields.DateTime(readonly=True)
 })

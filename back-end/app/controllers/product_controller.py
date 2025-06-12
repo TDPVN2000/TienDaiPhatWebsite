@@ -15,7 +15,7 @@ class ProductList(BaseController):
     def get(self):
         """List all products"""
         products = ProductService.get_all()
-        return [p.to_dict() for p in products]
+        return products
 
     @product_ns.doc('create_product')
     @product_ns.expect(product_model)

@@ -15,7 +15,7 @@ class TableDataList(BaseController):
     def get(self):
         """List all table data"""
         tables = TableDataService.get_all()
-        return [t.to_dict() for t in tables]
+        return tables
 
     @table_data_ns.doc('create_table_data')
     @table_data_ns.expect(table_data_model)

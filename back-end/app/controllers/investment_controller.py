@@ -15,7 +15,7 @@ class InvestmentList(BaseController):
     def get(self):
         """List all investments"""
         investments = InvestmentService.get_all()
-        return [i.to_dict() for i in investments]
+        return investments
 
     @investment_ns.doc('create_investment')
     @investment_ns.expect(investment_model)

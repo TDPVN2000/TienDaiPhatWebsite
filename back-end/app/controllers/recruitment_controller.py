@@ -15,7 +15,7 @@ class RecruitmentList(BaseController):
     def get(self):
         """List all recruitment positions"""
         recruitments = RecruitmentService.get_all()
-        return [r.to_dict() for r in recruitments]
+        return recruitments
 
     @recruitment_ns.doc('create_recruitment')
     @recruitment_ns.expect(recruitment_input_model)

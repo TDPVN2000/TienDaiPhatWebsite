@@ -15,7 +15,7 @@ class FieldList(BaseController):
     def get(self):
         """List all fields"""
         fields = field_service.get_all()
-        return [f.to_dict() for f in fields]
+        return fields
 
     @field_ns.doc('create_field')
     @field_ns.expect(field_model)

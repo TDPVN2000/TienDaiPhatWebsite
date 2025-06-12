@@ -13,12 +13,17 @@ class TranslationList(BaseController):
     @translation_ns.doc('list_translations')
     @translation_ns.marshal_list_with(translation_model)
     def get(self):
-        """List all translations (optionally filter by language)"""
+        """List all translations (optionally filter by language and model)"""
         language = request.args.get('language')
+        model_name = request.args.get('model_name')
+        
+        query = Translation.query
         if language:
-            translations = Translation.query.filter_by(language=language).all()
-        else:
-            translations = Translation.query.all()
+            query = query.filter_by(language=language)
+        if model_name:
+            query = query.filter_by(model_name=model_name)
+            
+        translations = query.all()
         return [t.to_dict() for t in translations]
 
     @translation_ns.doc('create_translation')
@@ -30,7 +35,8 @@ class TranslationList(BaseController):
         translation = TranslationService.create_translation(
             key=data['key'],
             language=data['language'],
-            value=data['value']
+            value=data['value'],
+            model_name=data['model_name']
         )
         return translation.to_dict(), 201
 
@@ -56,6 +62,7 @@ class TranslationResource(BaseController):
             translation_ns.abort(404, 'Translation not found')
         data = request.get_json()
         translation.value = data['value']
+        translation.model_name = data['model_name']
         db.session.commit()
         return translation.to_dict()
 
