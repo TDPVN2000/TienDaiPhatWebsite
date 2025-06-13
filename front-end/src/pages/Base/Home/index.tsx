@@ -1,7 +1,7 @@
 import { images } from 'assets';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import Introduction from './Components/Introduction/Introduction';
 import History from './Components/History/History';
 import BusinessSector from './Components/BusinessSector/BusinessSector';
@@ -17,7 +17,7 @@ import Loading from 'components/Loading';
 const slideList = [images.carousel1, images.carousel2, images.carousel3];
 
 export default function Home() {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

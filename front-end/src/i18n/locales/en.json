@@ -5,7 +5,22 @@
     "error": "Something went wrong!",
     "logout": "Logout",
     "login": "Login",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "medicalEquipment": "Medical Equipment",
+    "dredgingLandfill": "Dredging & Land Reclamation",
+    "investmentProduction": "High-Tech Manufacturing Investment",
+    "VNAttractiveInvestment": "Vietnam – An Attractive Investment Destination",
+    "unlockingPotential": "Unlocking Potential",
+    "mineralMining": "MINERAL MINING & TRADING",
+    "businessPartnerships": " BUSINESS PARTNERSHIPS",
+    "updating": "Updating",
+    "employees": "employees",
+    "nameCompany": "Tien Dai Phat Investment Joint Stock Company",
+    "headOfficeLabel": "Head Office: ",
+    "headOfficeAddress": "11/18/199 Ho Tung Mau Street, Cau Dien Ward, Nam Tu Liem District, Hanoi",
+    "recruitment": "Recruitment",
+    "contact": "Contact",
+    "copyright": "©2024 Copyright to Tien Dai Phat"
   },
   "menu": {
     "aboutUs": "ABOUT US",
@@ -17,10 +32,13 @@
     "businessCooperation": "Business Cooperation (updating)",
     "news": "NEWS",
     "recruitment": "RECRUITMENT",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "mineralExploitationTrade": "Mineral exploitation and trade (Updating)"
   },
   "button": {
-    "backHome": "Back home"
+    "backHome": "Back home",
+    "viewMore": "View More",
+    "viewDetail": "View Details"
   },
   "text": {
     "notFoundPage": "Sorry, the page you visited does not exist.",
@@ -85,6 +103,145 @@
     "cancel": "Cancel"
   },
   "introduction": {
-    "title": "Company TDP"
+    "title": "Tien Dai Phat Investment Joint Stock Company",
+    "establishment": "Established on ",
+    "address": "Headquartered at ",
+    "content1": "Tien Dai Phat Investment Joint Stock Company is proud to be one of the pioneers in Vietnam in the field of medical equipment manufacturing and trading. With a vision and mission to deliver high-quality Made in Vietnam products, we continuously research, innovate, and improve our production technology to meet the ever-increasing demands of the market.",
+    "content2": "In addition to manufacturing medical equipment, the Company is also actively involved in other sectors such as waterway dredging, mineral exploitation, production investment, and business - trade cooperation.",
+    "detailAdd": "No. 11/18/199 Ho Tung Mau Street, Cau Dien Ward, Nam Tu Liem District, Hanoi City, Vietnam"
+  },
+  "history": {
+    "title": "Development History",
+    "content1": "The predecessor of Tien Dai Phat Investment Joint Stock Company specialized in trading mechanical, vocational training, and medical equipment to serve domestic customers. Recognizing the market's trend toward innovation, the company underwent restructuring to focus on manufacturing medical equipment and expanding into other business sectors.",
+    "content2": "This transformation reflects the strategic vision of future trends, shaping sustainable and comprehensive development while affirming the Company's leading position in the market.",
+    "content3": "ISO 9001:2000 Certification (2006): Marked a significant milestone in the company's development and its commitment to quality and credibility."
+  },
+  "businessSector": {
+    "title": "Business Sectors",
+    "btnLearnMore": "Learn more ->"
+  },
+  "visionMission": {
+    "title": "Vision and Mission",
+    "content": "The world is constantly changing, leading to diversification and multilateralization in global supply chains. Seizing this opportunity, we continuously learn and innovate to become a pioneering force, staying ahead of trends, leading the market, and capturing new opportunities."
+  },
+  "news": {
+    "title": "News",
+    "titleNews": "News Corner",
+    "subTitleNews": "Discover activities and featured information",
+    "noData": "There are no articles here yet. We will update as soon as possible!",
+    "titleBack": "Back to News Page",
+    "featuredNews": "FEATURED NEWS",
+    "newsFromTDP": "NEWS FROM TIEN DAI PHAT"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subTitle": "Solutions to build the future are waiting for you"
+  },
+  "recruitment": {
+    "title": "Join Us and Create Great Things Together",
+    "titleTreatment": "Salary, Bonuses, and Other Benefits at Tien Dai Phat",
+    "introduceTreatment": "At Tien Dai Phat, we are committed to providing our team with a professional, friendly working environment and a full range of attractive benefits, including:",
+    "note": "Join us now to build, grow, and create breakthrough and sustainable values together!",
+    "position": "POSITION",
+    "address": "WORKPLACE ADDRESS",
+    "detail": "DETAILS",
+    "titleBack": "Back to Recruitment Page"
+  },
+  "investmentProduction": {
+    "contentIntroduction": "Recognizing the immense potential and growth space of the domestic market, Tien Dai Phat Investment Joint Stock Company has boldly invested, explored, and learned to develop core technology, aiming to become a part of the high-value supply chain of both the country and the world.",
+    "noteProject": "Projects related to this field are being updated",
+    "statisticsMinistryFinance": "According to statistics from the Ministry of Finance",
+    "content1": "Foreign investment projects in Vietnam in several technology-related sectors valid until January 2025 (Cumulative)",
+    "content2": "Implemented capital and new projects by foreign investors in Vietnam (2024–2025)",
+    "titleSubContent2": "Cumulative as of 31/01/2025:",
+    "mainSubContent2": "149 countries and territories have invested in Vietnam with 42,272 projects and a total registered capital of USD 505.4 billion. South Korea ranks first, followed by Singapore, Japan, and Taiwan.",
+    "contentTop": "Over the past two decades, Vietnam has emerged as one of the fastest-growing economies in the region, with an average GDP growth of 6–7% per year. What makes Vietnam stand out is not only economic growth but also a strong shift toward high-tech, manufacturing, digital transformation, and green transition.",
+    "contentBottom": "Vietnam is currently a crucial part of the global supply chain, with participation from many leading technology corporations such as Samsung, Intel, Foxconn, and LG. Vietnam is also rapidly expanding its semiconductor ecosystem, with the presence of numerous chip manufacturing plants and R&D centers."
+  },
+  "dredgingLandfill": {
+    "introductionToTheField": "Introduction to the Field",
+    "contentIntroduction": "Tien Dai Phat is proud to be the domestic company that owns the largest dredging vessel in Vietnam and is currently the only unit with a full capability profile to carry out major, complex, and key offshore projects.",
+    "titleDredgerInformation": "Dredger Information",
+    "profileTitle": "Company Profile",
+    "btnContact": "Contact us for more detailed information",
+    "completedProjects": "Completed Projects"
+  },
+  "medicalEquipment": {
+    "historyDevelopment": "History and Development Orientation",
+    "contentIntro1": "Tien Dai Phat started with importing and supplying medical equipment to both public and private hospitals nationwide, from central to local levels.",
+    "contentIntro2": "With a vision of self-reliance and independence in technology and production, Tien Dai Phat has invested in research and development to proactively supply various types of medical equipment in Vietnam.",
+    "contentIntro3": "Our first milestone was the development and production of highly sensitive medical equipment in the field of Hemodialysis. Tien Dai Phat confidently positions itself as a pioneer in the Made in Vietnam market.",
+    "productTitle": "Products",
+    "nameProduct1": "Artificial Kidney Filter / PES Membrane / Low-flux",
+    "info1Product1": "Low membrane permeability: Smaller membrane pores.",
+    "info2Product1": "Primarily removes small molecules like urea through diffusion.",
+    "info3Product1": "Typically suitable for patients with milder kidney failure.",
+    "nameProduct2": "Artificial Kidney Filter / PES Membrane / High-flux",
+    "info1Product2": "High membrane permeability: Larger membrane pores.",
+    "info2Product2": "Removes small, medium, and large molecules through diffusion and convection.",
+    "info3Product3": "Suitable for patients with more severe kidney failure, offering more effective toxin removal.",
+    "btnContact": "Contact us for more product information",
+    "investmentProductionScale": "Investment and Production Scale",
+    "instruct": "Tap the number for more information",
+    "titleProjectComplete": "Completed Projects",
+    "titleCertificate": "Certifications & Standards"
+  },
+  "businessSectorContent": {
+    "medicalEquipment": "Specializing in the manufacturing and supply of medical equipment across all sectors.",
+    "dredgingLandfill": "Deep-sea port construction and land reclamation services.",
+    "investmentProduction": "Investing in high-tech production lines to create revolutionary, high-value products in line with digital and green transformation trends.",
+    "mineralMining": "Mining and processing of minerals to supply raw materials for various industries.",
+    "businessPartnerships": "Expanding business and trade partnerships domestically and internationally to build a global business network."
+  },
+  "benefitsDataItem": {
+    "competitiveSalary": "Competitive salary: Based on competency, experience, and job position, ensuring fairness and attracting talent.",
+    "performanceBonus": "Performance bonus: Rewards based on actual work results and contributions.",
+    "holidayTetBonuses": "Holiday and Tet bonuses: Fully implemented according to State regulations to ensure employee benefits.",
+    "insuranceAsRegulated": "Insurance as regulated: Full contributions to social insurance, health insurance, and unemployment insurance as required by law.",
+    "leavePolicy": "Leave policy: 12 annual leave days, holidays, and Tet leave in accordance with the law.",
+    "professionalTraining": "Professional training: Participate in courses to improve skills and expertise suitable for each position.",
+    "clearCareerPath": "Clear career path: Built on capability, attitude, and actual contributions.",
+    "professionalLearningEnv": "Professional learning environment: Work with experienced leaders and enthusiastic colleagues who are always ready to share and support. Opportunities to work and collaborate with international partners in technology and innovation.",
+    "lunchAllowance": "Lunch allowance based on working days: Helps maintain health and work efficiency.",
+    "idealWorkingEnv": "Ideal working environment: Friendly, open, encourages creativity, and respects diversity."
+  },
+  "benefitsDataTitle": {
+    "salaryBonusRegime": "Salary and Bonus Regime",
+    "welfareRegime": "Welfare Regime",
+    "developmentOpportunities": "Development Opportunities",
+    "otherBenefits": "Other Benefits"
+  },
+  "investmentDataAmount": {
+    "info1": "> 1,200 billion",
+    "info2": "> 13,000 m²",
+    "info3": "100%",
+    "info4": "> 6 million"
+  },
+  "investmentDataTitle": {
+    "info1": "Total planned investment",
+    "info2": "Factory area",
+    "info3": "New import of modern equipment",
+    "info4": "Products manufactured per year"
+  },
+  "investmentDataDetail": {
+    "info1": "<strong>Phase 1:</strong> 165.636 billion VND.\n<strong>Phase 2:</strong> 100.034 billion VND.\n<strong>Phase 3:</strong> 435 billion VND.\n<strong>Phase 4:</strong> 462 billion VND.\nExcluding additional incurred costs.",
+    "info2": "The factory is located at: <strong>Thuong Khuong, Binh Giang, Hai Duong</strong>.",
+    "info3": "Production materials are <strong>100% imported from Japan and South Korea</strong>, meeting medical quality standards.\nProduction/assembly lines: Modern and automated, supplied by reputable and well-known partners in the industry.",
+    "info4": "<strong>Goal:</strong> To develop and expand business operations, supplying Made in Vietnam medical equipment domestically and exporting to international markets."
+  },
+  "shipDataLabel": {
+    "ship1": "TIEN DAI PHAT 668",
+    "ship2": "DAI PHAT 68",
+    "ship3": "TIEN DAI PHAT 86"
+  },
+  "shipDataType": {
+    "ship1": "Dredging ship / Suction hopper dredger",
+    "ship2": "Engineering ship",
+    "ship3": "Large-scale dredging ship"
+  },
+  "shipDataDetail": {
+    "ship1": "VR-SB class | Capacity 16,000 m³/hour",
+    "ship2": "VR-SI class | Capacity 3,720 HP",
+    "ship3": "VR-SI class | Capacity 2,000 HP"
   }
 }

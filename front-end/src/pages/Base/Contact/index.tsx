@@ -1,11 +1,12 @@
 import PageHeader from 'components/Layout/PageHeader';
 import styles from './styles.module.scss';
 import PageFooter from 'components/Layout/PageFooter';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
+
 import { images } from 'assets';
 
 function Contact() {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.containerContact}>

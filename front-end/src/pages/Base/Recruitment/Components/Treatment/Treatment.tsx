@@ -1,10 +1,10 @@
 import { images } from 'assets';
 import { benefitsData } from 'constants/default-value';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import styles from './styles.module.scss';
 
 function Treatment() {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.containerTreatment}>
@@ -21,11 +21,11 @@ function Treatment() {
             {benefitsData.map((benefit, index) => (
               <div key={index} className={styles.benefitSection}>
                 <h2>
-                  {index + 1}. {benefit.title}
+                  {index + 1}. {t(benefit.title)}
                 </h2>
                 <ul>
                   {benefit.items.map((item, idx) => (
-                    <li key={idx}>{item}</li>
+                    <li key={idx}>{t(item)}</li>
                   ))}
                 </ul>
               </div>

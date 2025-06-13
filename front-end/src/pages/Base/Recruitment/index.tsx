@@ -3,14 +3,14 @@ import { getRecruitmentListApi } from 'api/recruitment';
 import PageFooter from 'components/Layout/PageFooter';
 import PageHeader from 'components/Layout/PageHeader';
 import Loading from 'components/Loading';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { listRecruitmentKey } from 'utils/queryKey';
 import RecruitmentList from './Components/RecruitmentList/RecruitmentList';
 import Treatment from './Components/Treatment/Treatment';
 import styles from './styles.module.scss';
 
 function Recruitment() {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   // !TODO: Call API List Recruitment
   const { data: jobList = [], isLoading: isLoadingJobList } = useQuery({

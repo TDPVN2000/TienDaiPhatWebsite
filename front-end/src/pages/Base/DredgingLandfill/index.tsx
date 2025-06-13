@@ -1,7 +1,7 @@
 import PageHeader from 'components/Layout/PageHeader';
 import styles from './styles.module.scss';
 import PageFooter from 'components/Layout/PageFooter';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { images } from 'assets';
 import ShipCard from './components/ShipCard';
 import { imgSlideDummy, projectData, shipData } from 'constants/default-value';
@@ -19,7 +19,7 @@ import Loading from 'components/Loading';
 import bgDredging from 'assets/images/carousel2.svg';
 
 function DredgingLandfill() {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const slideRef = useRef<HTMLDivElement>(null);
 

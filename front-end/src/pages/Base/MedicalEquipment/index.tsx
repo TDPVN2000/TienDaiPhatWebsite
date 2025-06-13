@@ -1,7 +1,7 @@
 import PageHeader from 'components/Layout/PageHeader';
 import styles from './styles.module.scss';
 import PageFooter from 'components/Layout/PageFooter';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { images } from 'assets';
 import ProductItem from './components/ProductItem';
 import { investmentData, productListMedical } from 'constants/default-value';
@@ -19,7 +19,7 @@ import Loading from 'components/Loading';
 import bgMedicalEquipment from 'assets/images/carousel1.svg';
 
 function MedicalEquipment() {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [hoveredId, setHoveredId] = useState(null);
 
@@ -156,7 +156,7 @@ function MedicalEquipment() {
                   {hoveredId === item.id && (
                     <div className={styles.popup}>
                       <p className={styles.txtDetail}>
-                        {formatText(item.detail)}
+                        {formatText(t(item.detail))}
                       </p>
                     </div>
                   )}

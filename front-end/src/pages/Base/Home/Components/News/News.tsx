@@ -1,6 +1,6 @@
 import { images } from 'assets';
 import { DateTimeFormat } from 'constants/enum';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { convertTimeToLocal } from 'utils/helper';
 import styles from './styles.module.scss';
@@ -10,7 +10,7 @@ interface Props {
 }
 
 function News({ newsData }: Props) {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleClick = (id: number) => {

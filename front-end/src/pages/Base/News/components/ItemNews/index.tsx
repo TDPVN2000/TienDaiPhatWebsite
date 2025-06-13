@@ -11,6 +11,8 @@ function ItemNews({ data }: any) {
     navigate(`/news-detail/${id}`);
   };
 
+  console.log('123', data?.title);
+
   return (
     <div
       key={data?.id}

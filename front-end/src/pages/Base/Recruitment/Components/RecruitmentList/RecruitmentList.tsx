@@ -1,5 +1,5 @@
 import { images } from 'assets';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 
@@ -8,7 +8,7 @@ interface Props {
 }
 
 function RecruitmentList({ jobList }: Props) {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleClick = (id: number) => {
