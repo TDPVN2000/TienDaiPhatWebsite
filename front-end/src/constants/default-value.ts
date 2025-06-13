@@ -64,43 +64,39 @@ export const businessSectorDummyData = [
   {
     id: 1,
     thumbnail: images.medical,
-    title: 'THIẾT BỊ Y TẾ',
-    content:
-      'Chuyên sản xuất và cung cấp các thiết bị y tế trong mọi lĩnh vực.',
+    title: 'common.medicalEquipment',
+    content: 'businessSectorContent.medicalEquipment',
     path: '/medical-equipment',
     status: true,
   },
   {
     id: 2,
     thumbnail: images.waterway,
-    title: 'NẠO VÉT, SAN LẤP',
-    content: 'Xây dựng cảng biển nước sâu, san lấp.',
+    title: 'common.dredgingLandfill',
+    content: 'businessSectorContent.dredgingLandfill',
     path: '/dredging-landfill',
     status: true,
   },
   {
     id: 3,
     thumbnail: images.investment,
-    title: 'ĐẦU TƯ SẢN XUẤT CÔNG NGHỆ CAO',
-    content:
-      'Đầu tư vào các dây chuyền sản xuất công nghệ cao, tạo ra những sản phẩm giá trị có tính cách mạng theo xu hướng đổi mới, chuyển đổi số và xanh của thị trường.',
+    title: 'common.investmentProduction',
+    content: 'businessSectorContent.investmentProduction',
     path: '/investment-production',
     status: true,
   },
   {
     id: 4,
     thumbnail: images.mineral,
-    title: 'KHAI THÁC KHOÁNG SẢN VÀ THƯƠNG MẠI',
-    content:
-      'Khai thác và chế biến khoáng sản, cung cấp nguyên liệu cho các ngành công nghiệp.',
+    title: 'common.mineralMining',
+    content: 'businessSectorContent.mineralMining',
     status: false,
   },
   {
     id: 5,
     thumbnail: images.trade,
-    title: 'HỢP TÁC KINH DOANH',
-    content:
-      'Mở rộng hợp tác kinh doanh và thương mại với các đối tác trong và ngoài nước, tạo nên mạng lưới quan hệ kinh doanh toàn cầu.',
+    title: 'common.businessPartnerships',
+    content: 'businessSectorContent.businessPartnerships',
     status: false,
   },
 ];
@@ -144,33 +140,33 @@ export const newsData = [
 
 export const benefitsData = [
   {
-    title: 'Chế độ lương thưởng',
+    title: 'benefitsDataTitle.salaryBonusRegime',
     items: [
-      'Mức lương cạnh tranh: Được xây dựng dựa trên năng lực, kinh nghiệm và vị trí công việc, đảm bảo sự công bằng và thu hút nhân tài.',
-      'Thưởng hiệu suất: Thưởng theo kết quả công việc và đóng góp thực tế.',
-      'Thưởng lễ, Tết: Thực hiện đầy đủ theo quy định của Nhà nước, đảm bảo quyền lợi cho người lao động.',
+      'benefitsDataItem.competitiveSalary',
+      'benefitsDataItem.performanceBonus',
+      'benefitsDataItem.holidayTetBonuses',
     ],
   },
   {
-    title: 'Chế độ phúc lợi',
+    title: 'benefitsDataTitle.welfareRegime',
     items: [
-      'Bảo hiểm theo quy định: Đóng đầy đủ BHXH, BHYT và BHTN theo quy định pháp luật.',
-      'Chế độ nghỉ phép: 12 ngày phép năm, nghỉ lễ, Tết theo quy định.',
+      'benefitsDataItem.insuranceAsRegulated',
+      'benefitsDataItem.leavePolicy',
     ],
   },
   {
-    title: 'Cơ hội phát triển',
+    title: 'benefitsDataTitle.developmentOpportunities',
     items: [
-      'Đào tạo chuyên môn: Được tham gia các khóa học nâng cao kỹ năng, kiến thức chuyên môn phù hợp với từng vị trí.',
-      'Lộ trình thăng tiến rõ ràng: Được xây dựng trên nền tảng năng lực, thái độ và đóng góp thực tế.',
-      'Môi trường học hỏi chuyên nghiệp: Làm việc cùng đội ngũ lãnh đạo giàu kinh nghiệm và đồng nghiệp nhiệt huyết, luôn sẵn sàng chia sẻ và hỗ trợ. Có cơ hội làm việc và công tác với các đơn vị nước ngoài trong các lĩnh vực liên quan đến công nghệ và đổi mới. ',
+      'benefitsDataItem.professionalTraining',
+      'benefitsDataItem.clearCareerPath',
+      'benefitsDataItem.professionalLearningEnv',
     ],
   },
   {
-    title: 'Các phúc lợi khác',
+    title: 'benefitsDataTitle.otherBenefits',
     items: [
-      'Hỗ trợ bữa trưa theo ngày công: Góp phần đảm bảo sức khỏe và hiệu quả công việc.',
-      'Không gian làm việc lý tưởng: Thân thiện, cởi mở, khuyến khích sáng tạo và tôn trọng sự khác biệt.',
+      'benefitsDataItem.lunchAllowance',
+      'benefitsDataItem.idealWorkingEnv',
     ],
   },
 ];
@@ -213,24 +209,24 @@ export const JOBSLIST = [
 export const shipData = [
   {
     id: 1,
-    label: 'TIẾN ĐẠI PHÁT 668',
+    label: 'shipDataLabel.ship1',
     image: images.ship668,
-    type: 'Tàu nạo vét/ Tàu hút bụng',
-    details: 'Cấp VR-SB | Công suất 16000 m3/ giờ',
+    type: 'shipDataType.ship1',
+    details: 'shipDataDetail.ship1',
   },
   {
     id: 2,
-    label: 'ĐẠI PHÁT 68',
+    label: 'shipDataLabel.ship2',
     image: images.ship68,
-    type: 'Tàu Công trình',
-    details: 'Cấp VR-SI | Công suất 3720 CV',
+    type: 'shipDataType.ship2',
+    details: 'shipDataDetail.ship2',
   },
   {
     id: 3,
-    label: 'TIẾN ĐẠI PHÁT 86',
+    label: 'shipDataLabel.ship3',
     image: images.ship86,
-    type: 'Tàu nạo vét cỡ lớn',
-    details: 'Cấp VR-SI | Công suất 2000 CV',
+    type: 'shipDataType.ship3',
+    details: 'shipDataDetail.ship3',
   },
 ];
 
@@ -282,27 +278,27 @@ export const productListMedical = [
 export const investmentData = [
   {
     id: 1,
-    amount: '> 1.200 tỷ',
-    title: 'tổng mức đầu tư dự kiến',
-    detail: `<strong>Giai đoạn 1:</strong> 165,636 tỷ vnđ.\n<strong>Giai đoạn 2:</strong> 100,034 tỷ vnđ.\n<strong>Giai đoạn 3:</strong> 435,000 tỷ vnđ.\n<strong>Giai đoạn 4:</strong> 462,000 tỷ vnđ.\nChưa bao gồm các chi phí phát sinh.`,
+    amount: 'investmentDataAmount.info1',
+    title: 'investmentDataTitle.info1',
+    detail: `investmentDataDetail.info1`,
   },
   {
     id: 2,
-    amount: '> 13.000m²',
-    title: 'diện tích nhà máy',
-    detail: `Nhà máy được đặt tại: <strong>Thượng Khuông, Bình Giang, Hải Dương</strong>.`,
+    amount: 'investmentDataAmount.info2',
+    title: 'investmentDataTitle.info2',
+    detail: `investmentDataDetail.info2`,
   },
   {
     id: 3,
-    amount: '100%',
-    title: 'nhập mới trang thiết bị hiện đại',
-    detail: `Nguyên vật liệu Sản xuất <strong>nhập khẩu 100% từ Nhật Bản, Hàn Quốc</strong>, đạt tiêu chuẩn chất lượng Y tế. \nDây chuyền sản xuất/lắp ráp: Hiện đại, tự động hoá được cung cấp bới các đối tác uy tín có tên tuổi trong ngành.`,
+    amount: 'investmentDataAmount.info3',
+    title: 'investmentDataTitle.info3',
+    detail: `investmentDataDetail.info3`,
   },
   {
     id: 4,
-    amount: '> 6 triệu',
-    title: 'sản phẩm được sản xuất trong 1 năm',
-    detail: `<strong>Mục tiêu:</strong> phát triển và mở rộng sản xuất kinh doanh, cung cấp các loại thiết bị y tế Made in Vietnam trong nước và xuất khẩu ra các thị trường quốc tế.`,
+    amount: 'investmentDataAmount.info4',
+    title: 'investmentDataTitle.info4',
+    detail: `investmentDataDetail.info4`,
   },
 ];
 

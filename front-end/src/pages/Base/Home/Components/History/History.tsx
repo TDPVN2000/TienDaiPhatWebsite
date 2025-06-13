@@ -1,9 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import styles from './styles.module.scss';
 import { images } from 'assets';
-import { useTranslations } from 'next-intl';
 
 function History() {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.containerHistory}>

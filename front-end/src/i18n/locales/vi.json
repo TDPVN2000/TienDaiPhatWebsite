@@ -11,7 +11,16 @@
     "investmentProduction": "ĐẦU TƯ SẢN XUẤT CÔNG NGHỆ CAO",
     "VNAttractiveInvestment": "Việt Nam – Điểm đến đầu tư hấp dẫn",
     "unlockingPotential": "Khai phá tiềm năng",
-    "updating": "Đang cập nhật"
+    "mineralMining": "KHAI THÁC KHOÁNG SẢN VÀ THƯƠNG MẠI",
+    "businessPartnerships": "HỢP TÁC KINH DOANH",
+    "updating": "Đang cập nhật",
+    "employees": "nhân viên",
+    "nameCompany": "CÔNG TY CỔ PHẦN ĐẦU TƯ TIẾN ĐẠI PHÁT",
+    "headOfficeLabel": "Trụ sở chính: ",
+    "headOfficeAddress": "11/18/199 đường Hồ Tùng Mậu, Phường Cầu Diễn, Q. Nam Từ Liêm, Hà Nội",
+    "recruitment": "Tuyển dụng",
+    "contact": "Liên hệ",
+    "copyright": "©2024 Bản quyền thuộc Tiến Đại Phát"
   },
   "menu": {
     "aboutUs": "VỀ CHÚNG TÔI",
@@ -23,7 +32,8 @@
     "businessCooperation": "Hợp tác kinh doanh (đang cập nhật)",
     "news": "TIN TỨC",
     "recruitment": "TUYỂN DỤNG",
-    "contact": "LIÊN HỆ"
+    "contact": "LIÊN HỆ",
+    "mineralExploitationTrade": "Khai thác khoáng sản và thương mại (Đang cập nhật)"
   },
   "button": {
     "backHome": "Back home",
@@ -97,7 +107,8 @@
     "establishment": "Thành lập ngày ",
     "address": "Trụ sở chính tại ",
     "content1": "Công ty Cổ phần Đầu tư Tiến Đại Phát tự hào là một trong những đơn vị tiên phong tại Việt Nam trong lĩnh vực sản xuất thương mại thiết bị y tế. Với tầm nhìn và sứ mệnh đưa ra các sản phẩm chất lượng cao Made in Vietnam, chúng tôi không ngừng nghiên cứu đổi mới và nâng cao công nghệ sản xuất để đáp ứng yêu cầu ngày càng cao của thị trường.",
-    "content2": "Ngoài sản xuất thiết bị y tế, Công ty còn hoạt động mạnh mẽ trong các lĩnh vực khác như nạo vét đường thuỷ, khai thác khoáng sản, đầu tư sản xuất và hợp tác kinh doanh - thương mại."
+    "content2": "Ngoài sản xuất thiết bị y tế, Công ty còn hoạt động mạnh mẽ trong các lĩnh vực khác như nạo vét đường thuỷ, khai thác khoáng sản, đầu tư sản xuất và hợp tác kinh doanh - thương mại.",
+    "detailAdd": "Số 11/18/199 Đường Hồ Tùng Mậu, Phường Cầu Diễn, Quận Nam Từ Liêm, Thành phố Hà Nội, Việt Nam"
   },
   "history": {
     "title": "Lịch sử phát triển",
@@ -118,7 +129,9 @@
     "titleNews": "Góc tin tức",
     "subTitleNews": "Khám phá hoạt động và thông tin nổi bật",
     "noData": "Chưa có bài viết nào ở đây. Chúng tôi sẽ cập nhật sớm nhất có thể!",
-    "titleBack": "Quay lại trang tin tức"
+    "titleBack": "Quay lại trang tin tức",
+    "featuredNews": "TIN NỔI BẬT",
+    "newsFromTDP": "TIN TỪ TIẾN ĐẠI PHÁT"
   },
   "contact": {
     "title": "Liên hệ với chúng tôi",
@@ -172,5 +185,63 @@
     "instruct": "Ấn vào con số để biết thêm thông tin",
     "titleProjectComplete": "Các dự án đã hoàn thành",
     "titleCertificate": "Chứng nhận & Tiêu chuẩn"
+  },
+  "businessSectorContent": {
+    "medicalEquipment": "Chuyên sản xuất và cung cấp các thiết bị y tế trong mọi lĩnh vực.",
+    "dredgingLandfill": "Xây dựng cảng biển nước sâu, san lấp.",
+    "investmentProduction": "Đầu tư vào các dây chuyền sản xuất công nghệ cao, tạo ra những sản phẩm giá trị có tính cách mạng theo xu hướng đổi mới, chuyển đổi số và xanh của thị trường.",
+    "mineralMining": "Khai thác và chế biến khoáng sản, cung cấp nguyên liệu cho các ngành công nghiệp.",
+    "businessPartnerships": "Mở rộng hợp tác kinh doanh và thương mại với các đối tác trong và ngoài nước, tạo nên mạng lưới quan hệ kinh doanh toàn cầu."
+  },
+  "benefitsDataItem": {
+    "competitiveSalary": "Mức lương cạnh tranh: Được xây dựng dựa trên năng lực, kinh nghiệm và vị trí công việc, đảm bảo sự công bằng và thu hút nhân tài.",
+    "performanceBonus": "Thưởng hiệu suất: Thưởng theo kết quả công việc và đóng góp thực tế.",
+    "holidayTetBonuses": "Thưởng lễ, Tết: Thực hiện đầy đủ theo quy định của Nhà nước, đảm bảo quyền lợi cho người lao động.",
+    "insuranceAsRegulated": "Bảo hiểm theo quy định: Đóng đầy đủ BHXH, BHYT và BHTN theo quy định pháp luật.",
+    "leavePolicy": "Chế độ nghỉ phép: 12 ngày phép năm, nghỉ lễ, Tết theo quy định.",
+    "professionalTraining": "Đào tạo chuyên môn: Được tham gia các khóa học nâng cao kỹ năng, kiến thức chuyên môn phù hợp với từng vị trí.",
+    "clearCareerPath": "Lộ trình thăng tiến rõ ràng: Được xây dựng trên nền tảng năng lực, thái độ và đóng góp thực tế.",
+    "professionalLearningEnv": "Môi trường học hỏi chuyên nghiệp: Làm việc cùng đội ngũ lãnh đạo giàu kinh nghiệm và đồng nghiệp nhiệt huyết, luôn sẵn sàng chia sẻ và hỗ trợ. Có cơ hội làm việc và công tác với các đơn vị nước ngoài trong các lĩnh vực liên quan đến công nghệ và đổi mới. ",
+    "lunchAllowance": "Hỗ trợ bữa trưa theo ngày công: Góp phần đảm bảo sức khỏe và hiệu quả công việc.",
+    "idealWorkingEnv": "Không gian làm việc lý tưởng: Thân thiện, cởi mở, khuyến khích sáng tạo và tôn trọng sự khác biệt."
+  },
+  "benefitsDataTitle": {
+    "salaryBonusRegime": "Chế độ lương thưởng",
+    "welfareRegime": "Chế độ phúc lợi",
+    "developmentOpportunities": "Cơ hội phát triển",
+    "otherBenefits": "Các phúc lợi khác"
+  },
+  "investmentDataAmount": {
+    "info1": "> 1.200 tỷ",
+    "info2": "> 13.000m²",
+    "info3": "100%",
+    "info4": "> 6 triệu"
+  },
+  "investmentDataTitle": {
+    "info1": "tổng mức đầu tư dự kiến",
+    "info2": "diện tích nhà máy",
+    "info3": "nhập mới trang thiết bị hiện đại",
+    "info4": "sản phẩm được sản xuất trong 1 năm"
+  },
+  "investmentDataDetail": {
+    "info1": "<strong>Giai đoạn 1:</strong> 165,636 tỷ vnđ.\n<strong>Giai đoạn 2:</strong> 100,034 tỷ vnđ.\n<strong>Giai đoạn 3:</strong> 435,000 tỷ vnđ.\n<strong>Giai đoạn 4:</strong> 462,000 tỷ vnđ.\nChưa bao gồm các chi phí phát sinh.",
+    "info2": "Nhà máy được đặt tại: <strong>Thượng Khuông, Bình Giang, Hải Dương</strong>.",
+    "info3": "Nguyên vật liệu Sản xuất <strong>nhập khẩu 100% từ Nhật Bản, Hàn Quốc</strong>, đạt tiêu chuẩn chất lượng Y tế. \nDây chuyền sản xuất/lắp ráp: Hiện đại, tự động hoá được cung cấp bới các đối tác uy tín có tên tuổi trong ngành.",
+    "info4": "<strong>Mục tiêu:</strong> phát triển và mở rộng sản xuất kinh doanh, cung cấp các loại thiết bị y tế Made in Vietnam trong nước và xuất khẩu ra các thị trường quốc tế."
+  },
+  "shipDataLabel": {
+    "ship1": "TIẾN ĐẠI PHÁT 668",
+    "ship2": "ĐẠI PHÁT 68",
+    "ship3": "TIẾN ĐẠI PHÁT 86"
+  },
+  "shipDataType": {
+    "ship1": "Tàu nạo vét/ Tàu hút bụng",
+    "ship2": "Tàu Công trình",
+    "ship3": "Tàu nạo vét cỡ lớn"
+  },
+  "shipDataDetail": {
+    "ship1": "Cấp VR-SB | Công suất 16000 m3/ giờ",
+    "ship2": "Cấp VR-SI | Công suất 3720 CV",
+    "ship3": "Cấp VR-SI | Công suất 2000 CV"
   }
 }

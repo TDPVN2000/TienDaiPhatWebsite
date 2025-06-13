@@ -1,7 +1,7 @@
 import PageHeader from 'components/Layout/PageHeader';
 import styles from './styles.module.scss';
 import PageFooter from 'components/Layout/PageFooter';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { images } from 'assets';
 import { useQuery } from '@tanstack/react-query';
 import { fieldsKey } from 'utils/queryKey';
@@ -11,7 +11,7 @@ import Loading from 'components/Loading';
 import bgInvestment from 'assets/images/carousel3.svg';
 
 function InvestmentProduction() {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   // !TODO: Call API Fields
   const { data: fields = [], isLoading: isLoadingFields } = useQuery({

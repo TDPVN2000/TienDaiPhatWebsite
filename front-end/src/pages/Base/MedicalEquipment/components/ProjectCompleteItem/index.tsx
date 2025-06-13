@@ -1,11 +1,11 @@
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import styles from './styles.module.scss';
 import { images } from 'assets';
 
 function ProjectCompleteItem(props: any) {
   const { data } = props || {};
   const { image_url, name } = data || {};
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.card}>

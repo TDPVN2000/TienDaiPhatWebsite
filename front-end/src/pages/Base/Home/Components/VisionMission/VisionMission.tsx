@@ -1,9 +1,9 @@
 import styles from './styles.module.scss';
 import { images } from 'assets';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 
 function VisionMission() {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.containerHistory}>

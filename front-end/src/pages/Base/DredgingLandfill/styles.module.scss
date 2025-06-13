@@ -13,6 +13,19 @@
     justify-content: center;
     position: relative;
 
+    // .containerTitleBg {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   background-color: #00000066;
+    //   padding: 24px 32px 5px 32px;
+    //   border-radius: 8px;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
+
     .containerTitleBg {
       position: absolute;
       top: 50%;
@@ -21,9 +34,11 @@
       background-color: #00000066;
       padding: 24px 32px 5px 32px;
       border-radius: 8px;
-      display: flex;
+      display: inline-flex;
       justify-content: center;
       align-items: center;
+      max-width: 90vw;
+      text-align: center;
     }
 
     .titleBg {

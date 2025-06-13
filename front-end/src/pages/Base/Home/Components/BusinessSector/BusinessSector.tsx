@@ -1,11 +1,11 @@
 import styles from './styles.module.scss';
 import { images } from 'assets';
 import { businessSectorDummyData } from 'constants/default-value';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 function BusinessSector() {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -39,8 +39,8 @@ function BusinessSector() {
                 <div
                   style={{ display: 'flex', flex: 1, flexDirection: 'column' }}
                 >
-                  <p className={styles.titleItem}>{title}</p>
-                  <p className={styles.contentItem}>{content}</p>
+                  <p className={styles.titleItem}>{t(title)}</p>
+                  <p className={styles.contentItem}>{t(content)}</p>
                 </div>
                 <div className={styles.viewBtnLearnMore}>
                   <button

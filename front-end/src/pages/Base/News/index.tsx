@@ -5,7 +5,7 @@ import { images } from 'assets';
 import PageFooter from 'components/Layout/PageFooter';
 import PageHeader from 'components/Layout/PageHeader';
 import Loading from 'components/Loading';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { listNewsKey } from 'utils/queryKey';
 import ItemNews from './components/ItemNews';
@@ -19,7 +19,7 @@ const tdpNewsData = Array.from({ length: 100 }, (_, index) => ({
 }));
 
 function News() {
-  const t = useTranslations();
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 9;
 
@@ -55,7 +55,9 @@ function News() {
         {tdpNewsData.length > 0 ? (
           <div className={styles.viewListNews}>
             <div className={styles.viewFeaturedNews}>
-              <div className={styles.highlightNewsTag}>TIN NỔI BẬT</div>
+              <div className={styles.highlightNewsTag}>
+                {t('news.featuredNews')}
+              </div>
               <div className={styles.containerFeatureNews}>
                 {featuredNews.map((news: any) => (
                   <ItemNews key={news?.id} data={news} />
@@ -64,7 +66,7 @@ function News() {
             </div>
             <div className={styles.viewTDPNews}>
               <div className={styles.highlightNewsTag}>
-                TIN TỪ TIẾN ĐẠI PHÁT
+                {t('news.newsFromTDP')}
               </div>
               <div className={styles.containerTDPNews}>
                 {visibleTDPNews.map((news: any) => (

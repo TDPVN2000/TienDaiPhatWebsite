@@ -1,11 +1,11 @@
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import styles from './styles.module.scss';
 import { images } from 'assets';
 
 function ProductItem(props: any) {
   const { data } = props || {};
   const { image, title, func1, func2, func3 } = data || {};
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.lowFluxFilter}>

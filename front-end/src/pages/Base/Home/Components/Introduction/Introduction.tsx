@@ -1,10 +1,9 @@
-import React from 'react';
-import styles from './styles.module.scss';
 import { images } from 'assets';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
+import styles from './styles.module.scss';
 
 function Introduction() {
-  const t = useTranslations();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.introduction}>
@@ -21,14 +20,11 @@ function Introduction() {
                 </p>
                 <p>
                   {t('introduction.address')}
-                  <strong>
-                    Số 11/18/199 Đường Hồ Tùng Mậu, Phường Cầu Diễn, Quận Nam Từ
-                    Liêm, Thành phố Hà Nội, Việt Nam
-                  </strong>
+                  <strong>{t('introduction.detailAdd')}</strong>
                 </p>
                 <div className={styles.tagAmountMember}>
                   <h1 className={styles.amount}>400+</h1>
-                  <h1 className={styles.member}>nhân viên</h1>
+                  <h1 className={styles.member}>{t('common.employees')}</h1>
                 </div>
               </div>
             </div>

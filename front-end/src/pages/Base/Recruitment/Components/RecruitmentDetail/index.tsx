@@ -1,6 +1,6 @@
 import PageFooter from 'components/Layout/PageFooter';
 import PageHeader from 'components/Layout/PageHeader';
-import { useTranslations } from 'next-intl';
+import { useTranslation } from 'react-i18next';
 import styles from './styles.module.scss';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
@@ -10,7 +10,7 @@ import { images } from 'assets';
 
 function RecruitmentDetail() {
   const { id } = useParams();
-  const t = useTranslations();
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   // !TODO: Call API Detail Recruitment
