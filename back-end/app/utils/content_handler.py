@@ -7,29 +7,32 @@ class ContentHandler:
     def process_content_for_display(content: str, content_type: str) -> str:
         """
         Process content to update image URLs for display
-        
+
         Args:
             content (str): The content to process
             content_type (str): Type of content (news, introductions, etc.)
-            
+
         Returns:
             str: Processed content with updated image URLs
         """
         if not content:
             return content
 
+        # Get base URL from config
+        base_url = current_app.config.get('BASE_URL', '')
+
         # Process CKEditor image URLs
         ckeditor_pattern = r'/static/([^"\']+)'
         def replace_ckeditor_url(match):
             image_path = match.group(1)
-            return f"{current_app.config.get('BASE_URL', '')}/static/{image_path}"
+            return f"{base_url}/static/{image_path}"
 
         # Process HTML image tags
         html_pattern = r'<img[^>]+src="([^"]+)"'
         def replace_html_url(match):
             image_url = match.group(1)
             if image_url.startswith('/static/'):
-                return f'<img src="{current_app.config.get("BASE_URL", "")}{image_url}"'
+                return f'<img src="{base_url}{image_url}"'
             return match.group(0)
 
         # Apply replacements
@@ -42,11 +45,11 @@ class ContentHandler:
     def process_model_for_display(model_data: Dict[str, Any], content_type: str) -> Dict[str, Any]:
         """
         Process model data to update image URLs for display
-        
+
         Args:
             model_data (Dict[str, Any]): The model data to process
             content_type (str): Type of content (news, introductions, etc.)
-            
+
         Returns:
             Dict[str, Any]: Processed model data with updated image URLs
         """
@@ -72,4 +75,4 @@ class ContentHandler:
             if model_data['image_url'].startswith('/static/'):
                 model_data['image_url'] = f"{current_app.config.get('BASE_URL', '')}{model_data['image_url']}"
 
-        return model_data 
+        return model_data

@@ -11,7 +11,7 @@ class NewsService:
         """Get all news items with optional language translation"""
         news_items = New.query.all()
         result = []
-        
+
         for news in news_items:
             news_dict = news.to_dict()
             if language:
@@ -24,7 +24,7 @@ class NewsService:
             # Process content for display
             news_dict = ContentHandler.process_model_for_display(news_dict, 'news')
             result.append(news_dict)
-        
+
         return result
 
     @staticmethod
@@ -33,7 +33,7 @@ class NewsService:
         news = New.query.get(news_id)
         if not news:
             return None
-            
+
         news_dict = news.to_dict()
         if language:
             # Translate title and content
@@ -52,7 +52,7 @@ class NewsService:
         # Process CKEditor content
         content = data.get('content', '')
         processed_content, _ = CKEditorHandler.process_content(content, 'news')
-        
+
         news = New(
             title=data['title'],
             content=processed_content,
@@ -93,10 +93,11 @@ class NewsService:
             news.title = data['title']
         if 'content' in data:
             # Process CKEditor content and clean up old images
-            old_content = news.content
-            processed_content, _ = CKEditorHandler.process_content(data['content'], 'news')
-            news.content = processed_content
-            CKEditorHandler.cleanup_old_images(processed_content, old_content, 'news')
+            news.content, _ = CKEditorHandler.update_content_images(
+                data['content'],
+                news.content,
+                'news'
+            )
         if 'image_url' in data:
             news.image_url = data['image_url']
 
@@ -112,14 +113,16 @@ class NewsService:
                 if 'content' in trans:
                     # Process CKEditor content in translations
                     old_trans_content = TranslationService.get_translation(f"{news.id}_content", lang)
-                    processed_trans_content, _ = CKEditorHandler.process_content(trans['content'], 'news')
+                    processed_trans_content, _ = CKEditorHandler.update_content_images(
+                        trans['content'],
+                        old_trans_content,
+                        'news'
+                    )
                     TranslationService.update_translation(
                         f"{news.id}_content",
                         lang,
                         processed_trans_content
                     )
-                    if old_trans_content:
-                        CKEditorHandler.cleanup_old_images(processed_trans_content, old_trans_content, 'news')
 
         db.session.commit()
         return news
@@ -144,4 +147,4 @@ class NewsService:
 
         db.session.delete(news)
         db.session.commit()
-        return True 
+        return True

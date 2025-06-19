@@ -10,7 +10,7 @@ class IntroductionService:
     def get_all(language: Optional[str] = None):
         intros = Introduction.query.all()
         result = []
-        
+
         for intro in intros:
             intro_dict = intro.to_dict()
             if language:
@@ -24,7 +24,7 @@ class IntroductionService:
             # Process content for display
             intro_dict = ContentHandler.process_model_for_display(intro_dict, 'introductions')
             result.append(intro_dict)
-        
+
         return result
 
     @staticmethod
@@ -32,7 +32,7 @@ class IntroductionService:
         intro = Introduction.query.get(intro_id)
         if not intro:
             return None
-            
+
         intro_dict = intro.to_dict()
         if language:
             # Translate title and content
@@ -89,10 +89,11 @@ class IntroductionService:
 
         # Process CKEditor content if present
         if 'content' in data:
-            old_content = intro.content
-            processed_content, _ = CKEditorHandler.process_content(data['content'], 'introductions')
-            data['content'] = processed_content
-            CKEditorHandler.cleanup_old_images(processed_content, old_content, 'introductions')
+            intro.content, _ = CKEditorHandler.update_content_images(
+                data['content'],
+                intro.content,
+                'introductions'
+            )
 
         # Update basic fields
         for key, value in data.items():
@@ -112,15 +113,17 @@ class IntroductionService:
                 if 'content' in trans:
                     # Process CKEditor content in translations
                     old_trans_content = TranslationService.get_translation(f"{intro.id}_content", lang, 'introduction')
-                    processed_trans_content, _ = CKEditorHandler.process_content(trans['content'], 'introductions')
+                    processed_trans_content, _ = CKEditorHandler.update_content_images(
+                        trans['content'],
+                        old_trans_content,
+                        'introductions'
+                    )
                     TranslationService.update_translation(
                         f"{intro.id}_content",
                         lang,
                         processed_trans_content,
                         'introduction'
                     )
-                    if old_trans_content:
-                        CKEditorHandler.cleanup_old_images(processed_trans_content, old_trans_content, 'introductions')
 
         db.session.commit()
         return intro
@@ -145,4 +148,4 @@ class IntroductionService:
 
         db.session.delete(intro)
         db.session.commit()
-        return True 
+        return True

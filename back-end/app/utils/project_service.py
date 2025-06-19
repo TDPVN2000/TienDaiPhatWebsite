@@ -10,7 +10,7 @@ class ProjectService:
     def get_all(language: Optional[str] = None):
         projects = Project.query.all()
         result = []
-        
+
         for project in projects:
             project_dict = project.to_dict()
             if language:
@@ -24,7 +24,7 @@ class ProjectService:
             # Process content for display
             project_dict = ContentHandler.process_model_for_display(project_dict, 'projects')
             result.append(project_dict)
-        
+
         return result
 
     @staticmethod
@@ -32,7 +32,7 @@ class ProjectService:
         project = Project.query.get(project_id)
         if not project:
             return None
-            
+
         project_dict = project.to_dict()
         if language:
             # Translate name and description
@@ -89,10 +89,11 @@ class ProjectService:
 
         # Process CKEditor content if present
         if 'description' in data:
-            old_description = project.description
-            processed_description, _ = CKEditorHandler.process_content(data['description'], 'projects')
-            data['description'] = processed_description
-            CKEditorHandler.cleanup_old_images(processed_description, old_description, 'projects')
+            project.description, _ = CKEditorHandler.update_content_images(
+                data['description'],
+                project.description,
+                'projects'
+            )
 
         # Update basic fields
         for key, value in data.items():
@@ -112,15 +113,17 @@ class ProjectService:
                 if 'description' in trans:
                     # Process CKEditor content in translations
                     old_trans_description = TranslationService.get_translation(f"{project.id}_description", lang, 'project')
-                    processed_trans_description, _ = CKEditorHandler.process_content(trans['description'], 'projects')
+                    processed_trans_description, _ = CKEditorHandler.update_content_images(
+                        trans['description'],
+                        old_trans_description,
+                        'projects'
+                    )
                     TranslationService.update_translation(
                         f"{project.id}_description",
                         lang,
                         processed_trans_description,
                         'project'
                     )
-                    if old_trans_description:
-                        CKEditorHandler.cleanup_old_images(processed_trans_description, old_trans_description, 'projects')
 
         db.session.commit()
         return project
@@ -145,4 +148,4 @@ class ProjectService:
 
         db.session.delete(project)
         db.session.commit()
-        return True 
+        return True

@@ -10,7 +10,7 @@ class ProductService:
     def get_all(language: Optional[str] = None):
         products = Product.query.all()
         result = []
-        
+
         for product in products:
             product_dict = product.to_dict()
             if language:
@@ -24,7 +24,7 @@ class ProductService:
             # Process content for display
             product_dict = ContentHandler.process_model_for_display(product_dict, 'products')
             result.append(product_dict)
-        
+
         return result
 
     @staticmethod
@@ -32,7 +32,7 @@ class ProductService:
         product = Product.query.get(product_id)
         if not product:
             return None
-            
+
         product_dict = product.to_dict()
         if language:
             # Translate name, description and features
@@ -99,10 +99,11 @@ class ProductService:
 
         # Process CKEditor content if present
         if 'description' in data:
-            old_description = product.description
-            processed_description, _ = CKEditorHandler.process_content(data['description'], 'products')
-            data['description'] = processed_description
-            CKEditorHandler.cleanup_old_images(processed_description, old_description, 'products')
+            product.description, _ = CKEditorHandler.update_content_images(
+                data['description'],
+                product.description,
+                'products'
+            )
 
         # Update basic fields
         for key, value in data.items():
@@ -122,27 +123,17 @@ class ProductService:
                 if 'description' in trans:
                     # Process CKEditor content in translations
                     old_trans_description = TranslationService.get_translation(f"{product.id}_description", lang, 'product')
-                    processed_trans_description, _ = CKEditorHandler.process_content(trans['description'], 'products')
+                    processed_trans_description, _ = CKEditorHandler.update_content_images(
+                        trans['description'],
+                        old_trans_description,
+                        'products'
+                    )
                     TranslationService.update_translation(
                         f"{product.id}_description",
                         lang,
                         processed_trans_description,
                         'product'
                     )
-                    if old_trans_description:
-                        CKEditorHandler.cleanup_old_images(processed_trans_description, old_trans_description, 'products')
-                if 'features' in trans:
-                    # Process CKEditor content in translations
-                    old_trans_features = TranslationService.get_translation(f"{product.id}_features", lang, 'product')
-                    processed_trans_features, _ = CKEditorHandler.process_content(trans['features'], 'products')
-                    TranslationService.update_translation(
-                        f"{product.id}_features",
-                        lang,
-                        processed_trans_features,
-                        'product'
-                    )
-                    if old_trans_features:
-                        CKEditorHandler.cleanup_old_images(processed_trans_features, old_trans_features, 'products')
 
         db.session.commit()
         return product
@@ -173,4 +164,4 @@ class ProductService:
 
         db.session.delete(product)
         db.session.commit()
-        return True 
+        return True

@@ -8,7 +8,7 @@ from typing import List, Optional
 def get_all(language: Optional[str] = None):
     fields = Field.query.all()
     result = []
-    
+
     for field in fields:
         field_dict = field.to_dict()
         if language:
@@ -22,7 +22,7 @@ def get_all(language: Optional[str] = None):
         # Process content for display
         field_dict = ContentHandler.process_model_for_display(field_dict, 'fields')
         result.append(field_dict)
-    
+
     return result
 
 def get_by_id(field_id, include_children=False, language: Optional[str] = None):
@@ -85,10 +85,11 @@ def update(field_id, data):
 
     # Process CKEditor content if present
     if 'description' in data:
-        old_description = field.description
-        processed_description, _ = CKEditorHandler.process_content(data['description'], 'fields')
-        data['description'] = processed_description
-        CKEditorHandler.cleanup_old_images(processed_description, old_description, 'fields')
+        field.description, _ = CKEditorHandler.update_content_images(
+            data['description'],
+            field.description,
+            'fields'
+        )
 
     # Update basic fields
     for key, value in data.items():
@@ -108,15 +109,17 @@ def update(field_id, data):
             if 'description' in trans:
                 # Process CKEditor content in translations
                 old_trans_description = TranslationService.get_translation(f"{field.id}_description", lang, 'field')
-                processed_trans_description, _ = CKEditorHandler.process_content(trans['description'], 'fields')
+                processed_trans_description, _ = CKEditorHandler.update_content_images(
+                    trans['description'],
+                    old_trans_description,
+                    'fields'
+                )
                 TranslationService.update_translation(
                     f"{field.id}_description",
                     lang,
                     processed_trans_description,
                     'field'
                 )
-                if old_trans_description:
-                    CKEditorHandler.cleanup_old_images(processed_trans_description, old_trans_description, 'fields')
 
     db.session.commit()
     return field
@@ -140,4 +143,4 @@ def delete(field_id):
 
     db.session.delete(field)
     db.session.commit()
-    return True 
+    return True

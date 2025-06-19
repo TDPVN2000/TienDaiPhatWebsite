@@ -2,6 +2,7 @@ from app.models.certification import Certification
 from app.extensions import db
 from .ckeditor_handler import CKEditorHandler
 from .content_handler import ContentHandler
+from .translation_service import TranslationService
 
 class CertificationService:
     @staticmethod
@@ -37,13 +38,42 @@ class CertificationService:
 
         # Process CKEditor content if present
         if 'content' in data:
-            old_content = certification.content
-            processed_content, _ = CKEditorHandler.process_content(data['content'], 'certifications')
-            data['content'] = processed_content
-            CKEditorHandler.cleanup_old_images(processed_content, old_content, 'certifications')
+            certification.content, _ = CKEditorHandler.update_content_images(
+                data['content'],
+                certification.content,
+                'certifications'
+            )
 
+        # Update basic fields
         for key, value in data.items():
-            setattr(certification, key, value)
+            if key != 'translations':
+                setattr(certification, key, value)
+
+        # Update translations if provided
+        if 'translations' in data:
+            for lang, trans in data['translations'].items():
+                if 'name' in trans:
+                    TranslationService.update_translation(
+                        f"{certification.id}_name",
+                        lang,
+                        trans['name'],
+                        'certification'
+                    )
+                if 'content' in trans:
+                    # Process CKEditor content in translations
+                    old_trans_content = TranslationService.get_translation(f"{certification.id}_content", lang, 'certification')
+                    processed_trans_content, _ = CKEditorHandler.update_content_images(
+                        trans['content'],
+                        old_trans_content,
+                        'certifications'
+                    )
+                    TranslationService.update_translation(
+                        f"{certification.id}_content",
+                        lang,
+                        processed_trans_content,
+                        'certification'
+                    )
+
         db.session.commit()
         return certification
 
@@ -59,4 +89,4 @@ class CertificationService:
 
         db.session.delete(certification)
         db.session.commit()
-        return True 
+        return True
