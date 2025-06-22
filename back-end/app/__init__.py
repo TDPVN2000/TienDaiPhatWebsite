@@ -18,7 +18,8 @@ from .controllers import (
     field_controller,
     news_controller,
     recruitment_controller,
-    translation_controller
+    translation_controller,
+    upload_controller
 )
 
 def create_app(config_class=Config):
@@ -26,7 +27,7 @@ def create_app(config_class=Config):
     app.config.from_object(config_class)
 
     # Initialize extensions
-    CORS(app, 
+    CORS(app,
          resources={r"/*": {
              "origins": app.config['CORS_ORIGINS'],
              "methods": app.config['CORS_METHODS'],
@@ -38,11 +39,11 @@ def create_app(config_class=Config):
     babel = Babel(app)
     mail = Mail(app)
     cache = Cache(app)
-    
+
     # Initialize database and migrations
     db.init_app(app)
     migrate = Migrate(app, db)
-    
+
     with app.app_context():
         db.create_all()
 
@@ -61,5 +62,6 @@ def create_app(config_class=Config):
     app.register_blueprint(news_controller.bp)
     app.register_blueprint(recruitment_controller.bp)
     app.register_blueprint(translation_controller.bp)
+    app.register_blueprint(upload_controller.bp)
 
     return app

@@ -1,6 +1,7 @@
 from flask_restx import Api, Namespace, Resource, fields
 from .product import product_ns, product_model
 from .new import news_ns, news_model
+from ..constants import MODEL_NAME_ENUM, LANGUAGE_CODE_ENUM
 
 # Create API instance
 api = Api(
@@ -21,17 +22,41 @@ introduction_ns = Namespace('introductions', description='Introduction operation
 field_ns = Namespace('fields', description='Field operations')
 recruitment_ns = Namespace('recruitment', description='Recruitment operations')
 
+# Upload API
+upload_ns = api.namespace('upload', description='File upload operations')
+
+# Upload response model
+upload_response_model = upload_ns.model('UploadResponse', {
+    'success': fields.Boolean(description='Upload success status'),
+    'message': fields.String(description='Response message'),
+    'data': fields.Nested(upload_ns.model('UploadData', {
+        'image_url': fields.String(description='URL of uploaded image'),
+        'filename': fields.String(description='Generated filename'),
+        'original_filename': fields.String(description='Original filename'),
+        'file_size': fields.Integer(description='File size in bytes'),
+        'folder': fields.String(description='S3 folder path')
+    }))
+})
+
 # Translation API
 translation_ns = api.namespace('translations', description='Translation operations')
 
 translation_model = translation_ns.model('Translation', {
     'id': fields.Integer(readonly=True),
     'key': fields.String(required=True, description='Translation key'),
-    'language': fields.String(required=True, description='Language code'),
+    'language': fields.String(required=True, description='Language code (e.g., en, vi)', enum=LANGUAGE_CODE_ENUM),
     'value': fields.String(required=True, description='Translated value'),
-    'model_name': fields.String(required=True, description='Name of the model this translation belongs to'),
+    'model_name': fields.String(required=True, description='Name of the model this translation belongs to', enum=MODEL_NAME_ENUM),
     'created_at': fields.DateTime(readonly=True),
     'updated_at': fields.DateTime(readonly=True)
+})
+
+# Create translation input model for POST requests
+translation_input_model = translation_ns.model('TranslationInput', {
+    'key': fields.String(required=True, description='Translation key'),
+    'language': fields.String(required=True, description='Language code (e.g., en, vi)', enum=LANGUAGE_CODE_ENUM),
+    'value': fields.String(required=True, description='Translated value'),
+    'model_name': fields.String(required=True, description='Name of the model this translation belongs to', enum=MODEL_NAME_ENUM)
 })
 
 # News API
@@ -40,6 +65,7 @@ news_ns = api.namespace('news', description='News operations')
 news_model = news_ns.model('News', {
     'id': fields.Integer(readonly=True),
     'title': fields.String(required=True, description='News title'),
+    'description': fields.String(description='News description'),
     'content': fields.String(required=True, description='News content'),
     'image_url': fields.String(description='News image URL'),
     'created_at': fields.DateTime(readonly=True),
@@ -166,3 +192,4 @@ api.add_namespace(field_ns)
 api.add_namespace(news_ns)
 api.add_namespace(recruitment_ns)
 api.add_namespace(translation_ns)
+api.add_namespace(upload_ns)

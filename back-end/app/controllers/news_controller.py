@@ -13,8 +13,9 @@ class NewsList(BaseController):
     @news_ns.doc('list_news')
     @news_ns.marshal_list_with(news_model)
     def get(self):
-        """List all news"""
-        news = NewsService.get_all()
+        """List all news with optional language translation"""
+        language = request.args.get('language')
+        news = NewsService.get_all(language=language)
         return news
 
     @news_ns.doc('create_news')
@@ -32,8 +33,9 @@ class NewsResource(BaseController):
     @news_ns.doc('get_news')
     @news_ns.marshal_with(news_model)
     def get(self, news_id):
-        """Get a news item by ID"""
-        new = NewsService.get_by_id(news_id)
+        """Get a news item by ID with optional language translation"""
+        language = request.args.get('language')
+        new = NewsService.get_by_id(news_id, language=language)
         if not new:
             news_ns.abort(404, 'News not found')
         return new
@@ -56,4 +58,4 @@ class NewsResource(BaseController):
         success = NewsService.delete(news_id)
         if not success:
             news_ns.abort(404, 'News not found')
-        return '', 204 
+        return '', 204

@@ -15,11 +15,12 @@ class NewsService:
         for news in news_items:
             news_dict = news.to_dict()
             if language:
-                # Translate title and content
+                # Translate title, content and description
                 news_dict = TranslationService.translate_object(
                     news_dict,
                     language,
-                    ['title', 'content']
+                    ['title', 'content', 'description'],
+                    'new'
                 )
             # Process content for display
             news_dict = ContentHandler.process_model_for_display(news_dict, 'news')
@@ -36,11 +37,12 @@ class NewsService:
 
         news_dict = news.to_dict()
         if language:
-            # Translate title and content
+            # Translate title, content and description
             news_dict = TranslationService.translate_object(
                 news_dict,
                 language,
-                ['title', 'content']
+                ['title', 'content', 'description'],
+                'new'
             )
         # Process content for display
         news_dict = ContentHandler.process_model_for_display(news_dict, 'news')
@@ -55,6 +57,7 @@ class NewsService:
 
         news = New(
             title=data['title'],
+            description=data.get('description', ''),  # Add description field
             content=processed_content,
             image_url=data.get('image_url')
         )
@@ -68,7 +71,15 @@ class NewsService:
                     TranslationService.create_translation(
                         f"{news.id}_title",
                         lang,
-                        trans['title']
+                        trans['title'],
+                        'new'
+                    )
+                if 'description' in trans:
+                    TranslationService.create_translation(
+                        f"{news.id}_description",
+                        lang,
+                        trans['description'],
+                        'new'
                     )
                 if 'content' in trans:
                     # Process CKEditor content in translations
@@ -77,7 +88,8 @@ class NewsService:
                     TranslationService.create_translation(
                         f"{news.id}_content",
                         lang,
-                        processed_trans_content
+                        processed_trans_content,
+                        'new'
                     )
 
         return news
@@ -91,6 +103,8 @@ class NewsService:
 
         if 'title' in data:
             news.title = data['title']
+        if 'description' in data:
+            news.description = data['description']  # Add description field update
         if 'content' in data:
             # Process CKEditor content and clean up old images
             news.content, _ = CKEditorHandler.update_content_images(
@@ -108,11 +122,19 @@ class NewsService:
                     TranslationService.update_translation(
                         f"{news.id}_title",
                         lang,
-                        trans['title']
+                        trans['title'],
+                        'new'
+                    )
+                if 'description' in trans:
+                    TranslationService.update_translation(
+                        f"{news.id}_description",
+                        lang,
+                        trans['description'],
+                        'new'
                     )
                 if 'content' in trans:
                     # Process CKEditor content in translations
-                    old_trans_content = TranslationService.get_translation(f"{news.id}_content", lang)
+                    old_trans_content = TranslationService.get_translation(f"{news.id}_content", lang, 'new')
                     processed_trans_content, _ = CKEditorHandler.update_content_images(
                         trans['content'],
                         old_trans_content,
@@ -121,7 +143,8 @@ class NewsService:
                     TranslationService.update_translation(
                         f"{news.id}_content",
                         lang,
-                        processed_trans_content
+                        processed_trans_content,
+                        'new'
                     )
 
         db.session.commit()
@@ -139,11 +162,12 @@ class NewsService:
 
         # Delete all translations for this news item
         for lang in TranslationService.get_all_languages():
-            trans_content = TranslationService.get_translation(f"{news.id}_content", lang)
+            trans_content = TranslationService.get_translation(f"{news.id}_content", lang, 'new')
             if trans_content:
                 CKEditorHandler.cleanup_old_images('', trans_content, 'news')
-            TranslationService.delete_translation(f"{news.id}_title", lang)
-            TranslationService.delete_translation(f"{news.id}_content", lang)
+            TranslationService.delete_translation(f"{news.id}_title", lang, 'new')
+            TranslationService.delete_translation(f"{news.id}_description", lang, 'new')
+            TranslationService.delete_translation(f"{news.id}_content", lang, 'new')
 
         db.session.delete(news)
         db.session.commit()

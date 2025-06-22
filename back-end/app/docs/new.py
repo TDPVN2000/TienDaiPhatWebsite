@@ -18,9 +18,24 @@ news_input_model = news_ns.model('NewsInput', {
     'title': fields.String(required=True, description='News title'),
     'description': fields.String(description='News description'),
     'content': fields.String(required=True, description='News content'),
-    'image_url': fields.String(description='News image URL')
+    'image_url': fields.String(description='News image URL'),
+    'translations': fields.Raw(description='Translations object with language codes as keys')
 })
 
 news_list_model = news_ns.model('NewsList', {
     'news': fields.List(fields.Nested(news_model), description='List of news')
 })
+
+# Translation example for documentation
+translation_example = {
+    'en': {
+        'title': 'English Title',
+        'description': 'English Description',
+        'content': 'English Content'
+    },
+    'vi': {
+        'title': 'Tiêu đề tiếng Việt',
+        'description': 'Mô tả tiếng Việt',
+        'content': 'Nội dung tiếng Việt'
+    }
+}
