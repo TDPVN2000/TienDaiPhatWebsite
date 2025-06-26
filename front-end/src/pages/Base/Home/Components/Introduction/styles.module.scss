@@ -110,3 +110,29 @@
     }
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+  .introduction {
+    .titleIntroduction {
+      font-size: 45px;
+    }
+  }
+
+  .containerContent {
+    .viewContent2 {
+      .imgIntroduction2 {
+        max-width: 600px;
+        height: auto;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}

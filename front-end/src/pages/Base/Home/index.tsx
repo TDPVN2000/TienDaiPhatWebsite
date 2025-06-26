@@ -17,7 +17,7 @@ import Loading from 'components/Loading';
 const slideList = [images.carousel1, images.carousel2, images.carousel3];
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -30,8 +30,8 @@ export default function Home() {
 
   // !TODO: Call API List News
   const { data: newsData = [], isLoading: isLoadingNewsData } = useQuery({
-    queryKey: [listNewsKey],
-    queryFn: () => getNewsApi(),
+    queryKey: [listNewsKey, i18n.language],
+    queryFn: () => getNewsApi({ language: i18n.language }),
   });
 
   if (isLoadingNewsData) {

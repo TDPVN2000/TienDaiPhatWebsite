@@ -4,20 +4,29 @@ import PageFooter from 'components/Layout/PageFooter';
 import { useTranslation } from 'react-i18next';
 import { images } from 'assets';
 import { useQuery } from '@tanstack/react-query';
-import { fieldsKey } from 'utils/queryKey';
-import { getDetailFieldsApi } from 'api/fields';
+import { fieldsKey, listFields } from 'utils/queryKey';
+import { getDetailFieldsApi, getFieldsApi } from 'api/fields';
 import { SubMenu } from 'constants/enum';
 import Loading from 'components/Loading';
 import bgInvestment from 'assets/images/carousel3.svg';
 
 function InvestmentProduction() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const { data: listFieldsData = [] } = useQuery({
+    queryKey: [listFields],
+    queryFn: () => getFieldsApi(),
+  });
+
+  const fieldId = listFieldsData.find(
+    (val: any) => val?.id === SubMenu.INVESTMENT_PRODUCTION
+  )?.id;
 
   // !TODO: Call API Fields
   const { data: fields = [], isLoading: isLoadingFields } = useQuery({
     queryKey: [fieldsKey],
-    queryFn: () => getDetailFieldsApi(8),
-    // queryFn: () => getDetailFieldsApi(SubMenu.INVESTMENT_PRODUCTION),
+    queryFn: () => getDetailFieldsApi(fieldId),
+    enabled: !!fieldId,
   });
 
   const isLoading = isLoadingFields;
@@ -25,6 +34,19 @@ function InvestmentProduction() {
   if (isLoading) {
     return <Loading />;
   }
+
+  const handleCheckImgByLanguage = (lang: any) => {
+    if (i18n.language === 'en') {
+      return {
+        financeMinistry: images.tableFinanceMinistryEn,
+        capitalStatistics: images.tableCapitalStatisticsEn,
+      };
+    }
+    return {
+      financeMinistry: images.tableFinanceMinistry,
+      capitalStatistics: images.tableCapitalStatistics,
+    };
+  };
 
   return (
     <div className={styles.container}>
@@ -94,7 +116,7 @@ function InvestmentProduction() {
               {t('investmentProduction.content1')}
             </p>
             <img
-              src={images.tableFinanceMinistry}
+              src={handleCheckImgByLanguage(i18n.language).financeMinistry}
               alt="tableFinanceMinistry"
               className={styles.tableFinanceMinistry}
             />
@@ -112,7 +134,7 @@ function InvestmentProduction() {
               {t('investmentProduction.content2')}
             </p>
             <img
-              src={images.tableCapitalStatistics}
+              src={handleCheckImgByLanguage(i18n.language).capitalStatistics}
               alt="tableCapitalStatistics"
               className={styles.tableCapitalStatistics}
             />

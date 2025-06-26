@@ -33,11 +33,14 @@ import imgBgInVestment from './images/img_bg_invesment.svg';
 import imgBgDredging from './images/img_bg_dredging.svg';
 import imgBgMedical from './images/img_bg_medical.png';
 import tableFinanceMinistry from './images/img_table_finance_ministry.svg';
+import tableFinanceMinistryEn from './images/img_table_finance_ministry_en.svg';
 import tableCapitalStatistics from './images/img_table_capital_statistics.svg';
+import tableCapitalStatisticsEn from './images/img_table_capital_statistics_en.svg';
 import ship668 from './images/img_ship_668.svg';
 import ship68 from './images/img_ship_68.svg';
 import ship86 from './images/img_ship_86.svg';
 import profile from './images/img_profile.svg';
+import profileEn from './images/img_profile_en.svg';
 import phoneWhite from './images/ic_phone_white.svg';
 import project1 from './images/img_project1.svg';
 import project2 from './images/img_project2.svg';
@@ -97,11 +100,14 @@ export const images = {
   imgBgDredging,
   imgBgMedical,
   tableFinanceMinistry,
+  tableFinanceMinistryEn,
   tableCapitalStatistics,
+  tableCapitalStatisticsEn,
   ship668,
   ship68,
   ship86,
   profile,
+  profileEn,
   phoneWhite,
   project1,
   project2,

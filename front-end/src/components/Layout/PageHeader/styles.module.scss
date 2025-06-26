@@ -145,3 +145,16 @@ $header-text-color: white;
   //   }
   // }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+  .header {
+    padding: 16px 200px;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}

@@ -19,14 +19,14 @@ const tdpNewsData = Array.from({ length: 100 }, (_, index) => ({
 }));
 
 function News() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 9;
 
   // !TODO: Call API List News
   const { data: tdpNewsData = [], isLoading: isLoadingNewsData } = useQuery({
-    queryKey: [listNewsKey],
-    queryFn: () => getNewsApi(),
+    queryKey: [listNewsKey, i18n.language],
+    queryFn: () => getNewsApi({ language: i18n.language }),
   });
 
   if (isLoadingNewsData) {

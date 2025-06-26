@@ -4,15 +4,24 @@ import PageFooter from 'components/Layout/PageFooter';
 import { useTranslation } from 'react-i18next';
 import { images } from 'assets';
 import ProductItem from './components/ProductItem';
-import { investmentData, productListMedical } from 'constants/default-value';
+import {
+  investmentData,
+  productListMedical,
+  projectComplete,
+} from 'constants/default-value';
 import InvestmentDataItem from './components/InvestmentDataItem';
 import ProjectCompleteItem from './components/ProjectCompleteItem';
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCertificationsApi } from 'api/certifications';
 import { useQuery } from '@tanstack/react-query';
-import { certificationKey, fieldsKey, projectKey } from 'utils/queryKey';
-import { getDetailFieldsApi } from 'api/fields';
+import {
+  certificationKey,
+  fieldsKey,
+  listFields,
+  projectKey,
+} from 'utils/queryKey';
+import { getDetailFieldsApi, getFieldsApi } from 'api/fields';
 import { SubMenu } from 'constants/enum';
 import { getProjectApi } from 'api/project';
 import Loading from 'components/Loading';
@@ -44,11 +53,20 @@ function MedicalEquipment() {
     ));
   };
 
+  const { data: listFieldsData = [] } = useQuery({
+    queryKey: [listFields],
+    queryFn: () => getFieldsApi(),
+  });
+
+  const fieldId = listFieldsData.find(
+    (val: any) => val?.id === SubMenu.MEDICAL_EQUIPMENT
+  )?.id;
+
   // !TODO: Call API Fields
   const { data: fields = [], isLoading: isLoadingFields } = useQuery({
     queryKey: [fieldsKey],
-    queryFn: () => getDetailFieldsApi(6),
-    // queryFn: () => getDetailFieldsApi(SubMenu.MEDICAL_EQUIPMENT),
+    queryFn: () => getDetailFieldsApi(fieldId),
+    enabled: !!fieldId,
   });
 
   // !TODO: Call API Project
@@ -173,7 +191,7 @@ function MedicalEquipment() {
           <img src={images.line} alt="line" className={styles.line} />
           <div className={styles.projectCompleteList}>
             {projectComplete
-              .filter((item: any) => item?.field_id === 6) // !TODO: sau đổi 6 thành Enum tương ứng SubMenu.MEDICAL_EQUIPMENT
+              .filter((item: any) => item?.field_id === fieldId)
               .map((item: any, index: number) => {
                 return (
                   <div key={index} className={styles.itemWrapper}>
