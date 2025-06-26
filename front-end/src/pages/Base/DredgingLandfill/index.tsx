@@ -46,8 +46,8 @@ function DredgingLandfill() {
 
   // !TODO: Call API Project
   const { data: projectData = [], isLoading: isLoadingProjectData } = useQuery({
-    queryKey: [projectKey],
-    queryFn: () => getProjectApi(),
+    queryKey: [projectKey, i18n],
+    queryFn: () => getProjectApi({ language: i18n.language }),
   });
 
   useEffect(() => {
