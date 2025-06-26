@@ -14,9 +14,9 @@ function NewsDetail() {
   const navigate = useNavigate();
 
   // !TODO: Call API Detail News
-  // const { data: dataDetailNew, refetch } = useQuery([detailNewsKey], () =>
-  //   getDetailNewApi(id)
-  // );
+  const { data: dataDetailNew, refetch } = useQuery([detailNewsKey], () =>
+    getDetailNewApi(id)
+  );
 
   return (
     <div className={styles.container}>
@@ -32,7 +32,13 @@ function NewsDetail() {
           <p className={styles.titleBack}>{t('news.titleBack')}</p>
         </div>
         <div className={styles.content}>
-          <p>{`ID news: ${id}`}</p>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: dataDetailNew?.content
+                ?.replace(/\\"/g, '"')
+                ?.replace(/\\n/g, ''),
+            }}
+          />
         </div>
       </div>
       <PageFooter />

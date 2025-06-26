@@ -243,5 +243,19 @@
     "ship1": "Cấp VR-SB | Công suất 16000 m3/ giờ",
     "ship2": "Cấp VR-SI | Công suất 3720 CV",
     "ship3": "Cấp VR-SI | Công suất 2000 CV"
+  },
+  "productMedical": {
+    "product1": {
+      "title": "Quả lọc thận nhân tạo/ lõi lọc PES/ Low-flux.",
+      "func1": "Độ thẩm thấu màng lọc thấp: Các lỗ màng nhỏ hơn.",
+      "func2": "Chủ yếu loại bỏ các phân tử nhỏ như ure thông qua quá trình khuếch tán.",
+      "func3": "Thường phù hợp cho bệnh nhân suy thận nhẹ hơn."
+    },
+    "product2": {
+      "title": "Quả lọc thận nhân tạo/ lõi lọc PES/ High-flux.",
+      "func1": "Độ thẩm thấu màng lọc cao: Các lỗ màng lớn hơn.",
+      "func2": "Loại bỏ các phân tử nhỏ, lớn và trung bình qua quá trình khuếch tán và đối lưu.",
+      "func3": "Thích hợp cho bệnh nhân suy thận nặng hơn, có thể hưởng lợi từ việc loại bỏ độc tố hiệu quả hơn."
+    }
   }
 }

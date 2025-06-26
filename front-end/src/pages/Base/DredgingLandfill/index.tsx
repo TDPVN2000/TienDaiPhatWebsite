@@ -4,7 +4,12 @@ import PageFooter from 'components/Layout/PageFooter';
 import { useTranslation } from 'react-i18next';
 import { images } from 'assets';
 import ShipCard from './components/ShipCard';
-import { imgSlideDummy, projectData, shipData } from 'constants/default-value';
+import {
+  imgSlideDummy,
+  projectComplete,
+  projectData,
+  shipData,
+} from 'constants/default-value';
 import ProjectCard from './components/ProjectCard';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
@@ -12,22 +17,31 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { getProjectApi } from 'api/project';
 import { useQuery } from '@tanstack/react-query';
-import { fieldsKey, projectKey } from 'utils/queryKey';
-import { getDetailFieldsApi } from 'api/fields';
+import { fieldsKey, listFields, projectKey } from 'utils/queryKey';
+import { getDetailFieldsApi, getFieldsApi } from 'api/fields';
 import { SubMenu } from 'constants/enum';
 import Loading from 'components/Loading';
 import bgDredging from 'assets/images/carousel2.svg';
 
 function DredgingLandfill() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const slideRef = useRef<HTMLDivElement>(null);
+
+  const { data: listFieldsData = [] } = useQuery({
+    queryKey: [listFields],
+    queryFn: () => getFieldsApi(),
+  });
+
+  const fieldId = listFieldsData.find(
+    (val: any) => val?.id === SubMenu.DREDGING_LANDFILL
+  )?.id;
 
   // !TODO: Call API Fields
   const { data: fields = [], isLoading: isLoadingFields } = useQuery({
     queryKey: [fieldsKey],
-    queryFn: () => getDetailFieldsApi(7),
-    // queryFn: () => getDetailFieldsApi(SubMenu.DREDGING_LANDFILL),
+    queryFn: () => getDetailFieldsApi(fieldId),
+    enabled: !!fieldId,
   });
 
   // !TODO: Call API Project
@@ -121,7 +135,7 @@ function DredgingLandfill() {
           <p className={styles.title}>{t('dredgingLandfill.profileTitle')}</p>
           <img src={images.line} alt="line" className={styles.line} />
           <img
-            src={images.profile}
+            src={i18n.language === 'en' ? images.profileEn : images.profile}
             alt="profile-map"
             className={styles.profileMap}
           />
@@ -159,7 +173,7 @@ function DredgingLandfill() {
           <img src={images.line} alt="line" className={styles.line} />
           <div className={styles.viewListProject}>
             {projectData
-              .filter((item: any) => item?.field_id === 7) // !TODO: sau đổi 7 thành Enum tương ứng SubMenu.DREDGING_LANDFILL
+              .filter((item: any) => item?.field_id === fieldId)
               .map((item: any) => {
                 return (
                   <ProjectCard

@@ -115,3 +115,29 @@
     }
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+  .container {
+    .body {
+      .viewListNews {
+        .viewFeaturedNews {
+          flex-direction: column;
+          padding: 0px 200px;
+        }
+
+        .viewTDPNews {
+          flex-direction: column;
+          padding: 0px 200px;
+          margin-top: 64px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}

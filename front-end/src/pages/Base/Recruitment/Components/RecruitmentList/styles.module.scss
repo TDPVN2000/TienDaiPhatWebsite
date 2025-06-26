@@ -96,3 +96,18 @@
     }
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+  .containerListRecruitment {
+    .jobList {
+      padding: 0px 100px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}

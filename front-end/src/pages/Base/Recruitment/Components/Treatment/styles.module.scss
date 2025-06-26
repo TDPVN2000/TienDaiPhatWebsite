@@ -86,3 +86,26 @@
     }
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+  .containerTreatment {
+    .contentTreatment {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      padding: 120px 64px 120px 100px;
+    }
+
+    .viewBGImage {
+      display: flex;
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}

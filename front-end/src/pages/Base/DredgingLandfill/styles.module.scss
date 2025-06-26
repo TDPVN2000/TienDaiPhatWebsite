@@ -221,6 +221,7 @@
         margin-top: 80px;
         display: flex;
         gap: 24px;
+        flex-wrap: wrap;
 
         .imgShip {
           max-width: 392px;
@@ -230,4 +231,66 @@
       }
     }
   }
+}
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+  .container {
+    .body {
+      .introduction {
+        height: 350px;
+        background-size: contain;
+        background-position: center;
+        padding: 0px 200px;
+        align-items: center;
+
+        .titleIntroduction {
+          font-size: 50px;
+          font-weight: 700;
+          color: #ffda44;
+          max-width: 280px;
+        }
+      }
+
+      .viewDredgerInformation {
+        padding: 120px 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .viewListShip {
+          margin-top: 80px;
+          display: flex;
+          gap: 20px;
+        }
+      }
+
+      .profile {
+        padding: 120px 200px;
+      }
+
+      .completedProjects {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 120px 100px;
+
+        .viewListProject {
+          margin-top: 80px;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
 }

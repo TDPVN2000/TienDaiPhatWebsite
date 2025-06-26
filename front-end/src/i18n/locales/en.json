@@ -243,5 +243,19 @@
     "ship1": "VR-SB class | Capacity 16,000 m³/hour",
     "ship2": "VR-SI class | Capacity 3,720 HP",
     "ship3": "VR-SI class | Capacity 2,000 HP"
+  },
+  "productMedical": {
+    "product1": {
+      "title": "Artificial Kidney Dialyzer / PES Filter Cartridge / Low-flux",
+      "func1": "Low membrane permeability: Smaller pore size.",
+      "func2": "Primarily removes small molecules such as urea through diffusion.",
+      "func3": "Generally suitable for patients with less severe kidney failure."
+    },
+    "product2": {
+      "title": "Artificial Kidney Dialyzer / PES Filter Cartridge / High-flux",
+      "func1": "High membrane permeability: Larger pore size.",
+      "func2": "Removes small, medium, and larger molecules through diffusion and convection.",
+      "func3": "Suitable for patients with more severe kidney failure, who can benefit from more efficient toxin removal."
+    }
   }
 }

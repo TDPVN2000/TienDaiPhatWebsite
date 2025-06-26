@@ -14,10 +14,10 @@ function RecruitmentDetail() {
   const navigate = useNavigate();
 
   // !TODO: Call API Detail Recruitment
-  // const { data: dataDetailRecruitment, refetch } = useQuery(
-  //   [detailRecruitmentKey],
-  //   () => getDetailRecruitmentApi(id)
-  // );
+  const { data: dataDetailRecruitment, refetch } = useQuery(
+    [detailRecruitmentKey],
+    () => getDetailRecruitmentApi(id)
+  );
 
   return (
     <div className={styles.container}>
@@ -33,7 +33,13 @@ function RecruitmentDetail() {
           <p className={styles.titleBack}>{t('recruitment.titleBack')}</p>
         </div>
         <div className={styles.content}>
-          <p>{`ID recruitment: ${id}`}</p>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: dataDetailRecruitment?.des_position
+                ?.replace(/\\"/g, '"')
+                ?.replace(/\\n/g, ''),
+            }}
+          />
         </div>
       </div>
       <PageFooter />

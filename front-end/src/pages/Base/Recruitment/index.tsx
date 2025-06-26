@@ -8,14 +8,15 @@ import { listRecruitmentKey } from 'utils/queryKey';
 import RecruitmentList from './Components/RecruitmentList/RecruitmentList';
 import Treatment from './Components/Treatment/Treatment';
 import styles from './styles.module.scss';
+import { JOBSLIST } from 'constants/default-value';
 
 function Recruitment() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // !TODO: Call API List Recruitment
   const { data: jobList = [], isLoading: isLoadingJobList } = useQuery({
-    queryKey: [listRecruitmentKey],
-    queryFn: () => getRecruitmentListApi(),
+    queryKey: [listRecruitmentKey, i18n.language],
+    queryFn: () => getRecruitmentListApi({ language: i18n.language }),
   });
 
   if (isLoadingJobList) {

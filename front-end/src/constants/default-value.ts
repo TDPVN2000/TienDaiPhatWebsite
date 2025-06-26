@@ -101,7 +101,7 @@ export const businessSectorDummyData = [
   },
 ];
 
-export const newsData = [
+export const newsDataDummy = [
   {
     id: 1,
     title: 'Những Cơ Hội Nghề Nghiệp Hấp Dẫn Tại Tiến Đại Phát Tháng 12/2024',
@@ -257,21 +257,18 @@ export const productListMedical = [
   {
     id: 1,
     image: images.kidneyFilter,
-    title: 'Quả lọc thận nhân tạo/ lõi lọc PES/ Low-flux.',
-    func1: 'Độ thẩm thấu màng lọc thấp: Các lỗ màng nhỏ hơn.',
-    func2:
-      'Chủ yếu loại bỏ các phân tử nhỏ như ure thông qua quá trình khuếch tán.',
-    func3: 'Thường phù hợp cho bệnh nhân suy thận nhẹ hơn.',
+    title: 'productMedical.product1.title',
+    func1: 'productMedical.product1.func1',
+    func2: 'productMedical.product1.func2',
+    func3: 'productMedical.product1.func3',
   },
   {
     id: 2,
     image: images.kidneyFilter,
-    title: 'Quả lọc thận nhân tạo/ lõi lọc PES/ High-flux.',
-    func1: 'Độ thẩm thấu màng lọc cao: Các lỗ màng lớn hơn.',
-    func2:
-      'Loại bỏ các phân tử nhỏ, lớn và trung bình qua quá trình khuếch tán và đối lưu.',
-    func3:
-      'Thích hợp cho bệnh nhân suy thận nặng hơn, có thể hưởng lợi từ việc loại bỏ độc tố hiệu quả hơn.',
+    title: 'productMedical.product2.title',
+    func1: 'productMedical.product2.func1',
+    func2: 'productMedical.product2.func2',
+    func3: 'productMedical.product2.func3',
   },
 ];
 

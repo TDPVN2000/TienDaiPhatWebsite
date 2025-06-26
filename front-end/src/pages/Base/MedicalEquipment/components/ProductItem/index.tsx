@@ -12,20 +12,20 @@ function ProductItem(props: any) {
       <div className={styles.imageSection}>
         <img src={image} alt={title} />
       </div>
-      <h1 className={styles.title}>{title}</h1>
+      <h1 className={styles.title}>{t(title)}</h1>
       <div className={styles.styleLine}></div>
       <div className={styles.infoSection}>
         <div className={styles.infoItem}>
           <img src={images.osmosis} alt="osmosis" className={styles.icon} />
-          <p>{func1}</p>
+          <p>{t(func1)}</p>
         </div>
         <div className={styles.infoItem}>
           <img src={images.icReact} alt="react" className={styles.icon} />
-          <p>{func2}</p>
+          <p>{t(func2)}</p>
         </div>
         <div className={styles.infoItem}>
           <img src={images.patient} alt="patient" className={styles.icon} />
-          <p>{func3}</p>
+          <p>{t(func3)}</p>
         </div>
       </div>
     </div>

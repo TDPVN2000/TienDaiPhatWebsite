@@ -217,3 +217,21 @@
     }
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+  .container {
+    .body {
+      .introduction {
+        height: 350px;
+        padding: 130px 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}

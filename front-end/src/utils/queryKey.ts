@@ -5,3 +5,4 @@ export const listRecruitmentKey = 'listRecruitmentKey';
 export const detailRecruitmentKey = 'detailRecruitmentKey';
 export const certificationKey = 'certificationKey';
 export const fieldsKey = 'fieldsKey';
+export const listFields = 'listFields';
