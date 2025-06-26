@@ -28,7 +28,7 @@ import Loading from 'components/Loading';
 import bgMedicalEquipment from 'assets/images/carousel1.svg';
 
 function MedicalEquipment() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [hoveredId, setHoveredId] = useState(null);
 
@@ -71,8 +71,8 @@ function MedicalEquipment() {
 
   // !TODO: Call API Project
   const { data: projectComplete = [], isLoading: isLoadingProject } = useQuery({
-    queryKey: [projectKey],
-    queryFn: () => getProjectApi(),
+    queryKey: [projectKey, i18n],
+    queryFn: () => getProjectApi({ language: i18n.language }),
   });
 
   // !TODO: Call API Certificate
