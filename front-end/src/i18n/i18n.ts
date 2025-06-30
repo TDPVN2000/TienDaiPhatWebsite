@@ -6,11 +6,17 @@ import en from './locales/en.json';
 import vi from './locales/vi.json';
 
 i18n
-  .use(initReactI18next)
   .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     fallbackLng: 'vi',
     debug: false,
+    detection: {
+      order: ['localStorage', 'cookie'],
+      lookupLocalStorage: 'i18nextLng',
+      lookupCookie: 'i18next',
+      caches: ['localStorage'],
+    },
     interpolation: {
       escapeValue: false,
     },
@@ -19,3 +25,5 @@ i18n
       en: { translation: en },
     },
   });
+
+export default i18n;
