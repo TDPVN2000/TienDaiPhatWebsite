@@ -3,7 +3,7 @@ from flask_restx import Resource
 from ..utils import field_service
 from ..models import Field
 from ..extensions import db
-from ..docs.api import field_ns, field_model
+from ..docs.api import field_ns, field_model, field_input_model
 from . import BaseController
 
 bp = Blueprint('field', __name__, url_prefix='/api/fields')
@@ -13,12 +13,13 @@ class FieldList(BaseController):
     @field_ns.doc('list_fields')
     @field_ns.marshal_list_with(field_model)
     def get(self):
-        """List all fields"""
-        fields = field_service.get_all()
+        """List all fields with optional language translation"""
+        language = request.args.get('language')
+        fields = field_service.get_all(language=language)
         return fields
 
     @field_ns.doc('create_field')
-    @field_ns.expect(field_model)
+    @field_ns.expect(field_input_model)
     @field_ns.marshal_with(field_model, code=201)
     def post(self):
         """Create a new field"""
@@ -32,15 +33,16 @@ class FieldResource(BaseController):
     @field_ns.doc('get_field')
     @field_ns.marshal_with(field_model)
     def get(self, field_id):
-        """Get a field by ID with all related data"""
+        """Get a field by ID with all related data and optional language translation"""
         include_children = request.args.get('include_children', 'false').lower() == 'true'
-        field = field_service.get_by_id(field_id, include_children=include_children)
+        language = request.args.get('language')
+        field = field_service.get_by_id(field_id, include_children=include_children, language=language)
         if not field:
             field_ns.abort(404, 'Field not found')
         return field
 
     @field_ns.doc('update_field')
-    @field_ns.expect(field_model)
+    @field_ns.expect(field_input_model)
     @field_ns.marshal_with(field_model)
     def put(self, field_id):
         """Update a field"""
@@ -57,4 +59,4 @@ class FieldResource(BaseController):
         success = field_service.delete(field_id)
         if not success:
             field_ns.abort(404, 'Field not found')
-        return '', 204 
+        return '', 204

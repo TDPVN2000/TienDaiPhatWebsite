@@ -13,8 +13,9 @@ class ProjectList(BaseController):
     @project_ns.doc('list_projects')
     @project_ns.marshal_list_with(project_model)
     def get(self):
-        """List all projects"""
-        projects = ProjectService.get_all()
+        """List all projects with optional language translation"""
+        language = request.args.get('language')
+        projects = ProjectService.get_all(language=language)
         return projects
 
     @project_ns.doc('create_project')
@@ -32,11 +33,12 @@ class ProjectResource(BaseController):
     @project_ns.doc('get_project')
     @project_ns.marshal_with(project_model)
     def get(self, project_id):
-        """Get a project by ID"""
-        project = ProjectService.get_by_id(project_id)
+        """Get a project by ID with optional language translation"""
+        language = request.args.get('language')
+        project = ProjectService.get_by_id(project_id, language=language)
         if not project:
             project_ns.abort(404, 'Project not found')
-        return project.to_dict()
+        return project
 
     @project_ns.doc('update_project')
     @project_ns.expect(project_model)
@@ -56,4 +58,4 @@ class ProjectResource(BaseController):
         success = ProjectService.delete(project_id)
         if not success:
             project_ns.abort(404, 'Project not found')
-        return '', 204 
+        return '', 204

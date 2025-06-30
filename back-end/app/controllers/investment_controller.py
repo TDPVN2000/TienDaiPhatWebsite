@@ -13,8 +13,9 @@ class InvestmentList(BaseController):
     @investment_ns.doc('list_investments')
     @investment_ns.marshal_list_with(investment_model)
     def get(self):
-        """List all investments"""
-        investments = InvestmentService.get_all()
+        """List all investments with optional language translation"""
+        language = request.args.get('language')
+        investments = InvestmentService.get_all(language=language)
         return investments
 
     @investment_ns.doc('create_investment')
@@ -32,11 +33,12 @@ class InvestmentResource(BaseController):
     @investment_ns.doc('get_investment')
     @investment_ns.marshal_with(investment_model)
     def get(self, investment_id):
-        """Get an investment by ID"""
-        investment = InvestmentService.get_by_id(investment_id)
+        """Get an investment by ID with optional language translation"""
+        language = request.args.get('language')
+        investment = InvestmentService.get_by_id(investment_id, language=language)
         if not investment:
             investment_ns.abort(404, 'Investment not found')
-        return investment.to_dict()
+        return investment
 
     @investment_ns.doc('update_investment')
     @investment_ns.expect(investment_model)
@@ -56,4 +58,4 @@ class InvestmentResource(BaseController):
         success = InvestmentService.delete(investment_id)
         if not success:
             investment_ns.abort(404, 'Investment not found')
-        return '', 204 
+        return '', 204

@@ -13,8 +13,9 @@ class RecruitmentList(BaseController):
     @recruitment_ns.doc('list_recruitments')
     @recruitment_ns.marshal_list_with(recruitment_model)
     def get(self):
-        """List all recruitment positions"""
-        recruitments = RecruitmentService.get_all()
+        """List all recruitment positions with optional language translation"""
+        language = request.args.get('language')
+        recruitments = RecruitmentService.get_all(language=language)
         return recruitments
 
     @recruitment_ns.doc('create_recruitment')
@@ -32,11 +33,12 @@ class RecruitmentResource(BaseController):
     @recruitment_ns.doc('get_recruitment')
     @recruitment_ns.marshal_with(recruitment_model)
     def get(self, recruitment_id):
-        """Get a recruitment position by ID"""
-        recruitment = RecruitmentService.get_by_id(recruitment_id)
+        """Get a recruitment position by ID with optional language translation"""
+        language = request.args.get('language')
+        recruitment = RecruitmentService.get_by_id(recruitment_id, language=language)
         if not recruitment:
             recruitment_ns.abort(404, 'Recruitment position not found')
-        return recruitment.to_dict()
+        return recruitment
 
     @recruitment_ns.doc('update_recruitment')
     @recruitment_ns.expect(recruitment_input_model)
@@ -56,4 +58,4 @@ class RecruitmentResource(BaseController):
         success = RecruitmentService.delete(recruitment_id)
         if not success:
             recruitment_ns.abort(404, 'Recruitment position not found')
-        return '', 204 
+        return '', 204

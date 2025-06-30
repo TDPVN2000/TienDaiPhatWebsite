@@ -13,15 +13,16 @@ class TableDataList(BaseController):
     @table_data_ns.doc('list_table_data')
     @table_data_ns.marshal_list_with(table_data_model)
     def get(self):
-        """List all table data"""
-        tables = TableDataService.get_all()
+        """List all table data with optional language translation"""
+        language = request.args.get('language')
+        tables = TableDataService.get_all(language=language)
         return tables
 
     @table_data_ns.doc('create_table_data')
     @table_data_ns.expect(table_data_model)
     @table_data_ns.marshal_with(table_data_model, code=201)
     def post(self):
-        """Create a new table data"""
+        """Create new table data"""
         data = request.get_json()
         table = TableDataService.create(data)
         return table.to_dict(), 201
@@ -32,28 +33,29 @@ class TableDataResource(BaseController):
     @table_data_ns.doc('get_table_data')
     @table_data_ns.marshal_with(table_data_model)
     def get(self, table_id):
-        """Get a table data by ID"""
-        table = TableDataService.get_by_id(table_id)
+        """Get table data by ID with optional language translation"""
+        language = request.args.get('language')
+        table = TableDataService.get_by_id(table_id, language=language)
         if not table:
-            table_data_ns.abort(404, 'TableData not found')
-        return table.to_dict()
+            table_data_ns.abort(404, 'Table data not found')
+        return table
 
     @table_data_ns.doc('update_table_data')
     @table_data_ns.expect(table_data_model)
     @table_data_ns.marshal_with(table_data_model)
     def put(self, table_id):
-        """Update a table data"""
+        """Update table data"""
         data = request.get_json()
         table = TableDataService.update(table_id, data)
         if not table:
-            table_data_ns.abort(404, 'TableData not found')
+            table_data_ns.abort(404, 'Table data not found')
         return table.to_dict()
 
     @table_data_ns.doc('delete_table_data')
-    @table_data_ns.response(204, 'TableData deleted')
+    @table_data_ns.response(204, 'Table data deleted')
     def delete(self, table_id):
-        """Delete a table data"""
+        """Delete table data"""
         success = TableDataService.delete(table_id)
         if not success:
-            table_data_ns.abort(404, 'TableData not found')
-        return '', 204 
+            table_data_ns.abort(404, 'Table data not found')
+        return '', 204

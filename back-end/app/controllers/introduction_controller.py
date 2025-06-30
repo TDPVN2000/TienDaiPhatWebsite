@@ -13,8 +13,9 @@ class IntroductionList(BaseController):
     @introduction_ns.doc('list_introductions')
     @introduction_ns.marshal_list_with(introduction_model)
     def get(self):
-        """List all introductions"""
-        intros = IntroductionService.get_all()
+        """List all introductions with optional language translation"""
+        language = request.args.get('language')
+        intros = IntroductionService.get_all(language=language)
         return intros
 
     @introduction_ns.doc('create_introduction')
@@ -32,11 +33,12 @@ class IntroductionResource(BaseController):
     @introduction_ns.doc('get_introduction')
     @introduction_ns.marshal_with(introduction_model)
     def get(self, intro_id):
-        """Get an introduction by ID"""
-        intro = IntroductionService.get_by_id(intro_id)
+        """Get an introduction by ID with optional language translation"""
+        language = request.args.get('language')
+        intro = IntroductionService.get_by_id(intro_id, language=language)
         if not intro:
             introduction_ns.abort(404, 'Introduction not found')
-        return intro.to_dict()
+        return intro
 
     @introduction_ns.doc('update_introduction')
     @introduction_ns.expect(introduction_model)
@@ -56,4 +58,4 @@ class IntroductionResource(BaseController):
         success = IntroductionService.delete(intro_id)
         if not success:
             introduction_ns.abort(404, 'Introduction not found')
-        return '', 204 
+        return '', 204

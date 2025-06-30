@@ -13,8 +13,9 @@ class CertificationList(BaseController):
     @certification_ns.doc('list_certifications')
     @certification_ns.marshal_list_with(certification_model)
     def get(self):
-        """List all certifications"""
-        certs = CertificationService.get_all()
+        """List all certifications with optional language translation"""
+        language = request.args.get('language')
+        certs = CertificationService.get_all(language=language)
         return certs
 
     @certification_ns.doc('create_certification')
@@ -32,11 +33,12 @@ class CertificationResource(BaseController):
     @certification_ns.doc('get_certification')
     @certification_ns.marshal_with(certification_model)
     def get(self, cert_id):
-        """Get a certification by ID"""
-        cert = CertificationService.get_by_id(cert_id)
+        """Get a certification by ID with optional language translation"""
+        language = request.args.get('language')
+        cert = CertificationService.get_by_id(cert_id, language=language)
         if not cert:
             certification_ns.abort(404, 'Certification not found')
-        return cert.to_dict()
+        return cert
 
     @certification_ns.doc('update_certification')
     @certification_ns.expect(certification_model)
@@ -56,4 +58,4 @@ class CertificationResource(BaseController):
         success = CertificationService.delete(cert_id)
         if not success:
             certification_ns.abort(404, 'Certification not found')
-        return '', 204 
+        return '', 204

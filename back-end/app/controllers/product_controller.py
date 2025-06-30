@@ -3,7 +3,7 @@ from flask_restx import Resource
 from ..utils.product_service import ProductService
 from ..models import Product
 from ..extensions import db
-from ..docs.api import product_ns, product_model
+from ..docs.api import product_ns, product_model, product_input_model
 from . import BaseController
 
 bp = Blueprint('product', __name__, url_prefix='/api/products')
@@ -13,12 +13,13 @@ class ProductList(BaseController):
     @product_ns.doc('list_products')
     @product_ns.marshal_list_with(product_model)
     def get(self):
-        """List all products"""
-        products = ProductService.get_all()
+        """List all products with optional language translation"""
+        language = request.args.get('language')
+        products = ProductService.get_all(language=language)
         return products
 
     @product_ns.doc('create_product')
-    @product_ns.expect(product_model)
+    @product_ns.expect(product_input_model)
     @product_ns.marshal_with(product_model, code=201)
     def post(self):
         """Create a new product"""
@@ -32,14 +33,15 @@ class ProductResource(BaseController):
     @product_ns.doc('get_product')
     @product_ns.marshal_with(product_model)
     def get(self, product_id):
-        """Get a product by ID"""
-        product = ProductService.get_by_id(product_id)
+        """Get a product by ID with optional language translation"""
+        language = request.args.get('language')
+        product = ProductService.get_by_id(product_id, language=language)
         if not product:
             product_ns.abort(404, 'Product not found')
-        return product.to_dict()
+        return product
 
     @product_ns.doc('update_product')
-    @product_ns.expect(product_model)
+    @product_ns.expect(product_input_model)
     @product_ns.marshal_with(product_model)
     def put(self, product_id):
         """Update a product"""
@@ -56,4 +58,4 @@ class ProductResource(BaseController):
         success = ProductService.delete(product_id)
         if not success:
             product_ns.abort(404, 'Product not found')
-        return '', 204 
+        return '', 204

@@ -13,8 +13,9 @@ class CapabilityList(BaseController):
     @capability_ns.doc('list_capabilities')
     @capability_ns.marshal_list_with(capability_model)
     def get(self):
-        """List all capabilities"""
-        caps = CapabilityService.get_all()
+        """List all capabilities with optional language translation"""
+        language = request.args.get('language')
+        caps = CapabilityService.get_all(language=language)
         return caps
 
     @capability_ns.doc('create_capability')
@@ -32,11 +33,12 @@ class CapabilityResource(BaseController):
     @capability_ns.doc('get_capability')
     @capability_ns.marshal_with(capability_model)
     def get(self, cap_id):
-        """Get a capability by ID"""
-        cap = CapabilityService.get_by_id(cap_id)
+        """Get a capability by ID with optional language translation"""
+        language = request.args.get('language')
+        cap = CapabilityService.get_by_id(cap_id, language=language)
         if not cap:
             capability_ns.abort(404, 'Capability not found')
-        return cap.to_dict()
+        return cap
 
     @capability_ns.doc('update_capability')
     @capability_ns.expect(capability_model)
@@ -56,4 +58,4 @@ class CapabilityResource(BaseController):
         success = CapabilityService.delete(cap_id)
         if not success:
             capability_ns.abort(404, 'Capability not found')
-        return '', 204 
+        return '', 204

@@ -83,18 +83,32 @@ capability_model = api.model('Capability', {
     'field_id': fields.Integer(description='Field ID'),
     'name': fields.String(description='Capability name'),
     'description': fields.String(description='Capability description'),
+    'image_url': fields.String(description='Capability image URL'),
     'created_at': fields.DateTime(description='Creation timestamp'),
     'updated_at': fields.DateTime(description='Last update timestamp')
+})
+
+capability_input_model = api.model('CapabilityInput', {
+    'field_id': fields.Integer(description='Field ID'),
+    'name': fields.String(required=True, description='Capability name'),
+    'description': fields.String(description='Capability description'),
+    'image_url': fields.String(description='Capability image URL'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"name": "English Name", "description": "English Description"}, "vi": {"name": "Tên tiếng Việt", "description": "Mô tả tiếng Việt"}}')
 })
 
 # Table Data models
 table_data_model = api.model('TableData', {
     'id': fields.Integer(description='Table Data ID'),
-    'field_id': fields.Integer(description='Field ID'),
     'name': fields.String(description='Table Data name'),
     'data': fields.Raw(description='Table Data content'),
     'created_at': fields.DateTime(description='Creation timestamp'),
     'updated_at': fields.DateTime(description='Last update timestamp')
+})
+
+table_data_input_model = api.model('TableDataInput', {
+    'name': fields.String(required=True, description='Table Data name'),
+    'data': fields.Raw(description='Table Data content'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"name": "English Name"}, "vi": {"name": "Tên tiếng Việt"}}')
 })
 
 # Certification models
@@ -108,6 +122,14 @@ certification_model = api.model('Certification', {
     'updated_at': fields.DateTime(description='Last update timestamp')
 })
 
+certification_input_model = api.model('CertificationInput', {
+    'field_id': fields.Integer(description='Field ID'),
+    'name': fields.String(required=True, description='Certification name'),
+    'description': fields.String(description='Certification description'),
+    'image_url': fields.String(description='Certification image URL'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"name": "English Name", "description": "English Description"}, "vi": {"name": "Tên tiếng Việt", "description": "Mô tả tiếng Việt"}}')
+})
+
 # Project models
 project_model = api.model('Project', {
     'id': fields.Integer(description='Project ID'),
@@ -119,26 +141,50 @@ project_model = api.model('Project', {
     'updated_at': fields.DateTime(description='Last update timestamp')
 })
 
+project_input_model = api.model('ProjectInput', {
+    'field_id': fields.Integer(description='Field ID'),
+    'name': fields.String(required=True, description='Project name'),
+    'description': fields.String(description='Project description'),
+    'image_url': fields.String(description='Project image URL'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"name": "English Name", "description": "English Description"}, "vi": {"name": "Tên tiếng Việt", "description": "Mô tả tiếng Việt"}}')
+})
+
 # Investment models
 investment_model = api.model('Investment', {
     'id': fields.Integer(description='Investment ID'),
     'field_id': fields.Integer(description='Field ID'),
-    'name': fields.String(description='Investment name'),
+    'title': fields.String(description='Investment title'),
     'description': fields.String(description='Investment description'),
-    'image_url': fields.String(description='Investment image URL'),
+    'value': fields.String(description='Investment value'),
+    'unit': fields.String(description='Investment unit'),
     'created_at': fields.DateTime(description='Creation timestamp'),
     'updated_at': fields.DateTime(description='Last update timestamp')
+})
+
+investment_input_model = api.model('InvestmentInput', {
+    'field_id': fields.Integer(description='Field ID'),
+    'title': fields.String(required=True, description='Investment title'),
+    'description': fields.String(description='Investment description'),
+    'value': fields.String(description='Investment value'),
+    'unit': fields.String(description='Investment unit'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"title": "English Title", "description": "English Description", "value": "English Value", "unit": "English Unit"}, "vi": {"title": "Tiêu đề tiếng Việt", "description": "Mô tả tiếng Việt", "value": "Giá trị tiếng Việt", "unit": "Đơn vị tiếng Việt"}}')
 })
 
 # Introduction models
 introduction_model = api.model('Introduction', {
     'id': fields.Integer(description='Introduction ID'),
-    'field_id': fields.Integer(description='Field ID'),
     'title': fields.String(description='Introduction title'),
     'content': fields.String(description='Introduction content'),
     'image_url': fields.String(description='Introduction image URL'),
     'created_at': fields.DateTime(description='Creation timestamp'),
     'updated_at': fields.DateTime(description='Last update timestamp')
+})
+
+introduction_input_model = api.model('IntroductionInput', {
+    'title': fields.String(required=True, description='Introduction title'),
+    'content': fields.String(description='Introduction content'),
+    'image_url': fields.String(description='Introduction image URL'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"title": "English Title", "content": "English Content"}, "vi": {"title": "Tiêu đề tiếng Việt", "content": "Nội dung tiếng Việt"}}')
 })
 
 # Field models
@@ -158,22 +204,51 @@ field_model = api.model('Field', {
     'products': fields.List(fields.Nested(product_model), description='Related products')
 })
 
+field_input_model = api.model('FieldInput', {
+    'name': fields.String(required=True, description='Field name'),
+    'description': fields.String(description='Field description'),
+    'image_url': fields.String(description='Field image URL'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"name": "English Name", "description": "English Description"}, "vi": {"name": "Tên tiếng Việt", "description": "Mô tả tiếng Việt"}}')
+})
+
+# Product models
+product_model = api.model('Product', {
+    'id': fields.Integer(description='Product ID'),
+    'field_id': fields.Integer(description='Field ID'),
+    'name': fields.String(description='Product name'),
+    'description': fields.String(description='Product description'),
+    'features': fields.String(description='Product features'),
+    'image_url': fields.String(description='Product image URL'),
+    'created_at': fields.DateTime(description='Creation timestamp'),
+    'updated_at': fields.DateTime(description='Last update timestamp')
+})
+
+product_input_model = api.model('ProductInput', {
+    'field_id': fields.Integer(description='Field ID'),
+    'name': fields.String(required=True, description='Product name'),
+    'description': fields.String(description='Product description'),
+    'features': fields.String(description='Product features'),
+    'image_url': fields.String(description='Product image URL'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"name": "English Name", "description": "English Description", "features": "English Features"}, "vi": {"name": "Tên tiếng Việt", "description": "Mô tả tiếng Việt", "features": "Tính năng tiếng Việt"}}')
+})
+
 # Recruitment models
 recruitment_model = api.model('Recruitment', {
     'id': fields.Integer(description='Recruitment ID'),
-    'position': fields.String(required=True, description='Job position title'),
-    'des_position': fields.String(required=True, description='Job position description'),
-    'address': fields.String(required=True, description='Work location address'),
-    'status': fields.String(description='Job status (active, inactive, closed)', default='active'),
+    'position': fields.String(description='Position title'),
+    'des_position': fields.String(description='Position description'),
+    'address': fields.String(description='Work address'),
+    'status': fields.String(description='Position status'),
     'created_at': fields.DateTime(description='Creation timestamp'),
     'updated_at': fields.DateTime(description='Last update timestamp')
 })
 
 recruitment_input_model = api.model('RecruitmentInput', {
-    'position': fields.String(required=True, description='Job position title'),
-    'des_position': fields.String(required=True, description='Job position description'),
-    'address': fields.String(required=True, description='Work location address'),
-    'status': fields.String(description='Job status (active, inactive, closed)', default='active')
+    'position': fields.String(required=True, description='Position title'),
+    'des_position': fields.String(description='Position description'),
+    'address': fields.String(required=True, description='Work address'),
+    'status': fields.String(description='Position status'),
+    'translations': fields.Raw(description='Translations object with language codes as keys and translation objects as values. Example: {"en": {"position": "English Position", "des_position": "English Description", "address": "English Address"}, "vi": {"position": "Vị trí tiếng Việt", "des_position": "Mô tả tiếng Việt", "address": "Địa chỉ tiếng Việt"}}')
 })
 
 recruitment_list_model = api.model('RecruitmentList', {
