@@ -12,7 +12,7 @@ interface Props {
 export default function PageHeader(props: Props) {
   const { isDetail } = props || {};
   const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState(i18n.language);
+  const [language, setLanguage] = useState(() => i18n.language || 'vi');
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLanguageChange = (lang: string) => {
