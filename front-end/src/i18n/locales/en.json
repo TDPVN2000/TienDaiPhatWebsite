@@ -26,10 +26,10 @@
     "aboutUs": "ABOUT US",
     "fieldOfOperation": "FIELD OF OPERATION",
     "medicalEquipment": "Medical Equipment",
-    "dredgingLandfill": "Dredging Landfill",
-    "investmentProduction": "Investment Production",
-    "mineralExploitation": "Mineral Exploitation (updating)",
-    "businessCooperation": "Business Cooperation (updating)",
+    "dredgingLandfill": "Dredging & Land Reclamation",
+    "investmentProduction": "High-Tech Manufacturing Investment",
+    "mineralExploitation": "MINERAL MINING & TRADING (updating)",
+    "businessCooperation": "BUSINESS PARTNERSHIPS (updating)",
     "news": "NEWS",
     "recruitment": "RECRUITMENT",
     "contact": "CONTACT",
@@ -112,9 +112,9 @@
   },
   "history": {
     "title": "Development History",
-    "content1": "The predecessor of Tien Dai Phat Investment Joint Stock Company specialized in trading mechanical, vocational training, and medical equipment to serve domestic customers. Recognizing the market's trend toward innovation, the company underwent restructuring to focus on manufacturing medical equipment and expanding into other business sectors.",
-    "content2": "This transformation reflects the strategic vision of future trends, shaping sustainable and comprehensive development while affirming the Company's leading position in the market.",
-    "content3": "ISO 9001:2000 Certification (2006): Marked a significant milestone in the company's development and its commitment to quality and credibility."
+    "content1": "The predecessor of Tien Dai Phat Investment Joint Stock Company specialized in trading mechanical equipment, vocational training equipment, and medical devices to serve domestic clients. Recognizing the trend of market transformation, the company underwent a restructuring process, focusing on the production of medical equipment and expanding into other business sectors.",
+    "content2": "This transformation reflects a strategic vision aligned with future trends, laying the foundation for sustainable and comprehensive development, while affirming the company's position as a market leader.",
+    "content3": "ISO 9001:2000 Certification (achieved in 2006): Marked a significant milestone in the company’s development and demonstrated its commitment to quality and credibility."
   },
   "businessSector": {
     "title": "Business Sectors",
@@ -225,7 +225,7 @@
   },
   "investmentDataDetail": {
     "info1": "<strong>Phase 1:</strong> 165.636 billion VND.\n<strong>Phase 2:</strong> 100.034 billion VND.\n<strong>Phase 3:</strong> 435 billion VND.\n<strong>Phase 4:</strong> 462 billion VND.\nExcluding additional incurred costs.",
-    "info2": "The factory is located at: <strong>Thuong Khuong, Binh Giang, Hai Duong</strong>.",
+    "info2": "The factory is located at: <strong>Thuong Khuong, Binh Giang, Hai Phong</strong>.",
     "info3": "Production materials are <strong>100% imported from Japan and South Korea</strong>, meeting medical quality standards.\nProduction/assembly lines: Modern and automated, supplied by reputable and well-known partners in the industry.",
     "info4": "<strong>Goal:</strong> To develop and expand business operations, supplying Made in Vietnam medical equipment domestically and exporting to international markets."
   },
@@ -246,13 +246,13 @@
   },
   "productMedical": {
     "product1": {
-      "title": "Artificial Kidney Dialyzer / PES Filter Cartridge / Low-flux",
+      "title": "Artificial Kidney Dialyzer / PES Membrane / Low-flux",
       "func1": "Low membrane permeability: Smaller pore size.",
       "func2": "Primarily removes small molecules such as urea through diffusion.",
       "func3": "Generally suitable for patients with less severe kidney failure."
     },
     "product2": {
-      "title": "Artificial Kidney Dialyzer / PES Filter Cartridge / High-flux",
+      "title": "Artificial Kidney Dialyzer / PES Membrane / High-flux",
       "func1": "High membrane permeability: Larger pore size.",
       "func2": "Removes small, medium, and larger molecules through diffusion and convection.",
       "func3": "Suitable for patients with more severe kidney failure, who can benefit from more efficient toxin removal."
