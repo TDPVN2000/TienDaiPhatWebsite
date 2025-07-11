@@ -251,7 +251,25 @@ export const projectData = [
   },
 ];
 
-export const imgSlideDummy = [images.slide1, images.slide2, images.slide3];
+export const imgSlideDummy = [
+  images.slide1,
+  images.slide2,
+  images.slide3,
+  images.slide4,
+  images.slide5,
+  images.slide6,
+  images.slide7,
+  images.slide8,
+  images.slide9,
+  images.slide10,
+  images.slide11,
+  images.slide12,
+  images.slide13,
+  images.slide14,
+  images.slide15,
+  images.slide16,
+  images.slide17,
+];
 
 export const productListMedical = [
   {

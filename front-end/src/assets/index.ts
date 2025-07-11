@@ -48,6 +48,20 @@ import project3 from './images/img_project3.svg';
 import slide1 from './images/img_slide1.svg';
 import slide2 from './images/img_slide2.svg';
 import slide3 from './images/img_slide3.svg';
+import slide4 from './images/slide4.jpg';
+import slide5 from './images/slide5.jpg';
+import slide6 from './images/slide6.jpg';
+import slide7 from './images/slide7.jpg';
+import slide8 from './images/slide8.jpg';
+import slide9 from './images/slide9.jpg';
+import slide10 from './images/slide10.jpg';
+import slide11 from './images/slide11.jpg';
+import slide12 from './images/slide12.jpg';
+import slide13 from './images/slide13.jpg';
+import slide14 from './images/slide14.jpg';
+import slide15 from './images/slide15.jpg';
+import slide16 from './images/slide16.jpg';
+import slide17 from './images/slide17.jpg';
 import kidneyFilter from './images/img_kidney_filter.svg';
 import osmosis from './images/ic_osmosis.svg';
 import icReact from './images/ic_react.svg';
@@ -115,6 +129,20 @@ export const images = {
   slide1,
   slide2,
   slide3,
+  slide4,
+  slide5,
+  slide6,
+  slide7,
+  slide8,
+  slide9,
+  slide10,
+  slide11,
+  slide12,
+  slide13,
+  slide14,
+  slide15,
+  slide16,
+  slide17,
   kidneyFilter,
   osmosis,
   icReact,
