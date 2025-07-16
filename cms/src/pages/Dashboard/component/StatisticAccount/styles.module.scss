@@ -1,0 +1,90 @@
+@import "src/styles/_variables.scss";
+.container {
+  position: relative;
+}
+.header {
+  width: 120px;
+  height: 45px;
+  position: absolute;
+  right: 0px;
+  top: -75px;
+}
+.chart {
+  background-color: #f4f4f4;
+  padding-left: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  position: relative;
+}
+.viewBottom {
+  background-color: #f4f4f4;
+  padding: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: 16px;
+}
+.viewFilterBody {
+  width: 230px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 1;
+}
+.viewDetailAccountYear {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  width: 100%;
+  background: #f4f4f4;
+  border-radius: 8px;
+  .viewInfoAccount {
+    padding: 16px;
+    width: 33%;
+    border-radius: 8px;
+    color: #ffff;
+    .title {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+    }
+    .body {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 30px;
+      margin-top: 24px;
+      .unit {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 12px;
+        margin-left: 4px;
+        text-align: end;
+      }
+    }
+    &__user {
+      @extend .viewInfoAccount;
+      background-color: #00a2d1;
+      margin-right: 12px;
+    }
+    &__store {
+      @extend .viewInfoAccount;
+      background-color: #50c238;
+      margin-right: 12px;
+    }
+    &__shipper {
+      @extend .viewInfoAccount;
+      background-color: #26418e;
+    }
+  }
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}

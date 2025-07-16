@@ -1,0 +1,36 @@
+@import "src/styles/_variables.scss";
+
+.container {
+  background: #ffffff;
+  padding-bottom: 12px;
+  padding-top: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: $dark-gray-color;
+}
+
+.search {
+  & > *:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.viewBtn {
+  display: flex;
+  flex-direction: row;
+  .btnDisabled {
+    :global {
+      .ant-btn {
+        border-color: $color-border-input;
+        background: $color-border-input;
+      }
+    }
+  }
+}

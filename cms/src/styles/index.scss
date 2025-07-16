@@ -1,0 +1,43 @@
+@import "./custom";
+@import "./variables";
+@import "./general";
+@import "./mixin";
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  // overflow: hidden;
+  color: $dark-gray-color;
+}
+.ant-table {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-menu {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-row {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-select-selector {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-dropdown-menu {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-input {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-btn {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-modal {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-radio-wrapper {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-form {
+  font-family: "Noto Sans JP", sans-serif !important;
+}
+.ant-pagination {
+  font-family: "Noto Sans JP", sans-serif !important;
+}

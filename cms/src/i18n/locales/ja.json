@@ -1,0 +1,694 @@
+{
+  "common": {
+    "linkInput": "リンク入力",
+    "noteSettingTimes": "*営業時間の設定は0:00~23:59までになります。",
+    "titleRejectStore": "お店を差し戻し理由",
+    "titleApproveStore": "お店のプロフィールを承認しますか？",
+    "placeHolderRejectStore": "お店を差し戻し理由を入力",
+    "admit": "承認",
+    "remand": "差し戻し",
+    "webName": "Delivery App",
+    "login": "ログイン",
+    "signUp": "Sign up",
+    "email": "メールアドレス",
+    "phone": "Phone",
+    "fullNameTitle": "Full Name",
+    "fullName": "{{firstName}} {{lastName}}",
+    "nicknameUserId": "{{nickname}} @{{userId}}",
+    "password": "パスワード",
+    "confirmPass": "confirm Pass",
+    "rememberMe": "Remember me",
+    "language": "Language",
+    "logout": "ログアウト",
+    "profile": "Profile",
+    "changePassword": "パスワード変更",
+    "logo": "TDP",
+    "keyword": "Keyword",
+    "titleListCategories": "List Ranking Categories",
+    "save": "Save",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "create": "Create",
+    "placeholderPassword": "Fill Password",
+    "status": "Status",
+    "doctor": "Doctor",
+    "clinic": "Clinic",
+    "member": "Member",
+    "order": "Order",
+    "all": "全て",
+    "countComment": "{{total}} comments",
+    "countLike": "{{total}} likes",
+    "index": "STT",
+    "qa": "Q&A",
+    "freePost": "Free post",
+    "active": "有効",
+    "inactive": "無効",
+    "approve": "Approve",
+    "reject": "Reject",
+    "comma": "、",
+    "space": "　",
+    "yen": "¥",
+    "dot": "・",
+    "colon": ":",
+    "address": "{{kenName}}・{{cityName}}",
+    "id": "Id",
+    "description": "Description",
+    "specificAddress": "Specific Address",
+    "province": "Province",
+    "urlInstagram": "URL Instagram",
+    "urlBlog": "URL Blog",
+    "linkWebsite": "Link Website",
+    "roleName": "Role Name",
+    "avatar": "Avatar",
+    "manager": "Manager",
+    "staff": "Staff",
+    "genderTitle": "Gender",
+    "role": "Role",
+    "gender": {
+      "male": "男",
+      "female": "女",
+      "other": "その他"
+    },
+    "banner": "Banner",
+    "date": "Date",
+    "point": "Point",
+    "birthday": "Birthday",
+    "category": "Category",
+    "categoryLevel2": "Category level 2",
+    "addressTitle": "Address",
+    "rangeDate": "{{start}} ~ {{end}}",
+    "deletedBy件数Role": "Deleted by role",
+    "admin": "Admin",
+    "total": "Total",
+    "items": "items",
+    "noData": "データがありません",
+    "selectDate": "Select Date",
+    "editImage": "アップロード画像を編集",
+    "hello": "こんにちは",
+    "japan": "Japan",
+    "korea": "Korea",
+    "accountDeleted": "Account Deleted",
+    "btnConfirm": "保存",
+    "btnConfirmDelete": "OK",
+    "btnCancel": "キャンセル",
+    "user": "利用者",
+    "store": "お店",
+    "worker": "ワーカー",
+    "send": "送信済み",
+    "draft": "下書き",
+    "unRep": "未返答",
+    "rep": "返答済",
+    "paid": "支払済",
+    "unPaid": "未払い",
+    "maxSizeImage": "画像は5MB以下にアップロッドしてください。",
+    "maxSizeFile": "5MB以下のファイル容量をアップロードしてください",
+    "typeErr": "PNG, JPEG, JPG, HEIFでアップロードしてください。",
+    "typeDocErr": "ファイルの形式は正しくありません。",
+    "statusBill": {
+      "finish": "完了",
+      "cancel": "配達失敗"
+    },
+    "statusWorker": {
+      "done": "完了",
+      "inActivity": "作業中止"
+    },
+    "notice": "お知らせ",
+    "media": "メディア",
+    "event": "パートナー",
+    "shipper": "配達依頼",
+    "helpRequest": "お手伝い依頼",
+    "type": "タイプ"
+  },
+  "modal": {
+    "addStaffModalTitle": "スタッフ追加",
+    "updateStaffModalTitle": "スタッフ編集",
+    "addUserModalTitle": "利用者登録 ",
+    "updateUserModalTitle": "利用者編集",
+    "addNotiModalTitle": "お知らせ作成",
+    "detailNotiModalTitle": "お知らせ詳細",
+    "titleModalDeleteItem": "お知らせを削除しますか？",
+    "detailContactModalTitle": "お問い合わせ詳細",
+    "saveConfirmTitle": "入力した内容を保存しますか。",
+    "cancel": "キャンセル",
+    "ok": "OK"
+  },
+  "myPage": {
+    "title": "My page",
+    "titleChangePass": "Change password",
+    "currentPass": "Current password",
+    "confirmPass": "Confirm password",
+    "newPass": "New password"
+  },
+  "validate": {
+    "noAllSpaces": "必須項目です。",
+    "usernameRequired": "Email required.",
+    "passwordRequired": "Password required.",
+    "usernameNoAllSpaces": "Email no all space.",
+    "passwordWrongFormat": "Password wrong format.",
+    "passwordTooShort": "半角英数字（大文字小文字混在）、8文字以上32文字以下でご入力ください。",
+    "passwordNoAllSpaces": "Password no all space",
+    "usernameWrongFormat": "Email wrong format",
+    "fieldIsRequired": "必須項目です。",
+    "titleRequired": "Title required.",
+    "contentRequired": "Content required.",
+    "membersNotification": "You should choose at least one member, clinic, or doctor",
+    "orderRequired": "order must be greater than 0",
+    "deliveredDate": "The delivery date and time must be {{time}} hour after the current date and time.",
+    "urlInvalid": "入力したリンクは正しくありません",
+    "notSupportVideo": "Your browser does not support the video tag.",
+    "passRequired": "{{field}} required",
+    "nameForm": "ひらがなや漢字、カタカナや半角英数字でご入力ください。",
+    "emailWrongFormat": "メールアドレスの形式が間違っています。",
+    "notNumber": "数字のみを入力してください",
+    "lastName": "カタカナでご入力ください。",
+    "phoneIsNotValid": "入力した電話番号は正しくありません。"
+  },
+  "notification": {
+    "success": "保存しました"
+  },
+  "nav": {
+    "user": "利用者管理",
+    "shipper": "ワーカー管理",
+    "store": "お店管理",
+    "notifications": "お知らせ管理",
+    "contactUs": "お問い合わせ管理",
+    "lpManagement": {
+      "title": "ホームページ管理",
+      "notiManager": "お知らせ管理",
+      "videoManager": "動画管理"
+    },
+    "revenues": "売上管理",
+    "dashboard": "ダッシュボード",
+    "view": "来店数設定",
+    "staff": "スタッフ管理",
+    "masterData": {
+      "title": "マスターデータ",
+      "staticPage": "静的ページ",
+      "category": "カテゴリー"
+    }
+  },
+  "homePageNotificationManagement": {
+    "list": "ホームページへの投稿管理",
+    "create": "投稿内容を作成",
+    "detail": "ホームページのお知らせ詳細",
+    "edit": "ホームページのお知らせ編集",
+    "title": "タイトル",
+    "content": "内容",
+    "contentPlaceholder": "お知らせ内容入力",
+    "license": "画像アップロード",
+    "type": "投稿箇所",
+    "editNotify": "お知らせ編集",
+    "timer": "投稿時間の設定",
+    "postingTime": "投稿時間",
+    "contentCreation": "内容作成"
+  },
+  "tables": {
+    "notifications": {
+      "title": "タイトル",
+      "content": "内容",
+      "type": "通知種類"
+    }
+  },
+  "searchLabel": {
+    "keyword": "Keyword"
+  },
+  "placeholders": {
+    "keyword": "keyword...",
+    "email": "メールアドレス入力",
+    "passwordLogin": "パスワード入力",
+    "year": "年",
+    "month": "月",
+    "day": "日",
+    "minute": "分"
+  },
+  "shipper": {
+    "listShipper": "List Shipper",
+    "listRequestShipper": "List Request Shipper",
+    "name": "Name",
+    "waiting": "承認待ち",
+    "cancel": "差し戻し"
+  },
+  "staffs": {
+    "title": "スタッフ管理",
+    "totalStaffs": "スタッフ人数:",
+    "placeholderKeyword": "スタッフ名を検索",
+    "index": "ID",
+    "name": "氏名",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "startAt": "作成日",
+    "status": "ステータス",
+    "btnAdd": "スタッフ追加",
+    "modal": "有効",
+    "titleModalDeleteItem": "このスタッフを削除しますか？"
+  },
+  "detailStaff": {
+    "title": "スタッフ詳細",
+    "info": "基本情報",
+    "btnEdit": "編集",
+    "btnCancel": "削除",
+    "firstName": "氏名",
+    "lastName": "フリガナ",
+    "gender": "性別",
+    "male": "男",
+    "female": "女",
+    "birthday": "生年月日",
+    "phone": "電話番号",
+    "mail": "メールアドレス",
+    "address": "住所",
+    "createAt": "作成日"
+  },
+  "modalAddStaff": {
+    "name": "氏名",
+    "lastName": "フリガナ",
+    "gender": "性別",
+    "male": "男",
+    "female": "女",
+    "birthday": "生年月日",
+    "phone": "電話番号",
+    "mail": "メールアドレス",
+    "address": "住所",
+    "placeholders": {
+      "phone": "電話番号",
+      "address": "住所入力",
+      "titleInput": "タイトル入力"
+    },
+    "phoneCode": "+81"
+  },
+  "lpVideo": {
+    "title": "動画アップロード",
+    "confirmBtn": "保存",
+    "userUpload": "利用者動画アップロード",
+    "workerUpload": "ワーカ動画アップロード",
+    "shopUpload": "店舗動画アップロード",
+    "public": "公開表示",
+    "upload": "アップロード"
+  },
+  "noti": {
+    "success": "成功",
+    "titlePage": "お知らせ管理",
+    "btnAdd": "お知らせ作成",
+    "title": "タイトル",
+    "content": "お知らせ内容",
+    "publicAt": "送信日",
+    "status": "ステータス",
+    "type": "受信対象",
+    "totalNoti": "総件数:",
+    "placeholders": {
+      "inputFilter": "タイトルで検索"
+    },
+    "delete": "削除"
+  },
+  "modalAddNoti": {
+    "title": "タイトル",
+    "placeholderTitle": "タイトル",
+    "content": "お知らせ内容",
+    "placeholderContent": "内容入力",
+    "type": "受信対象",
+    "btnSend": "送信",
+    "btnDraft": "下書き保存",
+    "timer": "送信時間"
+  },
+  "user": {
+    "title": "利用者管理",
+    "totalUsers": "総人数:",
+    "placeholderKeyword": "利用者/電話番号を検索",
+    "index": "ID",
+    "name": "氏名",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "startAt": "作成日",
+    "status": "ステータス",
+    "btnAdd": "利用者登録",
+    "modal": "有効",
+    "titleModalDeleteItem": "利用者を削除しますか？",
+    "btnConfirm": "登録"
+  },
+  "detailUser": {
+    "title": "利用者詳細",
+    "info": "基本情報",
+    "btnEdit": "編集",
+    "btnCancel": "削除",
+    "firstName": "氏名",
+    "lastName": "フリガナ",
+    "gender": "性別",
+    "male": "男",
+    "female": "女",
+    "birthday": "生年月日",
+    "phone": "電話番号",
+    "mail": "メールアドレス",
+    "address": "住所",
+    "createAt": "作成日"
+  },
+  "modalAddUser": {
+    "name": "氏名",
+    "lastName": "フリガナ",
+    "gender": "性別",
+    "male": "男",
+    "female": "女",
+    "birthday": "生年月日",
+    "phone": "電話番号（ーハイフンなし）",
+    "mail": "メールアドレス",
+    "address": "住所",
+    "placeholders": {
+      "phone": "電話番号",
+      "address": "住所入力"
+    },
+    "phoneCode": "+81"
+  },
+  "view": {
+    "title": "来店数管理",
+    "timeCount": "来店数カウント時間単位（分）",
+    "placeholderKeyword": "カテゴリーで検索",
+    "categoryName": "カテゴリー",
+    "currentPrice": "適応している単価(税別)",
+    "newPrice": "来店数の単価(税別)",
+    "email": "メールアドレス",
+    "dateApply": "新規適応期間",
+    "btnConfirmEdit": "保存",
+    "btnConfirmAdd": "登録",
+    "lastUpdateDate": "最終適応期間",
+    "placeholders": {
+      "newPrice": "単価",
+      "timeCount": "時間単位",
+      "dateApply": "適応期間"
+    }
+  },
+  "contact": {
+    "totalContact": "総件数:",
+    "titlePage": "お問い合わせ管理",
+    "modal": "ステータス",
+    "content": "お問い合わせ内容",
+    "title": "タイトル",
+    "email": "メールアドレス",
+    "status": "ステータス",
+    "sendAt": "送信日",
+    "btnConfirm": "保存",
+    "lastUpdateDate": "最終適応期間",
+    "placeholders": {
+      "newPrice": "単価",
+      "timeCount": "時間単位"
+    },
+    "reply": "返信",
+    "detail": {
+      "title": "お問い合わせ詳細"
+    }
+  },
+  "revenues": {
+    "title": "ダッシュボード",
+    "totalRevenue": "総売上:",
+    "newTotalRevenue": "総売上(税別):",
+    "chartTooltipTitle": "売上",
+    "placeholders": {
+      "inputFilter": "店名で検索",
+      "status": "ステータス"
+    },
+    "list": {
+      "total": "売上:",
+      "nameStore": "店名",
+      "month": "月間",
+      "totalClient": "来店数",
+      "storeRevenue": "お店から売上",
+      "newStoreRevenue": "お店から売上(税別)",
+      "status": "ステータス",
+      "csv": "Excel出力"
+    }
+  },
+  "shippers": {
+    "tabConfirm": "承認済",
+    "tabPending": "承認待ち",
+    "title": "ワーカー管理",
+    "btnAdd": "ワーカー登録",
+    "total": "総人数:",
+    "placeholders": {
+      "inputWaiting": "電話番号・ワーカーを検索",
+      "inputApprove": "ワーカーを検索",
+      "confirm": "認証ステータス",
+      "status": "ステータス",
+      "input": "依頼IDや利用者名で検索"
+    },
+    "index": "ID",
+    "name": "氏名",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "dateRegister": "登録日",
+    "dateConfirm": "申請日",
+    "statusConfirm": "認証ステータス",
+    "status": "ステータス ",
+    "titleModalDeleteItem": "ワーカーを削除しますか"
+  },
+  "detailShipper": {
+    "titleWating": "ワーカー承認",
+    "btnApprove": "承認",
+    "btnCancel": "差し戻し",
+    "titleApproved": "ワーカー詳細 ",
+    "btnEdit": "編集",
+    "btnDelete": "削除",
+    "info": "基本情報",
+    "firstName": "氏名",
+    "mail": "メールアドレス",
+    "createAt": "",
+    "lastName": "フリガナ",
+    "phone": "電話番号",
+    "address": "住所",
+    "gender": "性別",
+    "birthday": "生年月日",
+    "service": "配達",
+    "worker": "お手伝い",
+    "sizeService": "最大重量＆サイズ",
+    "tab": {
+      "detail": "基本情報",
+      "shipper": "配達履歴",
+      "worker": "お手伝い歴史"
+    },
+    "tabShipper": {
+      "status": {
+        "finish": "完了",
+        "cancel": "配達失敗"
+      },
+      "worker": {
+        "done": "完了",
+        "inActivity": "作業中止"
+      }
+    }
+  },
+  "editShipper": {
+    "titleAdd": "ワーカー登録",
+    "titleEdit": "ワーカー編集",
+    "btnAdd": "登録",
+    "btnEdit": "編集",
+    "btnSave": "保存",
+    "titleBodyAdd": "基本情報",
+    "titleAvatar": "本日の写真 (正面)",
+    "title8Image": "8枚画像",
+    "titleJob": "お手伝い",
+    "titleService": "配達",
+    "skill": "スキル",
+    "note": "仕事についての注意事項等",
+    "dream": "私の夢など",
+    "license": "顔写真のある身分証明書（マイナンバーカード、運転免許証）表・裏 ",
+    "transportType": {
+      "title": "配達手段",
+      "walk": "歩き",
+      "cycle": "自転車",
+      "bike125": "原付 125cc以下 ",
+      "bike125Upto": "軽貨物・バイク 125cc以上 "
+    },
+    "fee": {
+      "title": "配達料金",
+      "first": "~1000m",
+      "second": "1001 ~ 2000m",
+      "third": "2001 ~ 5000m",
+      "four": "5001 ~ 10000m"
+    },
+    "titleFeeMoving": "交通費",
+    "licenseAnothor": "その他書類",
+    "licenseAnothorCycle": "その他書類(自賠責保険など)",
+    "licenseBike125": "原付バイク以上の運転免許証 （表、裏）",
+    "licenseBike125Up": "普通自動車免許証（表、裏）",
+    "licenseBike125UpLight": "軽自動車届出済証",
+    "upload": "アップロード",
+    "surface": "表面",
+    "condition": {
+      "title": "最大重量＆サイズ",
+      "length": "タテ (cm)",
+      "width": "ヨコ(cm)",
+      "height": "高さ (cm)",
+      "maxWeight": "重量 (Kg)",
+      "compensation": {
+        "title": "商品補償",
+        "placeholder": "商品補償"
+      }
+    },
+    "modalApporve": "このアカウントの書類を承認しますか？",
+    "modalCancel": "差し戻しの理由入力",
+    "reasonCancel": "差し戻しの理由は"
+  },
+  "stores": {
+    "title": "お店管理",
+    "titleTotal": "総件数:",
+    "btnAdd": "登録",
+    "placeholders": {
+      "input": "お店を検索",
+      "type": "カテゴリー",
+      "status": "ステータス"
+    },
+    "index": "ID",
+    "name": "店名",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "address": "住所",
+    "type": "カテゴリー",
+    "priceReviewStore": "来店数の単価(税別)",
+    "createAt": "作成日",
+    "status": "ステータス",
+    "titleModalDeleteItem": "お店を削除しますか？"
+  },
+  "editStore": {
+    "titleAdd": "お店登録",
+    "titleEdit": "お店編集",
+    "btnAdd": "登録",
+    "btnEdit": "保存",
+    "titleBodyAdd": "基本情報",
+    "titleAvatar": "お店の画像",
+    "storeName": "店名",
+    "ownerName": "責任者名前",
+    "titleSettingView": "来店数設定",
+    "titleTimeWeek": "営業時間",
+    "fromStore": "お店から行きます",
+    "takeOut": "テイクアウト",
+    "prText": "PR内容",
+    "noti": "お知らせ",
+    "law": "特定商取引法",
+    "working": {
+      "status": {
+        "close": "休日",
+        "open": "営業日"
+      },
+      "time": {
+        "title": "シフト",
+        "placeholder": {
+          "start": "開始時間",
+          "end": "終了時間"
+        }
+      }
+    }
+  },
+  "detailStore": {
+    "titleDetail": "お店詳細",
+    "btnEdit": "編集",
+    "info": "基本情報",
+    "storeName": "店名",
+    "ownerName": "責任者名前",
+    "typeStore": "カテゴリー",
+    "mail": "メールアドレス",
+    "createAt": "",
+    "lastName": "フリガナ",
+    "phone": "電話番号",
+    "address": "住所",
+    "gender": "性別",
+    "npoTitle": "NPO等の支援店ですか？",
+    "birthday": "生年月日",
+    "prText": "PR内容",
+    "description": "お知らせ",
+    "service": "配達",
+    "worker": "お手伝い",
+    "sizeService": "最大重量＆サイズ",
+    "tab": {
+      "detail": "基本情報",
+      "product": "商品情報",
+      "order": "注文履歴",
+      "view": "来店数"
+    },
+    "tabShipper": {
+      "status": {
+        "finish": "完了",
+        "cancel": "配達失敗"
+      },
+      "worker": {
+        "done": "完了",
+        "inActivity": "作業中止"
+      }
+    },
+    "banner": {
+      "title": "8枚画像"
+    },
+    "workingTime": "営業時間",
+    "settingView": "来店数（これから適用一覧）",
+    "listProduct": {
+      "titleTotal": "商品数:",
+      "placeholder": {
+        "input": "商品名で検索",
+        "category": "カテゴリー"
+      },
+      "name": "商品名",
+      "category": "カテゴリー",
+      "price": "単価",
+      "totalSell": "売り数量",
+      "date": "更新日"
+    },
+    "listHistory": {
+      "titleTotal": "数売上:",
+      "placeholder": {
+        "input": "注文ID、名前で検索",
+        "category": "ステータス",
+        "fromDate": "注文日",
+        "endDate": "完了日"
+      },
+      "id": "注文ID ",
+      "nameUser": "利用者名",
+      "nameShipper": "ワーカー名",
+      "dateOrder": "注文日",
+      "dateFinish": "完了日",
+      "totalOrder": "商品数",
+      "totalBill": "金額",
+      "statusBill": "ステータス"
+    },
+    "listStatistic": {
+      "titleTotal": "総合計:",
+      "newTitleTotal": "総合計(税別):",
+      "placeholder": {
+        "date": "適応期間"
+      },
+      "rangeTime": "適応期間",
+      "totalClick": "総来店数",
+      "priceClick": "来店数の単価",
+      "newPriceClick": "来店数の単価(税別)",
+      "totalOrder": "合計",
+      "newTotalOrder": "合計(税別)"
+    }
+  },
+  "dashboard": {
+    "user": "利用者",
+    "store": "お店",
+    "shipper": "ワーカー",
+    "unit": "アカウント"
+  },
+  "table": {
+    "showTotal": "{{total}}件中　{{rangeStart}}～{{rangeEnd}}　を表示"
+  },
+  "feeManagement": {
+    "administrativeFeeManagement": "システム利用料金管理",
+    "commissionSetting": "手数料設定",
+    "orderRequestFee": "注文のシステム利用料金",
+    "deliveryRequest": "配達依頼",
+    "requestForHelp": "お手伝い依頼",
+    "keep": "保存",
+    "listOfAdministrativeFee": "システム利用料金の発生履歴",
+    "name": "氏名",
+    "emailAdd": "メールアドレス",
+    "phoneNumber": "電話番号",
+    "amountDue": "未払い金額: ",
+    "paid": "支払い済み",
+    "unpaid": "未払い",
+    "deliveryRequestPlaceholder": "配達のシステム利用料金",
+    "orderRequestFeeTitle": "システム利用料金",
+    "requestForHelpPlaceholder": "お手伝いのシステム利用料金",
+    "searchPlaceholder": "利用者/電話番号を検索"
+  },
+  "dropdownTypeOrder": {
+    "order": "注文",
+    "shipper": "配達",
+    "worker": "お手伝い"
+  }
+}

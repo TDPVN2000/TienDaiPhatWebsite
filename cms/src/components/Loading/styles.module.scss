@@ -1,0 +1,13 @@
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 2000;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

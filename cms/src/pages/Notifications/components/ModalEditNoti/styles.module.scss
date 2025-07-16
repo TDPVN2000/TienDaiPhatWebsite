@@ -1,0 +1,38 @@
+@import "src/styles/_variables.scss";
+
+.body {
+  .viewBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 16px;
+    .btnSubmit {
+      :global {
+        .ant-btn {
+          width: 174px;
+          height: 56px;
+          border-radius: 16px;
+        }
+      }
+    }
+  }
+  .oneLine {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .itemBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .placeholderDatePicker {
+    :global {
+      .ant-picker-input {
+        input {
+          color: $color-place-holder;
+        }
+      }
+    }
+  }
+}

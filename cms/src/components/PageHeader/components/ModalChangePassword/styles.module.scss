@@ -1,0 +1,19 @@
+.body {
+  .viewBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 16px;
+    width: 100%;
+    .btnSubmit {
+      width: 100%;
+      :global {
+        .ant-btn {
+          width: 100%;
+          height: 56px;
+          border-radius: 16px;
+        }
+      }
+    }
+  }
+}

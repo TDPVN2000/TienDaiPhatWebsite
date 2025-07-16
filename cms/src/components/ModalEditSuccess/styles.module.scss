@@ -1,0 +1,46 @@
+.modalDeleteItem {
+  :global {
+    .ant-modal-content {
+      padding: 14px 16px 16px 16px;
+      border-radius: 24px;
+    }
+  }
+  .body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 27px;
+      padding: 6px 0px 20px 0px;
+      &__hasContent {
+        @extend .title;
+        padding: 6px 0px 8px 0px;
+      }
+    }
+    .content {
+      width: 80%;
+      justify-content: center;
+      text-align: center;
+      padding: 0px 0px 8px 0px;
+    }
+    .viewBtn {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 16px;
+      .btnSubmit {
+        width: 100%;
+        :global {
+          .ant-btn {
+            width: 100%;
+            height: 56px;
+            border-radius: 16px;
+          }
+        }
+      }
+    }
+  }
+}

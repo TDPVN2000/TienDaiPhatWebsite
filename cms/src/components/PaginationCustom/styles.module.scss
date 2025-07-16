@@ -1,0 +1,9 @@
+@import "src/styles/_variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: $white-color;
+  padding: 12px;
+}

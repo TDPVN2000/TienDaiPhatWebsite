@@ -1,0 +1,16 @@
+@import "src/styles/_variables.scss";
+
+.body {
+  background: $color-body-list;
+  padding: 16px;
+  border-radius: 8px;
+  height: 100%;
+  margin-bottom: 20px;
+
+  .thumbnail {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

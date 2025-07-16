@@ -1,0 +1,60 @@
+@import "/src/styles/variables";
+
+.container {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding-top: 16px;
+  min-width: 227px;
+  .labelData {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: $dark-gray-color;
+  }
+  .notLabel {
+  }
+  .valueData {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $dark-gray-color;
+    white-space: pre;
+    &__bold {
+      @extend .valueData;
+      font-weight: 700;
+    }
+    &__long {
+      @extend .valueData;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+  }
+  .viewContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .viewImages {
+    flex: 1;
+    padding-right: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .imgCont {
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-right: 24px;
+  }
+}
+.viewTitle {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.titleRight {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #67727e;
+}

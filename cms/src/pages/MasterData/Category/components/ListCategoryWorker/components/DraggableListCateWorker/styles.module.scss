@@ -1,0 +1,36 @@
+.itemList {
+  display: flex;
+  flex-direction: row;
+  padding-block: 18px;
+  border: 0.01px solid #eaeaea;
+  border-width: 0px 0px 0.01px 0px;
+  align-items: center;
+  color: #2e2e2e;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  background: #ffff;
+  .icon {
+    padding-left: 16px;
+    align-items: center;
+  }
+}
+.viewList {
+  background: #ffff;
+  border-radius: 8px;
+}
+.viewHeader {
+  display: flex;
+  flex-direction: row;
+  padding-block: 18px;
+  border: 0.01px solid #eaeaea;
+  border-width: 0px 0px 0.01px 0px;
+  align-items: center;
+  color: #2e2e2e;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  background: #ffff;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}

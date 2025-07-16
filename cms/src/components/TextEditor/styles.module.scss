@@ -1,0 +1,25 @@
+.textEditor {
+  :global {
+    .ck.ck-toolbar.ck-toolbar_grouping {
+      // border-top-right-radius: 16px !important;
+      // border-top-left-radius: 16px !important;
+    }
+    .ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+      // border-bottom-left-radius: 16px !important;
+      // border-bottom-right-radius: 16px !important;
+      height: 500px;
+    }
+    .ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-focused {
+      // border-bottom-left-radius: 16px !important;
+      // border-bottom-right-radius: 16px !important;
+      height: 500px;
+    }
+    .ck.ck-content ul {
+      padding-left: 40px;
+    }
+    .ck.ck-content ol {
+      padding-left: 40px;
+    }
+  }
+  margin-top: 10px;
+}

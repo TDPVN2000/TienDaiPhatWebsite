@@ -1,0 +1,114 @@
+@import "src/styles/_variables.scss";
+
+.container {
+  .viewFilter {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+  }
+  :global {
+    .ant-form-item {
+      margin-bottom: 0px !important;
+    }
+  }
+}
+.viewTimeCount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  background: $color-body-list;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.body {
+  background: $color-body-list;
+  padding: 16px;
+  border-radius: 8px;
+  height: 100%;
+  .viewFilterInput {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+  }
+}
+.form {
+  padding-top: 65px;
+  display: flex;
+  flex-direction: row;
+  & > *:not(:last-child) {
+    margin-right: 112px;
+  }
+  &__input {
+    width: 410px;
+  }
+}
+.viewChange {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 20%;
+  left: 0;
+}
+.inputName {
+  border-radius: 8px !important;
+  &::placeholder {
+    font-size: 14px;
+  }
+}
+.datePicker {
+  border-radius: 8px;
+  :global {
+    input::placeholder {
+      font-size: 14px;
+    }
+  }
+}
+.viewFormItem {
+  :global {
+    .ant-form-item-explain.ant-form-item-explain-connected {
+      .ant-form-item-explain-error {
+        position: absolute;
+      }
+    }
+  }
+}
+.hideError {
+  :global {
+    .ant-form-item-explain.ant-form-item-explain-connected {
+      .ant-form-item-explain-error {
+        position: absolute;
+        display: none;
+      }
+    }
+    .ant-picker.ant-picker-status-error {
+      border-color: $color-border-input !important;
+    }
+    .ant-input-affix-wrapper.input.ant-input-affix-wrapper-status-error {
+      border-color: $color-border-input !important;
+    }
+  }
+}
+.viewTitleTimeCount {
+  padding-bottom: 4px;
+  .titleTimeCout {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    color: #3b3b3b;
+  }
+  .required {
+    color: #ff0000;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+.table {
+  :global {
+    .ant-table-tbody > tr > td {
+      cursor: auto !important;
+    }
+  }
+}

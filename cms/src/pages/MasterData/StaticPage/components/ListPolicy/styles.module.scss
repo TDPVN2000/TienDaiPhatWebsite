@@ -1,0 +1,16 @@
+@import "src/styles/_variables.scss";
+
+.container {
+}
+.body {
+  background: $color-body-list;
+  padding: 16px;
+  border-radius: 8px;
+  height: 100%;
+  .viewHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 16px;
+  }
+}

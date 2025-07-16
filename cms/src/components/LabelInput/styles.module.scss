@@ -1,0 +1,13 @@
+.container {
+  padding-bottom: 4px;
+  .title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    color: #3b3b3b;
+    margin-right: 5px;
+  }
+  .required {
+    color: #ff0000;
+  }
+}

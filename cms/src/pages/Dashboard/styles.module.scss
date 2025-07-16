@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+@import "src/styles/_variables.scss";
+
+.viewFilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 16px 0px 16px;
+  width: 100%;
+  background: #f4f4f4;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  .viewTotalRevenueYear {
+    display: flex;
+    align-items: center;
+    .titleTotalRevenueYear {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      color: $dark-gray-color;
+    }
+    .totalRevenueYear {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+      color: $total-item-list;
+      padding-left: 5px;
+    }
+  }
+}

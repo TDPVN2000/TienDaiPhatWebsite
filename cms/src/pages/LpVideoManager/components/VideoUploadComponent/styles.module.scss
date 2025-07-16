@@ -1,0 +1,72 @@
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  .title {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    .red {
+      color: #db292c;
+    }
+  }
+  .uploadArea {
+    display: flex;
+    height: 140px;
+    gap: 24px;
+    margin-bottom: 16px;
+    > div {
+      width: 250px;
+      height: 100%;
+      display: flex;
+      border-radius: 8px;
+      &.existedUpload {
+        position: relative;
+        .btnArea {
+          z-index: 1;
+          padding: 4px 4px;
+          position: absolute;
+          right: 4px;
+          top: 4px;
+          svg {
+            cursor: pointer;
+            fill: red;
+            stroke: black;
+            background-color: #f5a762;
+            border-radius: 50%;
+          }
+        }
+        :global(.react-player__preview) {
+          z-index: 0;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+      &.newUploadArea {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #ffffff;
+        border: 1px dashed #c0c0c0;
+        &:hover {
+          cursor: pointer;
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+  .releaseControlArea {
+    display: flex;
+    align-items: center;
+    span {
+      margin-right: 16px;
+    }
+    :global(.ant-switch) {
+      width: 46px;
+    }
+    :global(.ant-switch.ant-switch-checked) {
+      background: #27ae60;
+    }
+  }
+}

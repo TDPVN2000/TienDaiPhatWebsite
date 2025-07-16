@@ -1,0 +1,61 @@
+.rotate__90 {
+  transform: rotate(180deg);
+}
+
+.groupFaq {
+  border: none;
+  &__dropIcon {
+    transition: 0.4s all;
+  }
+
+  :global {
+    .ant-collapse-header {
+      display: flex;
+      flex-direction: row-reverse;
+      background: #f4f4f4;
+      align-items: center !important;
+      .ant-collapse-header-text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    .ant-collapse-content {
+      border-color: transparent;
+      background: #f4f4f4;
+    }
+    .ant-collapse-item {
+      background: #f4f4f4;
+      border-radius: 8px !important;
+      border: none;
+      overflow: hidden;
+      .ant-collapse-header {
+        padding: 16px 16px 0px 16px;
+      }
+    }
+    .ant-collapse-item-active {
+      .ant-collapse-header {
+        border-radius: 8px 8px 0px 0px !important;
+      }
+    }
+    .ant-collapse-expand-icon {
+      padding-inline-end: 0px !important;
+    }
+    .ant-collapse-content-box {
+      padding: 0px 16px 0px 16px !important;
+    }
+  }
+  &__headerCollapse {
+    @extend .groupFaq;
+    :global {
+      .ant-collapse-item {
+        .ant-collapse-header {
+          padding: 16px;
+        }
+      }
+    }
+  }
+}
+
+.inputName {
+  height: 56px;
+}

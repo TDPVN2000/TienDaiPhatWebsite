@@ -1,0 +1,21 @@
+@import "/src/styles/variables";
+.icon {
+  width: 24px;
+  height: 24px;
+  &__detail {
+    color: #df2115;
+    padding: 2px;
+    font-size: 18px;
+    margin-right: 4px;
+  }
+  &__detail_block {
+    color: #df2115;
+    font-size: 20px;
+    padding: 2px;
+    margin-right: 4px;
+  }
+}
+
+.actionButton {
+  border-radius: 15px;
+}

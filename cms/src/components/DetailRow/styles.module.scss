@@ -1,0 +1,16 @@
+.container {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #3b3b3b;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+  .label {
+    margin-right: 8px;
+    min-width: 300px;
+  }
+  .value {
+    font-weight: 700;
+  }
+}

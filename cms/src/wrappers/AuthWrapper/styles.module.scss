@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+.pageWrapper {
+  min-height: 100vh;
+  height: 100%;
+  height: -webkit-fill-available;
+}
+.mainWrapper {
+  height: 100%;
+  flex: 1;
+  transition: all 0.3s ease 0s;
+}
+.viewBody {
+  display: flex;
+}
+.pageContent {
+  flex: 1;
+  background-color: $white-color;
+  overflow: auto;
+  height: calc(100vh - $header-height);
+  padding: 0px 16px 16px 16px;
+  max-width: calc(100vw - 250px);
+}

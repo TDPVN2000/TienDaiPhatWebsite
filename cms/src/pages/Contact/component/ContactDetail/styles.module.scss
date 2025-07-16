@@ -1,0 +1,119 @@
+@import "src/styles/_variables.scss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.body {
+  overflow-y: auto;
+  max-height: 60%;
+}
+.replyList {
+}
+.infoContact {
+  border-radius: 8px;
+  background-color: $color-body-list;
+  padding-inline: 20px;
+  padding-bottom: 18px;
+}
+.itemReply {
+  border-radius: 8px;
+  background-color: $color-body-list;
+  padding-inline: 20px;
+  padding-bottom: 18px;
+  margin-top: 16px;
+}
+.viewReply {
+  border-radius: 8px;
+  padding-top: 16px;
+}
+
+.settingTime {
+  margin-block: 16px;
+  //   padding-bottom: 24px;
+  border-radius: 8px;
+  flex: 1;
+  .viewTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    border-color: $color-place-holder;
+    width: 100%;
+    &__after {
+      @extend .viewTitle;
+      padding-bottom: 16px;
+    }
+  }
+}
+
+.bodySettingTime {
+  .viewPickTime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    :global {
+      .ant-form-item {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+.unSelectMonthPicker {
+  :global {
+    .ant-picker-panel-container {
+      .ant-picker-panel-layout {
+        .ant-picker-panel {
+          .ant-picker-month-panel {
+            .ant-picker-body {
+              .ant-picker-content {
+                tbody {
+                  tr {
+                    td.ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-selected {
+                      .ant-picker-cell-inner {
+                        background: #fff;
+                        color: rgba(0, 0, 0, 0.88);
+                        &:hover {
+                          background: #0000000a;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.placeholderDatePicker {
+  :global {
+    .ant-picker-input {
+      input {
+        color: $color-place-holder;
+      }
+    }
+  }
+}
+.viewBtnConfirm {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.btnSubmit {
+  width: 49%;
+  :global {
+    .ant-btn {
+      height: 56px;
+      border-radius: 16px;
+    }
+  }
+}
