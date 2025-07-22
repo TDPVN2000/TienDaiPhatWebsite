@@ -93,3 +93,49 @@
     }
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 768px) {
+  .containerBusinessSector {
+    padding: 80px 40px;
+
+    .title {
+      font-size: 38px;
+      text-align: center;
+    }
+
+    .line {
+      width: 50%;
+    }
+  }
+
+  .body {
+    justify-content: center;
+
+    .containerItem {
+      width: calc(50% - 12px);
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .containerBusinessSector {
+    padding: 60px 20px;
+
+    .title {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    .line {
+      width: 70%;
+    }
+  }
+
+  .body {
+    .containerItem {
+      width: 100%;
+    }
+  }
+}

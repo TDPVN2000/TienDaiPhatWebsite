@@ -8,7 +8,7 @@ function Introduction() {
   return (
     <div className={styles.introduction}>
       <p className={styles.titleIntroduction}>{t('introduction.title')}</p>
-      <img src={images.line} alt="line" />
+      <img src={images.line} alt="line" className={styles.line} />
       <div className={styles.containerContent}>
         <div className={styles.viewContent1}>
           <div className={styles.content1}>

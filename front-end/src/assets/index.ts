@@ -77,6 +77,7 @@ import hospitalHNe from './images/img_hanoie.svg';
 import certificate from './images/ic_certificate.svg';
 import imgCer from './images/img_cer.svg';
 import arrowLeft from './images/ic_arrow_left.svg';
+import drawerMenu from './images/drawer-menu.svg';
 
 export const images = {
   userIcon,
@@ -158,4 +159,5 @@ export const images = {
   certificate,
   imgCer,
   arrowLeft,
+  drawerMenu,
 };
