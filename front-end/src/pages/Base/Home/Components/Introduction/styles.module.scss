@@ -132,7 +132,132 @@
 }
 
 @media (max-width: 768px) {
+  .introduction {
+    padding: 60px 0px;
+
+    .titleIntroduction {
+      font-size: 35px;
+      text-align: center;
+    }
+
+    .line {
+      width: 600px;
+      object-fit: cover;
+    }
+  }
+
+  .containerContent {
+    padding: 0 40px;
+
+    .viewContent1,
+    .viewContent2 {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .viewContent1 {
+      .content1 {
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+
+        .containerContent1 {
+          padding: 40px 20px;
+        }
+      }
+
+      .imgIntroduction1 {
+        margin-top: 16px;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    .viewContent2 {
+      margin-top: 32px;
+
+      .imgIntroduction2 {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+
+      .content2 {
+        margin-left: 0;
+        margin-top: 16px;
+        max-width: 100%;
+        width: 100%;
+
+        .containerContent2 {
+          padding: 32px 20px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .introduction {
+    padding: 60px 0px;
+
+    .titleIntroduction {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .line {
+      width: 400px;
+      object-fit: cover;
+    }
+  }
+
+  .containerContent {
+    padding: 0 20px;
+
+    .viewContent1,
+    .viewContent2 {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .viewContent1 {
+      .content1 {
+        .containerContent1 {
+          padding: 32px 16px;
+        }
+
+        .basicInfo p {
+          font-size: 16px;
+        }
+
+        .amount {
+          font-size: 36px;
+        }
+
+        .member {
+          font-size: 16px;
+        }
+      }
+
+      .imgIntroduction1 {
+        margin-top: 12px;
+      }
+    }
+
+    .viewContent2 {
+      .content2 {
+        .containerContent2 {
+          padding: 24px 16px;
+        }
+
+        .basicInfo p {
+          font-size: 16px;
+        }
+      }
+
+      .imgIntroduction2 {
+        margin-top: 12px;
+      }
+    }
+  }
 }

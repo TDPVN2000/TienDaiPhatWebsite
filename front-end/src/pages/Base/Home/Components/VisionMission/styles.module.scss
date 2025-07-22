@@ -38,3 +38,79 @@
     }
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 768px) {
+  .containerHistory {
+    min-height: auto;
+
+    .containerVisionMission {
+      flex: 1;
+
+      .bgVisionMission {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .body {
+      flex: 1;
+      padding: 40px 24px;
+      max-width: 100%;
+
+      .title {
+        font-size: 36px;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      .line {
+        width: 300px;
+        margin: 16px 0 24px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .containerHistory {
+    flex-direction: column;
+    min-height: auto;
+
+    .containerVisionMission {
+      width: 100%;
+      max-height: 240px;
+
+      .bgVisionMission {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .body {
+      padding: 32px 16px;
+      max-width: 100%;
+      text-align: center;
+
+      .title {
+        font-size: 28px;
+        justify-content: center;
+      }
+
+      .line {
+        width: 200px;
+        margin: 12px auto 20px auto;
+      }
+
+      .content {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+}

@@ -44,3 +44,45 @@
     transition: background-color 0.3s;
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+  .container {
+    .containerSlide {
+      min-height: 400px;
+    }
+
+    .imgSlide {
+      height: 400px;
+    }
+
+    .indicatorContainer {
+      top: 360px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    .containerSlide {
+      min-height: 260px;
+    }
+
+    .imgSlide {
+      height: 260px;
+    }
+
+    .indicatorContainer {
+      top: 230px;
+    }
+
+    .indicator {
+      width: 48px;
+      height: 4px;
+      margin: 0 4px;
+    }
+  }
+}

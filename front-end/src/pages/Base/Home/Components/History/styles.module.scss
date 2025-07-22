@@ -36,3 +36,60 @@
     }
   }
 }
+
+/* ====================== Responsive Styles ====================== */
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+  .containerHistory {
+    padding: 80px 40px;
+    min-height: auto;
+
+    .bgHistory {
+      padding: 32px 24px;
+      max-width: 100%;
+
+      .titleHistory {
+        font-size: 36px;
+        text-align: center;
+      }
+
+      .lineYellow {
+        width: 360px;
+        display: block;
+        margin: 24px auto;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 22px;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .containerHistory {
+    padding: 60px 20px;
+
+    .bgHistory {
+      padding: 24px 16px;
+
+      .titleHistory {
+        font-size: 28px;
+      }
+
+      .lineYellow {
+        width: 260px;
+        margin: 20px auto;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+  }
+}

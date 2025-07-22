@@ -146,6 +146,72 @@ $header-text-color: white;
   // }
 }
 
+.drawerLanguage {
+  margin-top: 20px;
+  position: relative;
+
+  .langToggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: fit-content;
+
+    .languageImg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .languageText {
+      font-size: 16px;
+      color: #36404e;
+    }
+  }
+
+  .langDropdown {
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+
+    .dropdownItem {
+      display: flex;
+      align-items: center;
+      padding: 6px 12px;
+      cursor: pointer;
+
+      .languageImg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .txtLanguage {
+        margin-left: 8px;
+        font-size: 14px;
+        color: #36404e;
+      }
+
+      &:hover {
+        background-color: #f3f3f3;
+      }
+    }
+  }
+}
+
+.menuIcon {
+  display: none;
+}
+
+.drawer {
+  display: none;
+}
+
 /* ====================== Responsive Styles ====================== */
 @media (max-width: 1200px) {
   .header {
@@ -154,7 +220,101 @@ $header-text-color: white;
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 16px 80px;
+
+    .headerNav,
+    .language {
+      display: none;
+    }
+
+    .menuIcon {
+      display: block;
+      cursor: pointer;
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+
+  .drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    padding: 20px;
+    overflow-y: auto;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 12px;
+
+        .drawerItem {
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          color: #333;
+          cursor: pointer;
+          padding: 8px 0;
+          // text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .drawerSubmenu {
+          padding-left: 16px;
+          margin-top: 4px;
+
+          .drawerSubmenuItem {
+            display: block;
+            font-size: 15px;
+            padding: 6px 0;
+            color: #444;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .drawerLanguage {
+      margin-top: 24px;
+
+      p {
+        margin: 8px 0;
+        cursor: pointer;
+        color: #36404e;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .header {
+    padding: 16px 30px;
+  }
+
+  .drawer {
+    width: 85%;
+  }
 }
