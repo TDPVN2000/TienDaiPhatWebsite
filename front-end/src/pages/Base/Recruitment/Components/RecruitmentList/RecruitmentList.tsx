@@ -20,7 +20,8 @@ function RecruitmentList({ jobList }: Props) {
       <div className={styles.jobList}>
         <p className={styles.title}>{t('recruitment.title')}</p>
         <img src={images.line} alt="line" className={styles.line} />
-        <div className={styles.jobItem}>
+
+        <div className={`${styles.jobItem} ${styles.jobItemLabel}`}>
           <div className={styles.jobPosition}>
             <p className={styles.label}>{t('recruitment.position')}</p>
           </div>
@@ -31,23 +32,32 @@ function RecruitmentList({ jobList }: Props) {
             <p className={styles.label}>{t('recruitment.detail')}</p>
           </div>
         </div>
-        {jobList.map((job: any, index: number) => (
-          <div className={styles.jobItem} key={index}>
-            <div className={styles.jobPosition}>
-              <div className={styles.txtPosition}>{job?.position}</div>
-              <div className={styles.txtDesPosition}>{job?.des_position}</div>
+
+        <div className={styles.mobileJobLabel}>
+          {t('recruitment.listRecruitment')}
+        </div>
+
+        {jobList.length > 0 ? (
+          jobList.map((job: any, index: number) => (
+            <div className={styles.jobItem} key={index}>
+              <div className={styles.jobPosition}>
+                <div className={styles.txtPosition}>{job?.position}</div>
+                <div className={styles.txtDesPosition}>{job?.des_position}</div>
+              </div>
+              <div className={styles.jobAddress}>{job?.address}</div>
+              <div className={styles.viewBtnDetail}>
+                <button
+                  onClick={() => handleClick(job?.id)}
+                  className={styles.styleBtn}
+                >
+                  {t('button.viewDetail')}
+                </button>
+              </div>
             </div>
-            <div className={styles.jobAddress}>{job?.address}</div>
-            <div className={styles.viewBtnDetail}>
-              <button
-                onClick={() => handleClick(job?.id)}
-                className={styles.styleBtn}
-              >
-                {t('button.viewDetail')}
-              </button>
-            </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className={styles.noData}>{t('news.noData')}</p>
+        )}
       </div>
     </div>
   );

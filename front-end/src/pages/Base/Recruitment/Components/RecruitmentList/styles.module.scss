@@ -6,6 +6,15 @@
   justify-content: center;
   align-items: center;
 
+  .noData {
+    font-size: 20px;
+    font-weight: 400;
+    color: #6b7076;
+    margin-top: 64px;
+    font-style: italic;
+    text-align: center;
+  }
+
   .title {
     font-size: 52px;
     font-weight: 700;
@@ -35,8 +44,6 @@
   }
 
   .jobList {
-    // padding: 0px 348px 0px 348px;
-
     .jobItem {
       padding: 24px 16px;
       border-bottom: 1px solid #eaebeb;
@@ -93,6 +100,29 @@
         border: none;
         cursor: pointer;
       }
+
+      &.jobItemLabel {
+        display: flex;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+
+    .mobileJobLabel {
+      display: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: #36404e;
+      margin-bottom: 16px;
+      width: 100%;
+      max-width: 1224px;
+      text-align: center;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
     }
   }
 }
@@ -107,7 +137,92 @@
 }
 
 @media (max-width: 768px) {
+  .containerListRecruitment {
+    padding: 80px 16px;
+
+    .noData {
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 36px;
+    }
+
+    .line {
+      width: 100%;
+      margin-bottom: 32px;
+    }
+
+    .jobList {
+      padding: 0;
+
+      .jobItem {
+        flex-wrap: wrap;
+        padding: 16px 0;
+        gap: 12px;
+
+        .jobPosition,
+        .jobAddress,
+        .viewBtnDetail {
+          width: 100%;
+          margin: 0;
+          justify-content: flex-start;
+        }
+
+        .jobPosition {
+          .txtPosition {
+            font-size: 20px;
+          }
+
+          .txtDesPosition {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+
+        .jobAddress,
+        .viewBtnDetail {
+          font-size: 14px;
+        }
+
+        .styleBtn {
+          padding: 8px 12px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .containerListRecruitment {
+    padding: 60px 12px;
+
+    .noData {
+      font-size: 16px;
+    }
+
+    .title {
+      font-size: 28px;
+    }
+
+    .jobList {
+      .jobItem {
+        .jobPosition {
+          .txtPosition {
+            font-size: 18px;
+          }
+
+          .txtDesPosition {
+            font-size: 13px;
+          }
+        }
+
+        .styleBtn {
+          font-size: 13px;
+          padding: 6px 10px;
+        }
+      }
+    }
+  }
 }

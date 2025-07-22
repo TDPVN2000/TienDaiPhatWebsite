@@ -15,6 +15,7 @@
       font-size: 48px;
       font-weight: bold;
       color: #ffffff;
+      text-align: center;
     }
 
     .line {
@@ -105,7 +106,66 @@
 }
 
 @media (max-width: 768px) {
+  .containerTreatment {
+    flex-direction: column;
+    min-height: auto;
+
+    .contentTreatment {
+      width: 100%;
+      padding: 60px 24px;
+
+      .titleTreatment {
+        font-size: 32px;
+        text-align: center;
+      }
+
+      .introduceTreatment,
+      .benefitsContainer .benefitSection h2,
+      .benefitsContainer .benefitSection ul li {
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      .noteTreatment {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .line {
+        margin: 12px auto 24px auto;
+        display: block;
+        max-width: 380px;
+      }
+    }
+
+    .viewBGImage {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .containerTreatment {
+    .contentTreatment {
+      padding: 40px 16px;
+
+      .titleTreatment {
+        font-size: 28px;
+      }
+
+      .introduceTreatment,
+      .benefitsContainer .benefitSection h2,
+      .benefitsContainer .benefitSection ul li {
+        font-size: 13px;
+      }
+
+      .noteTreatment {
+        font-size: 13px;
+      }
+
+      .line {
+        max-width: 250px;
+      }
+    }
+  }
 }
