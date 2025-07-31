@@ -290,7 +290,235 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    .headerBackground {
+      height: 500px;
+
+      .containerTitleBg {
+        padding: 16px 24px 4px 24px;
+      }
+
+      .titleBg {
+        font-size: 36px;
+        text-align: center;
+      }
+    }
+
+    .body {
+      .introduction {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 40px;
+        text-align: center;
+
+        .titleIntroduction {
+          font-size: 36px;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .viewContentIntro {
+          border-left: none;
+          border-top: 2px solid #ffda44;
+          padding-top: 20px;
+        }
+
+        .contentIntroduction {
+          margin-left: 0;
+        }
+      }
+
+      .viewDredgerInformation {
+        padding: 80px 40px;
+
+        .title {
+          font-size: 36px;
+        }
+
+        .line {
+          width: 300px;
+        }
+
+        .viewListShip {
+          margin-top: 40px;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          gap: 12px;
+
+          .imgShip {
+            max-width: 200px;
+            height: auto;
+            object-fit: cover;
+          }
+
+          > * {
+            flex: 1;
+            min-width: 0;
+          }
+        }
+      }
+
+      .profile {
+        padding: 80px 40px;
+
+        .title {
+          font-size: 36px;
+        }
+
+        .line {
+          width: 300px;
+        }
+
+        .profileMap {
+          margin: 40px 0px;
+        }
+
+        .btnContact {
+          font-size: 16px;
+          padding: 12px 20px;
+        }
+
+        .phoneWhite {
+          width: 20px;
+        }
+      }
+
+      .completedProjects {
+        padding: 80px 40px;
+
+        .title {
+          font-size: 36px;
+        }
+
+        .line {
+          width: 300px;
+        }
+
+        // .viewListProject {
+        //   flex-direction: row;
+        //   align-items: center;
+        // }
+        .viewListProject {
+          margin-top: 40px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 16px;
+
+          > * {
+            flex: 0 1 calc(50% - 16px);
+            max-width: 100%;
+          }
+        }
+      }
+
+      .wrapperSlide {
+        .imageWrapper {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 4/3;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .container {
+    .headerBackground {
+      height: 400px;
+
+      .titleBg {
+        font-size: 28px;
+      }
+    }
+
+    .body {
+      .introduction {
+        padding: 40px 20px;
+
+        .titleIntroduction {
+          font-size: 28px;
+        }
+
+        .contentIntroduction {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
+      // .viewDredgerInformation {
+      //   padding: 60px 20px;
+
+      //   .title {
+      //     font-size: 28px;
+      //   }
+
+      //   .line {
+      //     width: 200px;
+      //   }
+      // }
+
+      .viewDredgerInformation {
+        padding: 60px 20px;
+
+        .title {
+          font-size: 28px;
+          text-align: center;
+        }
+
+        .line {
+          width: 200px;
+        }
+
+        .viewListShip {
+          margin-top: 40px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 24px;
+
+          .imgShip {
+            max-width: 100%;
+            height: auto;
+          }
+
+          > * {
+            width: 100%;
+            max-width: 300px;
+          }
+        }
+      }
+
+      .profile {
+        padding: 60px 20px;
+
+        .title {
+          font-size: 28px;
+        }
+
+        .line {
+          width: 200px;
+        }
+
+        .btnContact {
+          font-size: 14px;
+          padding: 10px 16px;
+        }
+      }
+
+      .completedProjects {
+        padding: 60px 20px;
+
+        .title {
+          font-size: 28px;
+        }
+
+        .line {
+          width: 200px;
+        }
+      }
+    }
+  }
 }
