@@ -231,7 +231,178 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    .headerBackground {
+      height: 500px;
+
+      .containerTitleBg {
+        padding: 16px 24px 4px 24px;
+
+        .titleBg {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .body {
+      .introduction {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 24px;
+        text-align: center;
+
+        .titleIntroduction {
+          font-size: 36px;
+          margin: 0 0 20px 0;
+        }
+
+        .viewContentIntro {
+          border-left: none;
+
+          .contentIntroduction {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .viewProject {
+        padding: 16px;
+
+        .noteProject {
+          font-size: 16px;
+        }
+      }
+
+      .mainContent {
+        padding: 60px 24px;
+
+        .title {
+          font-size: 36px;
+        }
+
+        .line {
+          max-width: 80%;
+        }
+      }
+
+      .viewContent1 {
+        flex-direction: column;
+
+        .left {
+          margin-right: 0;
+          margin-bottom: 24px;
+
+          .imgTest1 {
+            max-width: 100%;
+          }
+        }
+
+        .right {
+          .top {
+            flex-direction: column;
+
+            .imgTest2 {
+              margin-left: 0;
+              margin-top: 16px;
+            }
+          }
+        }
+      }
+
+      .viewContent2,
+      .viewContent3 {
+        padding: 0 12px;
+
+        .statisticsMinistryFinance {
+          font-size: 24px;
+        }
+
+        .content1,
+        .content2 {
+          font-size: 16px;
+        }
+
+        .tableFinanceMinistry,
+        .tableCapitalStatistics {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  @media (max-width: 480px) {
+    .container {
+      .headerBackground {
+        .containerTitleBg {
+          padding: 8px 12px;
+          white-space: normal;
+          text-align: center;
+        }
+
+        .titleBg {
+          font-size: 22px;
+          line-height: 40px;
+        }
+      }
+
+      .body {
+        .introduction {
+          padding: 40px 16px;
+
+          .titleIntroduction {
+            font-size: 28px;
+          }
+
+          .contentIntroduction {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+
+        .viewProject {
+          padding: 12px;
+
+          .noteProject {
+            font-size: 14px;
+          }
+        }
+
+        .mainContent {
+          padding: 40px 16px;
+
+          .title {
+            font-size: 28px;
+          }
+        }
+
+        .viewContent1 {
+          .right {
+            .content {
+              font-size: 14px;
+              line-height: 20px;
+            }
+          }
+        }
+
+        .viewContent2,
+        .viewContent3 {
+          .statisticsMinistryFinance {
+            font-size: 20px;
+          }
+
+          .content1,
+          .content2 {
+            font-size: 14px;
+          }
+
+          .titleSubContent2,
+          .mainSubContent2 {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
 }
