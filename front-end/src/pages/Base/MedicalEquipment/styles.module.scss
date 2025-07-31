@@ -416,7 +416,240 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    .headerBackground {
+      height: 420px;
+
+      .containerTitleBg {
+        padding: 16px 24px;
+      }
+
+      .titleBg {
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+
+    .body {
+      .introduction {
+        flex-direction: column;
+        padding: 48px 24px;
+        height: auto;
+
+        .titleIntroduction {
+          font-size: 32px;
+          margin-bottom: 24px;
+          margin-right: 0;
+          text-align: center;
+        }
+
+        .containerContentIntro {
+          align-items: flex-start;
+        }
+
+        .viewContentIntro {
+          margin-bottom: 16px;
+        }
+
+        .contentIntroduction {
+          font-size: 16px;
+          max-width: 100%;
+        }
+      }
+
+      .viewProduct {
+        padding: 80px 24px;
+
+        .title {
+          font-size: 32px;
+          text-align: center;
+        }
+
+        .viewProductList {
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .btnContact {
+          width: 100%;
+        }
+
+        .line {
+          width: 40%;
+        }
+      }
+
+      .viewInvestmentProductionScale {
+        padding: 80px 24px;
+
+        .title {
+          font-size: 32px;
+          text-align: center;
+        }
+
+        .line {
+          width: 75%;
+        }
+
+        .viewInstruct {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+
+        .txtInstruct {
+          font-size: 16px;
+        }
+
+        .viewInvestmentData {
+          flex-direction: column;
+          gap: 24px;
+
+          .itemWrapper {
+            border-right: none;
+          }
+
+          .popup {
+            max-width: 100%;
+            width: 100%;
+            left: 0;
+            transform: translateY(8px);
+          }
+        }
+      }
+
+      .viewProjectComplete {
+        padding: 80px 24px;
+
+        .title {
+          font-size: 32px;
+        }
+
+        .line {
+          width: 45%;
+          object-fit: cover;
+        }
+      }
+
+      .viewCertificate {
+        .title {
+          font-size: 32px;
+          text-align: center;
+        }
+
+        .certificateList {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 24px;
+          flex-direction: row;
+        }
+
+        .certificate,
+        .certificatePlaceholder {
+          width: 220px;
+          height: 300px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .container {
+    .headerBackground {
+      height: 320px;
+
+      .titleBg {
+        font-size: 24px;
+      }
+    }
+
+    .body {
+      .introduction {
+        padding: 32px 16px;
+
+        .titleIntroduction {
+          font-size: 24px;
+        }
+
+        .contentIntroduction {
+          font-size: 14px;
+        }
+      }
+
+      .viewProduct {
+        padding: 64px 16px;
+
+        .title {
+          font-size: 24px;
+        }
+
+        .btnContact {
+          font-size: 16px;
+          padding: 12px;
+        }
+
+        .line {
+          width: 30%;
+        }
+      }
+
+      .viewInvestmentProductionScale {
+        padding: 64px 16px;
+
+        .title {
+          font-size: 24px;
+        }
+
+        .txtInstruct {
+          font-size: 14px;
+        }
+
+        .txtDetail {
+          font-size: 14px;
+        }
+
+        .line {
+          width: 85%;
+        }
+      }
+
+      .viewProjectComplete {
+        padding: 64px 16px;
+
+        .title {
+          font-size: 24px;
+        }
+
+        .line {
+          width: 50%;
+          object-fit: cover;
+        }
+
+        .projectCompleteList {
+          flex-direction: column;
+
+          .itemWrapper {
+            width: 100%;
+          }
+        }
+      }
+
+      .viewCertificate {
+        padding: 0px 16px 64px 16px;
+
+        .title {
+          font-size: 24px;
+        }
+
+        .certificate,
+        .certificatePlaceholder {
+          width: 240px;
+          height: 320px;
+        }
+      }
+    }
+  }
 }

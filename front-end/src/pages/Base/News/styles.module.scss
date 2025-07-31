@@ -137,7 +137,111 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    .body {
+      padding: 60px 20px;
+
+      .noData {
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .title {
+        font-size: 36px;
+        text-align: center;
+      }
+
+      .subTitle {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .line {
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      .viewListNews {
+        margin-top: 48px;
+
+        .viewFeaturedNews {
+          padding: 0px 16px;
+
+          .highlightNewsTag {
+            font-size: 16px;
+            padding: 6px 20px;
+            margin-bottom: 16px;
+          }
+
+          .containerFeatureNews {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+          }
+        }
+
+        .viewTDPNews {
+          padding: 0px 16px;
+          margin-top: 48px;
+
+          .highlightNewsTag {
+            font-size: 16px;
+            padding: 6px 20px;
+            margin-bottom: 16px;
+          }
+
+          .containerTDPNews {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+          }
+
+          .pagination {
+            margin-top: 24px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .container {
+    .body {
+      padding: 60px 10px;
+
+      .noData {
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+
+      .subTitle {
+        font-size: 13px;
+      }
+
+      .line {
+        width: 250px;
+      }
+
+      .viewListNews {
+        .viewFeaturedNews {
+          padding: 0px 12px;
+
+          .containerFeatureNews {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .viewTDPNews {
+          padding: 0px 12px;
+
+          .containerTDPNews {
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+    }
+  }
 }
