@@ -58,7 +58,59 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    .body {
+      padding: 80px;
+
+      .headerBack {
+        .titleBack {
+          font-size: 14px;
+        }
+
+        .arrowLeft {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .content {
+        margin-top: 32px;
+
+        span {
+          font-size: 15px;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .container {
+    .body {
+      padding: 80px 30px;
+      margin-top: 24px;
+
+      .headerBack {
+        .titleBack {
+          font-size: 13px;
+        }
+
+        .arrowLeft {
+          width: 18px;
+          height: 18px;
+          margin-right: 6px;
+        }
+      }
+
+      .content {
+        margin-top: 24px;
+
+        span {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
 }

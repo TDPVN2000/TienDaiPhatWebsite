@@ -57,7 +57,60 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    .body {
+      padding: 80px;
+
+      .headerBack {
+        .arrowLeft {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+        }
+
+        .titleBack {
+          font-size: 14px;
+        }
+      }
+
+      .content {
+        margin-top: 32px;
+
+        span {
+          font-size: 15px;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  .container {
+    .body {
+      padding: 80px 30px;
+      margin-top: 24px;
+
+      .headerBack {
+        .arrowLeft {
+          width: 20px;
+          height: 20px;
+          margin-right: 6px;
+        }
+
+        .titleBack {
+          font-size: 13px;
+        }
+      }
+
+      .content {
+        margin-top: 24px;
+
+        span {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
 }
