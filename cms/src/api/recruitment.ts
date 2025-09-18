@@ -13,5 +13,10 @@ export const deleteRecruitmentApi = (recruitment_id: number) =>
 export const getDetailRecruitmentApi = (recruitment_id?: number | string) =>
   sendGet(`recruitment/${recruitment_id}`).then((res) => res);
 
-export const updateRecruitmentApi = (recruitment_id: number | string) =>
-  sendPut(`recruitment/${recruitment_id}`).then((res: any) => res.data);
+export const updateRecruitmentApi = (payload: {
+  recruitment_id: number | string;
+  params?: any;
+}) =>
+  sendPut(`recruitment/${payload?.recruitment_id}`, payload?.params).then(
+    (res: any) => res
+  );

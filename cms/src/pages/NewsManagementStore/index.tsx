@@ -99,7 +99,7 @@ export default function NewsManagementStore() {
           type: "success",
           message: t("Cập nhật thành công"),
         });
-        navigate(`/news-management/detail/${id}`);
+        navigate(`/news-management`);
       },
       onError: (err: any) => {
         handleErrorMessage(err);

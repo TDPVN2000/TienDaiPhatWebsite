@@ -15,6 +15,7 @@ import {
   formatDate,
   formatYearMonthDay,
   handleErrorMessage,
+  htmlToText,
 } from "utils/helper";
 import { useRole } from "utils/hooks/usePermissions";
 
@@ -62,6 +63,9 @@ function TableRecruitment({ data, isLoading, onRefetch }: IProps) {
         dataIndex: "des_position",
         key: "des_position",
         width: 250,
+        render: (value: any, record: any, index: number) => (
+          <div className="line-2">{htmlToText(record?.des_position)}</div>
+        ),
       },
       {
         title: t("Địa chỉ làm việc"),

@@ -86,7 +86,7 @@ export default function CertificationManagementStore() {
           type: "success",
           message: t("Cập nhật thành công"),
         });
-        navigate(`/certification-management/detail/${id}`);
+        navigate(`/certification-management`);
       },
       onError: (err: any) => {
         handleErrorMessage(err);
