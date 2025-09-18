@@ -26,7 +26,7 @@ export default function RecruitmentManagementDetail() {
         hasBack
         buttonAdd={{
           title: t("Chỉnh sửa"),
-          onClick: () => navigation(`/news-management/store/${id}`),
+          onClick: () => navigation(`/recruitment-management/store/${id}`),
           isLoading: isLoading,
         }}
       />

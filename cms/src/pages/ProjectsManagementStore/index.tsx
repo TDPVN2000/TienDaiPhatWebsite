@@ -89,7 +89,7 @@ export default function ProjectsManagementStore() {
           type: "success",
           message: t("Cập nhật thành công"),
         });
-        navigate(`/projects-management/detail/${id}`);
+        navigate(`/projects-management`);
       },
       onError: (err: any) => {
         handleErrorMessage(err);

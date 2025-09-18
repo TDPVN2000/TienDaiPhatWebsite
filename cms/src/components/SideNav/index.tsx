@@ -287,13 +287,13 @@ export default function SideNav() {
         className={styles.menu}
         items={getVisibleItem(items)}
       />
-      <div
+      {/* <div
         className={styles.viewLogout}
         onClick={() => setOpenModalLogOut(true)}
       >
         <IconPackage />
         <div className={styles.titleLogout}>{t("common.logout")}</div>
-      </div>
+      </div> */}
       <ModalDeleteItem
         open={openModalLogOut}
         dataItem={{}}
@@ -301,7 +301,7 @@ export default function SideNav() {
           setOpenModalLogOut(!openModalLogOut);
         }}
         onSubmit={onLogOut}
-        title={t("本当にログアウトしますか？")}
+        title={t("Are you sure you want to log out?")}
       />
     </div>
   );

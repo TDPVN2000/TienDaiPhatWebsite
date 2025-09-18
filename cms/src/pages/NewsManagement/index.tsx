@@ -47,7 +47,7 @@ export default function NewsManagement() {
           onClick: () => navigate("/news-management/store"),
         }}
       />
-      <div className={styles.body}> 
+      <div className={styles.body}>
         <div className={styles.viewFilter}>
           <div className={styles.viewTotalNotifications}>
             <span className={styles.totalNotifications}>
