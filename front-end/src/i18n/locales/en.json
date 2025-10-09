@@ -28,12 +28,12 @@
     "medicalEquipment": "Medical Equipment",
     "dredgingLandfill": "Dredging & Land Reclamation",
     "investmentProduction": "High-Tech Manufacturing Investment",
-    "mineralExploitation": "MINERAL MINING & TRADING (updating)",
-    "businessCooperation": "BUSINESS PARTNERSHIPS (updating)",
+    "mineralExploitation": "MINERAL MINING & TRADING (Updating)",
+    "businessCooperation": "BUSINESS PARTNERSHIPS (Updating)",
     "news": "NEWS",
     "recruitment": "RECRUITMENT",
     "contact": "CONTACT",
-    "mineralExploitationTrade": "Mineral exploitation and trade (Updating)"
+    "mineralExploitationTrade": "Mineral mining and trading (Updating)"
   },
   "button": {
     "backHome": "Back home",

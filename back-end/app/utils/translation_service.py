@@ -84,12 +84,14 @@ class TranslationService:
     @staticmethod
     def get_all_languages() -> List[str]:
         """Get all available languages"""
-        return db.session.query(Translation.language).distinct().all()
+        languages = db.session.query(Translation.language).distinct().all()
+        return [lang[0] for lang in languages]
 
     @staticmethod
     def get_all_model_names() -> List[str]:
         """Get all available model names"""
-        return db.session.query(Translation.model_name).distinct().all()
+        model_names = db.session.query(Translation.model_name).distinct().all()
+        return [model[0] for model in model_names]
 
     @staticmethod
     def translate_object(obj: dict, language: str, translation_keys: List[str], model_name: str) -> dict:

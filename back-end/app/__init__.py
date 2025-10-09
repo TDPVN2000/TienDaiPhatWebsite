@@ -7,6 +7,7 @@ from flask_migrate import Migrate
 from .extensions import db
 from .config import Config
 from .docs.api import api
+from .routes import bp as main_bp
 from .controllers import (
     capability_controller,
     table_data_controller,
@@ -28,14 +29,12 @@ def create_app(config_class=Config):
 
     # Initialize extensions
     CORS(app,
-         resources={r"/*": {
-             "origins": app.config['CORS_ORIGINS'],
-             "methods": app.config['CORS_METHODS'],
-             "allow_headers": app.config['CORS_ALLOW_HEADERS'],
-             "expose_headers": app.config['CORS_EXPOSE_HEADERS'],
-             "supports_credentials": app.config['CORS_SUPPORTS_CREDENTIALS'],
-             "max_age": 600
-         }})
+         origins=app.config['CORS_ORIGINS'],
+         methods=app.config['CORS_METHODS'],
+         allow_headers=app.config['CORS_ALLOW_HEADERS'],
+         expose_headers=app.config['CORS_EXPOSE_HEADERS'],
+         supports_credentials=app.config['CORS_SUPPORTS_CREDENTIALS'],
+         max_age=600)
     babel = Babel(app)
     mail = Mail(app)
     cache = Cache(app)
@@ -51,6 +50,7 @@ def create_app(config_class=Config):
     api.init_app(app)
 
     # Register blueprints
+    app.register_blueprint(main_bp)
     app.register_blueprint(capability_controller.bp)
     app.register_blueprint(table_data_controller.bp)
     app.register_blueprint(certification_controller.bp)

@@ -23,6 +23,10 @@ class Config:
         'https://localhost:*',
         'http://127.0.0.1:*',
         'https://127.0.0.1:*',
+        'https://nimble-pegasus-974ceb.netlify.app',
+        'https://*.netlify.app',
+        'https://*.trycloudflare.com',
+        'https://dog-remain-manor-celebration.trycloudflare.com',
         '*'  # Allow all origins in development
     ]
     CORS_METHODS = ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH']
